@@ -46,6 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Doctor\Doctor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doctor\Doctor.Designer.cs">
+      <DependentUpon>Doctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Handle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doctor\Handle.Designer.cs">
+      <DependentUpon>Handle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\NewPhysicalExaminationcs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doctor\NewPhysicalExaminationcs.Designer.cs">
+      <DependentUpon>NewPhysicalExaminationcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\PhysicalExamination.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doctor\PhysicalExamination.Designer.cs">
+      <DependentUpon>PhysicalExamination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Show.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doctor\Show.Designer.cs">
+      <DependentUpon>Show.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +96,21 @@
     <Compile Include="Registration\Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Doctor\Doctor.resx">
+      <DependentUpon>Doctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\Handle.resx">
+      <DependentUpon>Handle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\NewPhysicalExaminationcs.resx">
+      <DependentUpon>NewPhysicalExaminationcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\PhysicalExamination.resx">
+      <DependentUpon>PhysicalExamination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\Show.resx">
+      <DependentUpon>Show.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
