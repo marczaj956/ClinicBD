@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\AddNew.Designer.cs">
+      <DependentUpon>AddNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admincs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Admincs.Designer.cs">
+      <DependentUpon>Admincs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Edit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Show.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Show.Designer.cs">
+      <DependentUpon>Show.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\Doctor.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,6 +120,18 @@
     <Compile Include="Registration\Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin\AddNew.resx">
+      <DependentUpon>AddNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Admincs.resx">
+      <DependentUpon>Admincs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Show.resx">
+      <DependentUpon>Show.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doctor\Doctor.resx">
       <DependentUpon>Doctor.cs</DependentUpon>
     </EmbeddedResource>
