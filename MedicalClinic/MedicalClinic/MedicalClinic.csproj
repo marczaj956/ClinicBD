@@ -46,59 +46,131 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\AddNew.cs">
+    <Compile Include="Controls\Admin\AddNew.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Admin\AddNew.Designer.cs">
+    <Compile Include="Controls\Admin\AddNew.Designer.cs">
       <DependentUpon>AddNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Admincs.cs">
+    <Compile Include="Controls\Admin\Admincs.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Admin\Admincs.Designer.cs">
+    <Compile Include="Controls\Admin\Admincs.Designer.cs">
       <DependentUpon>Admincs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Edit.cs">
+    <Compile Include="Controls\Admin\Edit.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Admin\Edit.Designer.cs">
+    <Compile Include="Controls\Admin\Edit.Designer.cs">
       <DependentUpon>Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Show.cs">
+    <Compile Include="Controls\Admin\Show.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Admin\Show.Designer.cs">
+    <Compile Include="Controls\Admin\Show.Designer.cs">
       <DependentUpon>Show.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctor\Doctor.cs">
+    <Compile Include="Controls\Doctor\Doctor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Doctor\Doctor.Designer.cs">
+    <Compile Include="Controls\Doctor\Doctor.Designer.cs">
       <DependentUpon>Doctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctor\Handle.cs">
+    <Compile Include="Controls\Doctor\EditLabExamination.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Doctor\Handle.Designer.cs">
+    <Compile Include="Controls\Doctor\EditLabExamination.Designer.cs">
+      <DependentUpon>EditLabExamination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Doctor\EditPhysicalExamination.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Doctor\EditPhysicalExamination.Designer.cs">
+      <DependentUpon>EditPhysicalExamination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Doctor\Handle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Doctor\Handle.Designer.cs">
       <DependentUpon>Handle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctor\NewPhysicalExaminationcs.cs">
+    <Compile Include="Controls\Doctor\LabolatoryExaminantion.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Doctor\NewPhysicalExaminationcs.Designer.cs">
+    <Compile Include="Controls\Doctor\LabolatoryExaminantion.Designer.cs">
+      <DependentUpon>LabolatoryExaminantion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Doctor\NewLabolatoryExaminationcs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Doctor\NewLabolatoryExaminationcs.Designer.cs">
+      <DependentUpon>NewLabolatoryExaminationcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Doctor\NewPhysicalExaminationcs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Doctor\NewPhysicalExaminationcs.Designer.cs">
       <DependentUpon>NewPhysicalExaminationcs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctor\PhysicalExamination.cs">
+    <Compile Include="Controls\Doctor\PhysicalExamination.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Doctor\PhysicalExamination.Designer.cs">
+    <Compile Include="Controls\Doctor\PhysicalExamination.Designer.cs">
       <DependentUpon>PhysicalExamination.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctor\Show.cs">
+    <Compile Include="Controls\Doctor\Show.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Doctor\Show.Designer.cs">
+    <Compile Include="Controls\Doctor\Show.Designer.cs">
       <DependentUpon>Show.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Doctor\ShowLabExamination.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Doctor\ShowLabExamination.Designer.cs">
+      <DependentUpon>ShowLabExamination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Doctor\ShowPhysicalExamination.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Doctor\ShowPhysicalExamination.Designer.cs">
+      <DependentUpon>ShowPhysicalExamination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Laboratory\Edit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Laboratory\Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Laboratory\Show.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Laboratory\Show.Designer.cs">
+      <DependentUpon>Show.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Registration\Edit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Registration\Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Registration\New.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Registration\New.Designer.cs">
+      <DependentUpon>New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Registration\Show.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Registration\Show.Designer.cs">
+      <DependentUpon>Show.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Registration\VisitRegistration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Registration\VisitRegistration.Designer.cs">
+      <DependentUpon>VisitRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -106,51 +178,96 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainPanel\MainPanel.cs">
+    <Compile Include="Controls\Laboratory\Laboratory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainPanel\MainPanel.Designer.cs">
+    <Compile Include="Controls\Laboratory\Laboratory.Designer.cs">
+      <DependentUpon>Laboratory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MainPanel\MainPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MainPanel\MainPanel.Designer.cs">
       <DependentUpon>MainPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registration\Registration.cs">
+    <Compile Include="Controls\Registration\Registration.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Registration\Registration.Designer.cs">
+    <Compile Include="Controls\Registration\Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin\AddNew.resx">
+    <EmbeddedResource Include="Controls\Admin\AddNew.resx">
       <DependentUpon>AddNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\Admincs.resx">
+    <EmbeddedResource Include="Controls\Admin\Admincs.resx">
       <DependentUpon>Admincs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\Edit.resx">
+    <EmbeddedResource Include="Controls\Admin\Edit.resx">
       <DependentUpon>Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\Show.resx">
+    <EmbeddedResource Include="Controls\Admin\Show.resx">
       <DependentUpon>Show.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctor\Doctor.resx">
+    <EmbeddedResource Include="Controls\Doctor\Doctor.resx">
       <DependentUpon>Doctor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctor\Handle.resx">
+    <EmbeddedResource Include="Controls\Doctor\EditLabExamination.resx">
+      <DependentUpon>EditLabExamination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Doctor\EditPhysicalExamination.resx">
+      <DependentUpon>EditPhysicalExamination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Doctor\Handle.resx">
       <DependentUpon>Handle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctor\NewPhysicalExaminationcs.resx">
+    <EmbeddedResource Include="Controls\Doctor\LabolatoryExaminantion.resx">
+      <DependentUpon>LabolatoryExaminantion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Doctor\NewLabolatoryExaminationcs.resx">
+      <DependentUpon>NewLabolatoryExaminationcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Doctor\NewPhysicalExaminationcs.resx">
       <DependentUpon>NewPhysicalExaminationcs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctor\PhysicalExamination.resx">
+    <EmbeddedResource Include="Controls\Doctor\PhysicalExamination.resx">
       <DependentUpon>PhysicalExamination.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctor\Show.resx">
+    <EmbeddedResource Include="Controls\Doctor\Show.resx">
       <DependentUpon>Show.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Doctor\ShowLabExamination.resx">
+      <DependentUpon>ShowLabExamination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Doctor\ShowPhysicalExamination.resx">
+      <DependentUpon>ShowPhysicalExamination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Laboratory\Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Laboratory\Show.resx">
+      <DependentUpon>Show.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Registration\Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Registration\New.resx">
+      <DependentUpon>New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Registration\Show.resx">
+      <DependentUpon>Show.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Registration\VisitRegistration.resx">
+      <DependentUpon>VisitRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainPanel\MainPanel.resx">
+    <EmbeddedResource Include="Controls\Laboratory\Laboratory.resx">
+      <DependentUpon>Laboratory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MainPanel\MainPanel.resx">
       <DependentUpon>MainPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -162,7 +279,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Registration\Registration.resx">
+    <EmbeddedResource Include="Controls\Registration\Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

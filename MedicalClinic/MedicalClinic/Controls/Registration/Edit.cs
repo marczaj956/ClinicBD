@@ -1,28 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-namespace MedicalClinic
+namespace MedicalClinic.Controls.Registration
 {
-    public partial class Form1 : Form
+    public partial class Edit : UserControl
     {
-        public Form1()
+        public Edit()
         {
             InitializeComponent();
-            Init();
         }
-        private void Init()
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
     }
-
 }
-

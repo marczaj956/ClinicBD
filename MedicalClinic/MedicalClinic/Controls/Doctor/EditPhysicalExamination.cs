@@ -1,28 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-namespace MedicalClinic
+namespace MedicalClinic.Controls.Doctor
 {
-    public partial class Form1 : Form
+    public partial class EditPhysicalExamination : UserControl
     {
-        public Form1()
+        public EditPhysicalExamination()
         {
             InitializeComponent();
-            Init();
-        }
-        private void Init()
-        {
-           
         }
     }
-
 }
-
