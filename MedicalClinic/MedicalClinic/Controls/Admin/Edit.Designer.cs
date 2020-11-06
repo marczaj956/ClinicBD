@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Name = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Surname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Name1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Surname2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Login = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.Password = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.Role = new System.Windows.Forms.ComboBox();
+            this.Cancel = new System.Windows.Forms.Button();
+            this.SaveAndClose = new System.Windows.Forms.Button();
+            this.Activ = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.Name);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.Surname);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1917, 168);
@@ -62,15 +62,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dane osobowe";
             // 
-            // label1
+            // Name
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(25, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 29);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Imie";
+            this.Name.AutoSize = true;
+            this.Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Name.Location = new System.Drawing.Point(25, 76);
+            this.Name.Name = "Name";
+            this.Name.Size = new System.Drawing.Size(59, 29);
+            this.Name.TabIndex = 1;
+            this.Name.Text = "Imie";
             // 
             // textBox1
             // 
@@ -91,14 +91,14 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Nazwisko";
             // 
-            // textBox2
+            // Surname
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(544, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(228, 35);
-            this.textBox2.TabIndex = 4;
+            this.Surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Surname.Location = new System.Drawing.Point(544, 76);
+            this.Surname.Name = "Surname";
+            this.Surname.ReadOnly = true;
+            this.Surname.Size = new System.Drawing.Size(228, 35);
+            this.Surname.TabIndex = 4;
             // 
             // label3
             // 
@@ -110,33 +110,33 @@
             this.label3.TabIndex = 28;
             this.label3.Text = "Imie";
             // 
-            // textBox3
+            // Name1
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox3.Location = new System.Drawing.Point(118, 255);
-            this.textBox3.MaxLength = 50;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(417, 35);
-            this.textBox3.TabIndex = 29;
+            this.Name1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Name1.Location = new System.Drawing.Point(118, 255);
+            this.Name1.MaxLength = 50;
+            this.Name1.Name = "Name1";
+            this.Name1.Size = new System.Drawing.Size(417, 35);
+            this.Name1.TabIndex = 29;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(729, 258);
+            this.label4.Location = new System.Drawing.Point(729, 255);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 29);
             this.label4.TabIndex = 30;
             this.label4.Text = "Nazwisko";
             // 
-            // textBox4
+            // Surname2
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox4.Location = new System.Drawing.Point(899, 252);
-            this.textBox4.MaxLength = 50;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(421, 35);
-            this.textBox4.TabIndex = 31;
+            this.Surname2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Surname2.Location = new System.Drawing.Point(899, 255);
+            this.Surname2.MaxLength = 50;
+            this.Surname2.Name = "Surname2";
+            this.Surname2.Size = new System.Drawing.Size(421, 35);
+            this.Surname2.TabIndex = 31;
             // 
             // label5
             // 
@@ -148,35 +148,35 @@
             this.label5.TabIndex = 32;
             this.label5.Text = "Login";
             // 
-            // textBox5
+            // Login
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox5.Location = new System.Drawing.Point(118, 409);
-            this.textBox5.MaxLength = 50;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(417, 35);
-            this.textBox5.TabIndex = 33;
+            this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Login.Location = new System.Drawing.Point(118, 409);
+            this.Login.MaxLength = 50;
+            this.Login.Name = "Login";
+            this.Login.ReadOnly = true;
+            this.Login.Size = new System.Drawing.Size(417, 35);
+            this.Login.TabIndex = 33;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(729, 412);
+            this.label6.Location = new System.Drawing.Point(729, 409);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 29);
             this.label6.TabIndex = 34;
             this.label6.Text = "Hasło";
             // 
-            // textBox6
+            // Password
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox6.Location = new System.Drawing.Point(899, 406);
-            this.textBox6.MaxLength = 50;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.PasswordChar = '*';
-            this.textBox6.Size = new System.Drawing.Size(421, 35);
-            this.textBox6.TabIndex = 35;
+            this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Password.Location = new System.Drawing.Point(899, 409);
+            this.Password.MaxLength = 50;
+            this.Password.Name = "Password";
+            this.Password.PasswordChar = '*';
+            this.Password.Size = new System.Drawing.Size(421, 35);
+            this.Password.TabIndex = 35;
             // 
             // label7
             // 
@@ -188,71 +188,71 @@
             this.label7.TabIndex = 36;
             this.label7.Text = "Rola";
             // 
-            // comboBox1
+            // Role
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.Role.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Role.FormattingEnabled = true;
+            this.Role.Items.AddRange(new object[] {
             "Rejestrator",
             "Lekarz",
             "Laborant",
             "Kierownik labolatorium",
             "Administrator"});
-            this.comboBox1.Location = new System.Drawing.Point(118, 575);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(409, 37);
-            this.comboBox1.TabIndex = 37;
+            this.Role.Location = new System.Drawing.Point(118, 578);
+            this.Role.Name = "Role";
+            this.Role.Size = new System.Drawing.Size(409, 37);
+            this.Role.TabIndex = 37;
             // 
-            // button2
+            // Cancel
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(1420, 845);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 50);
-            this.button2.TabIndex = 41;
-            this.button2.Text = "Anuluj";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Cancel.Location = new System.Drawing.Point(1420, 846);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(142, 50);
+            this.Cancel.TabIndex = 41;
+            this.Cancel.Text = "Anuluj";
+            this.Cancel.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // SaveAndClose
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(1124, 846);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 50);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Zapisz i zamknij";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SaveAndClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SaveAndClose.Location = new System.Drawing.Point(1124, 846);
+            this.SaveAndClose.Name = "SaveAndClose";
+            this.SaveAndClose.Size = new System.Drawing.Size(196, 50);
+            this.SaveAndClose.TabIndex = 40;
+            this.SaveAndClose.Text = "Zapisz i zamknij";
+            this.SaveAndClose.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // Activ
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBox1.Location = new System.Drawing.Point(734, 579);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(125, 33);
-            this.checkBox1.TabIndex = 42;
-            this.checkBox1.Text = "Aktywny";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.Activ.AutoSize = true;
+            this.Activ.Checked = true;
+            this.Activ.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Activ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Activ.Location = new System.Drawing.Point(734, 578);
+            this.Activ.Name = "Activ";
+            this.Activ.Size = new System.Drawing.Size(125, 33);
+            this.Activ.TabIndex = 42;
+            this.Activ.Text = "Aktywny";
+            this.Activ.UseVisualStyleBackColor = true;
             // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Activ);
+            this.Controls.Add(this.Cancel);
+            this.Controls.Add(this.SaveAndClose);
+            this.Controls.Add(this.Role);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.Login);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.Password);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.Name1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.Surname2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Edit";
             this.Size = new System.Drawing.Size(1920, 1000);
@@ -266,22 +266,22 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Name;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Surname;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Name1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Surname2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Login;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox Role;
+        private System.Windows.Forms.Button Cancel;
+        private System.Windows.Forms.Button SaveAndClose;
+        private System.Windows.Forms.CheckBox Activ;
     }
 }

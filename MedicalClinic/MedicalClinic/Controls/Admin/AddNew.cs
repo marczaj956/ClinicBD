@@ -16,5 +16,10 @@ namespace MedicalClinic.Admin
         {
             InitializeComponent();
         }
+
+        private void SaveAndClose_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

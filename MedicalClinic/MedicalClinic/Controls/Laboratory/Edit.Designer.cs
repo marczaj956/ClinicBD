@@ -121,7 +121,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(1279, 237);
+            this.label7.Location = new System.Drawing.Point(1279, 234);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 29);
             this.label7.TabIndex = 66;
@@ -130,7 +130,7 @@
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox6.Location = new System.Drawing.Point(308, 228);
+            this.textBox6.Location = new System.Drawing.Point(308, 234);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(286, 35);
@@ -159,7 +159,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox4.Location = new System.Drawing.Point(882, 231);
+            this.textBox4.Location = new System.Drawing.Point(882, 234);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(286, 35);
@@ -265,7 +265,7 @@
             "Zatwierdzony",
             "Anulowany",
             "W trakcie"});
-            this.comboBox1.Location = new System.Drawing.Point(1366, 226);
+            this.comboBox1.Location = new System.Drawing.Point(1366, 234);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(286, 37);
             this.comboBox1.TabIndex = 42;

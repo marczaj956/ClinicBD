@@ -169,7 +169,7 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(277, 233);
+            this.comboBox1.Location = new System.Drawing.Point(277, 241);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(374, 37);
             this.comboBox1.TabIndex = 106;
@@ -199,7 +199,7 @@
             "15.30",
             "16.00",
             "16.30"});
-            this.comboBox2.Location = new System.Drawing.Point(267, 699);
+            this.comboBox2.Location = new System.Drawing.Point(267, 702);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(374, 37);
             this.comboBox2.TabIndex = 107;

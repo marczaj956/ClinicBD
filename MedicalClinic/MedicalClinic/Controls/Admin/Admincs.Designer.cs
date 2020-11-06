@@ -29,39 +29,39 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.SignOut = new System.Windows.Forms.Button();
+            this.Search = new System.Windows.Forms.Button();
+            this.Role = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Login = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Surname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.NumerPracownika = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Imie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nazwisko = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rola = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Add = new System.Windows.Forms.Button();
+            this.Edit = new System.Windows.Forms.Button();
+            this.Show = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.SignOut);
+            this.groupBox1.Controls.Add(this.Search);
+            this.groupBox1.Controls.Add(this.Role);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.Login);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.Surname);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.Name);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(0, 3);
             this.groupBox1.Name = "groupBox1";
@@ -69,39 +69,39 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // button5
+            // SignOut
             // 
-            this.button5.Location = new System.Drawing.Point(1739, 25);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(141, 48);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Wyloguj";
-            this.button5.UseVisualStyleBackColor = true;
+            this.SignOut.Location = new System.Drawing.Point(1733, 25);
+            this.SignOut.Name = "SignOut";
+            this.SignOut.Size = new System.Drawing.Size(141, 48);
+            this.SignOut.TabIndex = 9;
+            this.SignOut.Text = "Wyloguj";
+            this.SignOut.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // Search
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(1228, 124);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 50);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Szukaj";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Search.Location = new System.Drawing.Point(1228, 124);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(142, 50);
+            this.Search.TabIndex = 8;
+            this.Search.Text = "Szukaj";
+            this.Search.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // Role
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.Role.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Role.FormattingEnabled = true;
+            this.Role.Items.AddRange(new object[] {
             "Rejestrator",
             "Lekarz",
             "Laborant",
             "Kierownik labolatorium",
             "Administrator"});
-            this.comboBox1.Location = new System.Drawing.Point(791, 116);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(286, 37);
-            this.comboBox1.TabIndex = 7;
+            this.Role.Location = new System.Drawing.Point(791, 124);
+            this.Role.Name = "Role";
+            this.Role.Size = new System.Drawing.Size(286, 37);
+            this.Role.TabIndex = 7;
             // 
             // label4
             // 
@@ -113,31 +113,31 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Rola";
             // 
-            // textBox3
+            // Login
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox3.Location = new System.Drawing.Point(791, 52);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(286, 35);
-            this.textBox3.TabIndex = 5;
+            this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Login.Location = new System.Drawing.Point(791, 61);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(286, 35);
+            this.Login.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(675, 58);
+            this.label3.Location = new System.Drawing.Point(675, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 29);
             this.label3.TabIndex = 4;
             this.label3.Text = "Login";
             // 
-            // textBox2
+            // Surname
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(226, 124);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(286, 35);
-            this.textBox2.TabIndex = 3;
+            this.Surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Surname.Location = new System.Drawing.Point(226, 124);
+            this.Surname.Name = "Surname";
+            this.Surname.Size = new System.Drawing.Size(286, 35);
+            this.Surname.TabIndex = 3;
             // 
             // label2
             // 
@@ -149,14 +149,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Nazwisko";
             // 
-            // textBox1
+            // Name
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(226, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(286, 35);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Name.Location = new System.Drawing.Point(226, 61);
+            this.Name.Name = "Name";
+            this.Name.Size = new System.Drawing.Size(286, 35);
+            this.Name.TabIndex = 1;
+            this.Name.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -206,43 +206,43 @@
             this.Rola.HeaderText = "Rola";
             this.Rola.Name = "Rola";
             // 
-            // button2
+            // Add
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(1295, 891);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 50);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Dodaj";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Add.Location = new System.Drawing.Point(1295, 891);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(142, 50);
+            this.Add.TabIndex = 9;
+            this.Add.Text = "Dodaj";
+            this.Add.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // Edit
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(1499, 891);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(142, 50);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Edytuj";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Edit.Location = new System.Drawing.Point(1499, 891);
+            this.Edit.Name = "Edit";
+            this.Edit.Size = new System.Drawing.Size(142, 50);
+            this.Edit.TabIndex = 10;
+            this.Edit.Text = "Edytuj";
+            this.Edit.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // Show
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(1693, 891);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(142, 50);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Pokaż";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Show.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Show.Location = new System.Drawing.Point(1693, 891);
+            this.Show.Name = "Show";
+            this.Show.Size = new System.Drawing.Size(142, 50);
+            this.Show.TabIndex = 11;
+            this.Show.Text = "Pokaż";
+            this.Show.UseVisualStyleBackColor = true;
             // 
             // Admincs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Show);
+            this.Controls.Add(this.Edit);
+            this.Controls.Add(this.Add);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Admincs";
@@ -257,23 +257,23 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Name;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button Search;
+        private System.Windows.Forms.ComboBox Role;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Login;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Surname;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumerPracownika;
         private System.Windows.Forms.DataGridViewTextBoxColumn Imie;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nazwisko;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rola;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.Button Edit;
+        private System.Windows.Forms.Button Show;
+        private System.Windows.Forms.Button SignOut;
     }
 }

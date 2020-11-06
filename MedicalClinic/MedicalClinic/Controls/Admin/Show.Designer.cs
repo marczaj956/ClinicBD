@@ -30,30 +30,30 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Surname = new System.Windows.Forms.TextBox();
+            this.Back = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Login = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.Password = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Name1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.Surname2 = new System.Windows.Forms.TextBox();
+            this.Role = new System.Windows.Forms.TextBox();
+            this.Activ = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.Name);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.Surname);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1917, 168);
@@ -71,14 +71,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Imie";
             // 
-            // textBox1
+            // Name
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(115, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(228, 35);
-            this.textBox1.TabIndex = 2;
+            this.Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Name.Location = new System.Drawing.Point(115, 76);
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            this.Name.Size = new System.Drawing.Size(228, 35);
+            this.Name.TabIndex = 2;
             // 
             // label2
             // 
@@ -90,24 +90,24 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Nazwisko";
             // 
-            // textBox2
+            // Surname
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(544, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(228, 35);
-            this.textBox2.TabIndex = 4;
+            this.Surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Surname.Location = new System.Drawing.Point(544, 76);
+            this.Surname.Name = "Surname";
+            this.Surname.ReadOnly = true;
+            this.Surname.Size = new System.Drawing.Size(228, 35);
+            this.Surname.TabIndex = 4;
             // 
-            // button1
+            // Back
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(1124, 855);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 50);
-            this.button1.TabIndex = 54;
-            this.button1.Text = "Powrót";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Back.Location = new System.Drawing.Point(1124, 855);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(196, 50);
+            this.Back.TabIndex = 54;
+            this.Back.Text = "Powrót";
+            this.Back.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -129,36 +129,36 @@
             this.label5.TabIndex = 46;
             this.label5.Text = "Login";
             // 
-            // textBox5
+            // Login
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox5.Location = new System.Drawing.Point(118, 435);
-            this.textBox5.MaxLength = 50;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(417, 35);
-            this.textBox5.TabIndex = 47;
+            this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Login.Location = new System.Drawing.Point(118, 435);
+            this.Login.MaxLength = 50;
+            this.Login.Name = "Login";
+            this.Login.ReadOnly = true;
+            this.Login.Size = new System.Drawing.Size(417, 35);
+            this.Login.TabIndex = 47;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(729, 438);
+            this.label6.Location = new System.Drawing.Point(729, 435);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 29);
             this.label6.TabIndex = 48;
             this.label6.Text = "Hasło";
             // 
-            // textBox6
+            // Password
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox6.Location = new System.Drawing.Point(899, 432);
-            this.textBox6.MaxLength = 50;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.PasswordChar = '*';
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(421, 35);
-            this.textBox6.TabIndex = 49;
+            this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Password.Location = new System.Drawing.Point(899, 435);
+            this.Password.MaxLength = 50;
+            this.Password.Name = "Password";
+            this.Password.PasswordChar = '*';
+            this.Password.ReadOnly = true;
+            this.Password.Size = new System.Drawing.Size(421, 35);
+            this.Password.TabIndex = 49;
             // 
             // label3
             // 
@@ -170,74 +170,74 @@
             this.label3.TabIndex = 42;
             this.label3.Text = "Imie";
             // 
-            // textBox3
+            // Name1
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox3.Location = new System.Drawing.Point(118, 281);
-            this.textBox3.MaxLength = 50;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(417, 35);
-            this.textBox3.TabIndex = 43;
+            this.Name1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Name1.Location = new System.Drawing.Point(118, 281);
+            this.Name1.MaxLength = 50;
+            this.Name1.Name = "Name1";
+            this.Name1.ReadOnly = true;
+            this.Name1.Size = new System.Drawing.Size(417, 35);
+            this.Name1.TabIndex = 43;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(729, 284);
+            this.label4.Location = new System.Drawing.Point(729, 281);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 29);
             this.label4.TabIndex = 44;
             this.label4.Text = "Nazwisko";
             // 
-            // textBox4
+            // Surname2
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox4.Location = new System.Drawing.Point(899, 278);
-            this.textBox4.MaxLength = 50;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(421, 35);
-            this.textBox4.TabIndex = 45;
+            this.Surname2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Surname2.Location = new System.Drawing.Point(899, 281);
+            this.Surname2.MaxLength = 50;
+            this.Surname2.Name = "Surname2";
+            this.Surname2.ReadOnly = true;
+            this.Surname2.Size = new System.Drawing.Size(421, 35);
+            this.Surname2.TabIndex = 45;
             // 
-            // textBox7
+            // Role
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox7.Location = new System.Drawing.Point(118, 604);
-            this.textBox7.MaxLength = 50;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(417, 35);
-            this.textBox7.TabIndex = 55;
+            this.Role.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Role.Location = new System.Drawing.Point(118, 604);
+            this.Role.MaxLength = 50;
+            this.Role.Name = "Role";
+            this.Role.ReadOnly = true;
+            this.Role.Size = new System.Drawing.Size(417, 35);
+            this.Role.TabIndex = 55;
             // 
-            // checkBox1
+            // Activ
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBox1.Location = new System.Drawing.Point(734, 603);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(125, 33);
-            this.checkBox1.TabIndex = 56;
-            this.checkBox1.Text = "Aktywny";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.Activ.AutoSize = true;
+            this.Activ.Enabled = false;
+            this.Activ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Activ.Location = new System.Drawing.Point(734, 604);
+            this.Activ.Name = "Activ";
+            this.Activ.Size = new System.Drawing.Size(125, 33);
+            this.Activ.TabIndex = 56;
+            this.Activ.Text = "Aktywny";
+            this.Activ.UseVisualStyleBackColor = true;
             // 
             // Show
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Activ);
+            this.Controls.Add(this.Role);
+            this.Controls.Add(this.Back);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.Login);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.Password);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.Name1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.Surname2);
             this.Controls.Add(this.groupBox1);
             this.Enabled = false;
             this.Name = "Show";
@@ -253,20 +253,20 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Name;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox Surname;
+        private System.Windows.Forms.Button Back;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Login;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Name1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox Surname2;
+        private System.Windows.Forms.TextBox Role;
+        private System.Windows.Forms.CheckBox Activ;
     }
 }

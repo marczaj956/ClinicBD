@@ -16,7 +16,7 @@ namespace MedicalClinic
         public Form1()
         {
             InitializeComponent();
-            Init();
+            //Init();
         }
         private void Init()
         {

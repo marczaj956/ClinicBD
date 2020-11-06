@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.Lekarz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -68,10 +68,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(1733, 25);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(141, 48);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Wyloguj";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(1539, 221);
+            this.button1.Location = new System.Drawing.Point(1487, 214);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(142, 50);
             this.button1.TabIndex = 5;
@@ -80,7 +89,7 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(881, 36);
+            this.monthCalendar1.Location = new System.Drawing.Point(797, 36);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 1;
             // 
@@ -88,7 +97,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(760, 36);
+            this.label3.Location = new System.Drawing.Point(676, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 29);
             this.label3.TabIndex = 4;
@@ -101,7 +110,7 @@
             this.comboBox2.Items.AddRange(new object[] {
             "Anulowana",
             "Zakończona"});
-            this.comboBox2.Location = new System.Drawing.Point(227, 176);
+            this.comboBox2.Location = new System.Drawing.Point(227, 184);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(263, 37);
             this.comboBox2.TabIndex = 3;
@@ -120,7 +129,7 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(227, 63);
+            this.comboBox1.Location = new System.Drawing.Point(227, 71);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(263, 37);
             this.comboBox1.TabIndex = 1;
@@ -141,7 +150,7 @@
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBox1.Location = new System.Drawing.Point(1454, 71);
+            this.checkBox1.Location = new System.Drawing.Point(1402, 36);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(227, 33);
             this.checkBox1.TabIndex = 0;
@@ -220,15 +229,6 @@
             this.button3.TabIndex = 7;
             this.button3.Text = "Obsłuż";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(1743, 25);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(141, 48);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Wyloguj";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // Doctor
             // 

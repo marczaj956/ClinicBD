@@ -65,7 +65,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(1744, 25);
+            this.button5.Location = new System.Drawing.Point(1733, 25);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(141, 48);
             this.button5.TabIndex = 9;
@@ -96,7 +96,7 @@
             "Zatwierdzony",
             "Anulowany",
             "W trakcie"});
-            this.comboBox1.Location = new System.Drawing.Point(240, 198);
+            this.comboBox1.Location = new System.Drawing.Point(238, 202);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(186, 37);
             this.comboBox1.TabIndex = 5;
@@ -105,7 +105,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(45, 198);
+            this.label3.Location = new System.Drawing.Point(43, 202);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 29);
             this.label3.TabIndex = 4;
@@ -114,7 +114,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(240, 90);
+            this.textBox2.Location = new System.Drawing.Point(238, 100);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(186, 35);
             this.textBox2.TabIndex = 3;
@@ -123,7 +123,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(45, 96);
+            this.label2.Location = new System.Drawing.Point(43, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(180, 29);
             this.label2.TabIndex = 2;

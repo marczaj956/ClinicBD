@@ -119,7 +119,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(1024, 853);
+            this.button2.Location = new System.Drawing.Point(1024, 854);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(142, 50);
             this.button2.TabIndex = 42;
@@ -139,7 +139,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox4.Location = new System.Drawing.Point(921, 344);
+            this.textBox4.Location = new System.Drawing.Point(921, 350);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(245, 35);
@@ -159,7 +159,7 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(263, 342);
+            this.comboBox1.Location = new System.Drawing.Point(263, 350);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(339, 37);
             this.comboBox1.TabIndex = 36;
