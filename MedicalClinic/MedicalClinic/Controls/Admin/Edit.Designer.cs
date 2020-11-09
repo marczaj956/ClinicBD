@@ -254,7 +254,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Surname2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Edit";
+           // this.Name = "Edit";
             this.Size = new System.Drawing.Size(1920, 1000);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

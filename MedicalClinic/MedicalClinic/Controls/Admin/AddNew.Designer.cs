@@ -194,7 +194,7 @@
             this.Controls.Add(this.Name);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Surname);
-            this.Name = "AddNew";
+          //  this.Name = "AddNew";
             this.Size = new System.Drawing.Size(1920, 1000);
             this.ResumeLayout(false);
             this.PerformLayout();

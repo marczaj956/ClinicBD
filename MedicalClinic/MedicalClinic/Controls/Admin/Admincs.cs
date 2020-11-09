@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MedicalClinic.MainPanel;
 
 namespace MedicalClinic.Admin
 {
@@ -20,6 +21,16 @@ namespace MedicalClinic.Admin
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void SignOut_Click(object sender, EventArgs e)
+        {
+
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new MainPanel.MainPanel());
+                      
         }
     }
 }

@@ -240,7 +240,7 @@
             this.Controls.Add(this.Surname2);
             this.Controls.Add(this.groupBox1);
             this.Enabled = false;
-            this.Name = "Show";
+          //  this.Name = "Show";
             this.Size = new System.Drawing.Size(1920, 1000);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
