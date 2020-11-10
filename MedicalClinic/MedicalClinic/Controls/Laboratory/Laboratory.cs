@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MedicalClinic.Controls.Laboratory;
 
 namespace MedicalClinic.Laboratory
 {
@@ -23,6 +24,16 @@ namespace MedicalClinic.Laboratory
             P.Controls.Clear();
             this.Hide();
             this.Parent.Controls.Add(new MainPanel.MainPanel());
+        }
+
+        private void button3_Click(object sender, EventArgs e) //show
+        {
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

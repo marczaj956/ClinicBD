@@ -149,6 +149,12 @@
     <Compile Include="Controls\Laboratory\Edit.Designer.cs">
       <DependentUpon>Edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Laboratory\Lab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Laboratory\Lab.Designer.cs">
+      <DependentUpon>Lab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Laboratory\Show.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -281,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Laboratory\Edit.resx">
       <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Laboratory\Lab.resx">
+      <DependentUpon>Lab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Laboratory\Show.resx">
       <DependentUpon>Show.cs</DependentUpon>

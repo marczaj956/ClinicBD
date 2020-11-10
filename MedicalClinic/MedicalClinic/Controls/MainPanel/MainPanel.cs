@@ -11,6 +11,7 @@ using MedicalClinic.Admin;
 using MedicalClinic.Doctor;
 using MedicalClinic.Controls.Doctor;
 using MedicalClinic.Controls.Registration;
+using MedicalClinic.Controls.Laboratory;
 
 namespace MedicalClinic.MainPanel
 {
@@ -80,7 +81,7 @@ namespace MedicalClinic.MainPanel
                 if (result.First().Role.ToString() == "Lab")
 
                 {
-                    this.Parent.Controls.Add(new Laboratory.Laboratory());
+                    this.Parent.Controls.Add(new Lab());
                 }
 
 

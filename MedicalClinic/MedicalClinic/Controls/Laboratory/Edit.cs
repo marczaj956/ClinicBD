@@ -16,5 +16,13 @@ namespace MedicalClinic.Controls.Laboratory
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new Lab());
+        }
     }
 }

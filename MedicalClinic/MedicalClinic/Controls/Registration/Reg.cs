@@ -56,5 +56,13 @@ namespace MedicalClinic.Controls.Registration
             this.Hide();
             this.Parent.Controls.Add(new Show());
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new MainPanel.MainPanel());
+        }
     }
 }
