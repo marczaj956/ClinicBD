@@ -41,7 +41,7 @@ namespace MedicalClinic.MainPanel
             get { return LoginText.Text; }
         }
 
-        AdminForm ad = null;
+        
         private void button1_Click(object sender, EventArgs e)
         {
            
@@ -53,7 +53,7 @@ namespace MedicalClinic.MainPanel
 
 
             if (result.Any())
-            {    TEST.Text = result.First().Role.ToString();
+            {    textBox1.Text = result.First().Role.ToString();
                 
                 Panel P = new Panel();
                 P.Controls.Clear();

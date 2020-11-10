@@ -14,7 +14,7 @@ namespace MedicalClinic
 {
     public partial class MainForm : Form
     {
-        string role;
+       // string role;
         
         public MainForm()
         {

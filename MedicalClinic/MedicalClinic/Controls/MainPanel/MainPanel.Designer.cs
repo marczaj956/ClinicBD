@@ -34,7 +34,7 @@
             this.LoginText = new System.Windows.Forms.TextBox();
             this.PassText = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.TEST = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -104,18 +104,18 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // TEST
+            // textBox1
             // 
-            this.TEST.Location = new System.Drawing.Point(1068, 163);
-            this.TEST.Name = "TEST";
-            this.TEST.Size = new System.Drawing.Size(100, 20);
-            this.TEST.TabIndex = 6;
+            this.textBox1.Location = new System.Drawing.Point(1068, 163);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 6;
             // 
             // MainPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.TEST);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PassText);
             this.Controls.Add(this.LoginText);
@@ -138,6 +138,6 @@
         private System.Windows.Forms.TextBox LoginText;
         private System.Windows.Forms.TextBox PassText;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox TEST;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

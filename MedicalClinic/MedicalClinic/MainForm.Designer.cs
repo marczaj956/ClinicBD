@@ -41,11 +41,13 @@
             // 
             // mainPanel1
             // 
-            this.mainPanel1.Location = new System.Drawing.Point(11, 11);
+            this.mainPanel1.AutoSize = true;
+            this.mainPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel1.Location = new System.Drawing.Point(0, 0);
             this.mainPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.mainPanel1.Name = "mainPanel1";
             this.mainPanel1.ROLE = "";
-            this.mainPanel1.Size = new System.Drawing.Size(1251, 560);
+            this.mainPanel1.Size = new System.Drawing.Size(1265, 666);
             this.mainPanel1.TabIndex = 2;
             // 
             // MainForm
@@ -60,6 +62,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

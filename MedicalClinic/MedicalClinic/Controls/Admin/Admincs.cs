@@ -32,5 +32,30 @@ namespace MedicalClinic.Admin
             this.Parent.Controls.Add(new MainPanel.MainPanel());
                       
         }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new AddNew());
+            
+        }
+
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new Edit());
+        }
+
+        private void Show_Click(object sender, EventArgs e)
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new Show());
+        }
     }
 }

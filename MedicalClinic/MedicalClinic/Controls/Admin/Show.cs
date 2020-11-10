@@ -16,5 +16,14 @@ namespace MedicalClinic.Admin
         {
             InitializeComponent();
         }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new Admincs());
+            
+        }
     }
 }

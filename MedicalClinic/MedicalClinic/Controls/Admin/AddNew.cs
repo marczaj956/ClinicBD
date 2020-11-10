@@ -18,8 +18,19 @@ namespace MedicalClinic.Admin
         }
 
         private void SaveAndClose_Click(object sender, EventArgs e)
-        {
+        {  //zapis
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new Admincs());
+        }
 
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new Admincs());
         }
     }
 }

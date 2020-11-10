@@ -179,6 +179,9 @@
     <Compile Include="Controls\Registration\VisitRegistration.Designer.cs">
       <DependentUpon>VisitRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataClasses.cs">
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DataClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -276,6 +279,7 @@
     <EmbeddedResource Include="Controls\Registration\VisitRegistration.resx">
       <DependentUpon>VisitRegistration.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="DataClasses.dbml.layout">
       <DependentUpon>DataClasses.dbml</DependentUpon>
     </None>
