@@ -29,5 +29,21 @@ namespace MedicalClinic.Doctor
             this.Hide();
             this.Parent.Controls.Add(new MainPanel.MainPanel());
         }
+
+        private void button2_Click(object sender, EventArgs e) //show
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new Show());
+        }
+
+        private void button3_Click(object sender, EventArgs e) //handle
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new Handle());
+        }
     }
 }

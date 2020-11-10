@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MedicalClinic.Doctor;
 
 namespace MedicalClinic.Controls.Doctor
 {
@@ -15,6 +16,14 @@ namespace MedicalClinic.Controls.Doctor
         public ShowLabExamination()
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new Show());
         }
     }
 }

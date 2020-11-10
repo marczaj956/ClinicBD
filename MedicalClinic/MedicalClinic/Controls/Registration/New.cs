@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MedicalClinic.Registration;
 
 namespace MedicalClinic.Controls.Registration
 {
@@ -15,6 +16,11 @@ namespace MedicalClinic.Controls.Registration
         public New()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

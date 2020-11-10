@@ -187,6 +187,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses.dbml</DependentUpon>
     </Compile>
+    <Compile Include="show ExaminationPsyhic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="show ExaminationPsyhic.Designer.cs">
+      <DependentUpon>show ExaminationPsyhic.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,12 @@
     </Compile>
     <Compile Include="Controls\Registration\Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="showExaminationLab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="showExaminationLab.Designer.cs">
+      <DependentUpon>showExaminationLab.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
@@ -278,6 +290,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Registration\VisitRegistration.resx">
       <DependentUpon>VisitRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="show ExaminationPsyhic.resx">
+      <DependentUpon>show ExaminationPsyhic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="showExaminationLab.resx">
+      <DependentUpon>showExaminationLab.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="DataClasses.dbml.layout">
