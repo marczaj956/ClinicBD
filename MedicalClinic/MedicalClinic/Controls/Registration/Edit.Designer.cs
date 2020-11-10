@@ -50,20 +50,23 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(846, 829);
+            this.button1.Location = new System.Drawing.Point(564, 539);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 50);
+            this.button1.Size = new System.Drawing.Size(95, 32);
             this.button1.TabIndex = 103;
             this.button1.Text = "Powrót";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(25, 702);
+            this.label6.Location = new System.Drawing.Point(17, 456);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(171, 29);
+            this.label6.Size = new System.Drawing.Size(114, 20);
             this.label6.TabIndex = 102;
             this.label6.Text = "Godzina wizyty";
             // 
@@ -71,9 +74,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(25, 241);
+            this.label5.Location = new System.Drawing.Point(17, 157);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(200, 29);
+            this.label5.Size = new System.Drawing.Size(131, 20);
             this.label5.TabIndex = 101;
             this.label5.Text = "Nazwisko lekarza";
             // 
@@ -81,15 +85,17 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(25, 361);
+            this.label4.Location = new System.Drawing.Point(17, 235);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 29);
+            this.label4.Size = new System.Drawing.Size(89, 20);
             this.label4.TabIndex = 100;
             this.label4.Text = "Data wizyty";
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(267, 361);
+            this.monthCalendar1.Location = new System.Drawing.Point(178, 235);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 99;
             // 
@@ -101,9 +107,11 @@
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Location = new System.Drawing.Point(0, 3);
+            this.groupBox1.Location = new System.Drawing.Point(0, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1917, 168);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(1278, 109);
             this.groupBox1.TabIndex = 98;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dane osobowe";
@@ -112,66 +120,73 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(25, 76);
+            this.label1.Location = new System.Drawing.Point(17, 49);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 29);
+            this.label1.Size = new System.Drawing.Size(39, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Imie";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(115, 76);
+            this.textBox1.Location = new System.Drawing.Point(77, 49);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(228, 35);
+            this.textBox1.Size = new System.Drawing.Size(153, 26);
             this.textBox1.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(407, 76);
+            this.label2.Location = new System.Drawing.Point(271, 49);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 29);
+            this.label2.Size = new System.Drawing.Size(76, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nazwisko";
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(544, 76);
+            this.textBox2.Location = new System.Drawing.Point(363, 49);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(228, 35);
+            this.textBox2.Size = new System.Drawing.Size(153, 26);
             this.textBox2.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(841, 76);
+            this.label3.Location = new System.Drawing.Point(561, 49);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 29);
+            this.label3.Size = new System.Drawing.Size(48, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Pesel";
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox3.Location = new System.Drawing.Point(935, 76);
+            this.textBox3.Location = new System.Drawing.Point(623, 49);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(228, 35);
+            this.textBox3.Size = new System.Drawing.Size(153, 26);
             this.textBox3.TabIndex = 6;
             // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(277, 241);
+            this.comboBox1.Location = new System.Drawing.Point(185, 157);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(374, 37);
+            this.comboBox1.Size = new System.Drawing.Size(251, 28);
             this.comboBox1.TabIndex = 106;
             // 
             // comboBox2
@@ -199,18 +214,20 @@
             "15.30",
             "16.00",
             "16.30"});
-            this.comboBox2.Location = new System.Drawing.Point(267, 702);
+            this.comboBox2.Location = new System.Drawing.Point(178, 456);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(374, 37);
+            this.comboBox2.Size = new System.Drawing.Size(251, 28);
             this.comboBox2.TabIndex = 107;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(584, 829);
+            this.button2.Location = new System.Drawing.Point(389, 539);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(230, 50);
+            this.button2.Size = new System.Drawing.Size(153, 32);
             this.button2.TabIndex = 108;
             this.button2.Text = "Zapisz i zamknij";
             this.button2.UseVisualStyleBackColor = true;
@@ -218,16 +235,17 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(329, 829);
+            this.button3.Location = new System.Drawing.Point(219, 539);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(230, 50);
+            this.button3.Size = new System.Drawing.Size(153, 32);
             this.button3.TabIndex = 109;
             this.button3.Text = "Usuń i zamknij";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // Edit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -239,8 +257,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Edit";
-            this.Size = new System.Drawing.Size(1920, 1000);
+            this.Size = new System.Drawing.Size(1280, 650);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

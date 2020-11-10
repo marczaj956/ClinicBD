@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MedicalClinic.Admin;
 using MedicalClinic.Doctor;
 using MedicalClinic.Controls.Doctor;
+using MedicalClinic.Controls.Registration;
 
 namespace MedicalClinic.MainPanel
 {
@@ -74,7 +75,7 @@ namespace MedicalClinic.MainPanel
                 if (result.First().Role.ToString() == "Rec")
 
                 {
-                    this.Parent.Controls.Add(new Registration.Registration());
+                    this.Parent.Controls.Add(new Reg());
                 }
                 if (result.First().Role.ToString() == "Lab")
 

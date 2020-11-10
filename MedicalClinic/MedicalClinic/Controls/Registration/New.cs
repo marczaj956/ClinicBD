@@ -20,7 +20,10 @@ namespace MedicalClinic.Controls.Registration
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new Reg());
         }
     }
 }
