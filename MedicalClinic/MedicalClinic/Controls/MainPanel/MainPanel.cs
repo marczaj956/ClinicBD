@@ -53,7 +53,7 @@ namespace MedicalClinic.MainPanel
 
 
             if (result.Any())
-            {    TEST.Text = result.First().Role.ToString();
+            {    
 
                 Panel P = new Panel();
                 P.Controls.Clear();
