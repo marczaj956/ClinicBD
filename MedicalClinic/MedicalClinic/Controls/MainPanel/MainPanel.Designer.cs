@@ -80,6 +80,7 @@
             this.LoginText.Name = "LoginText";
             this.LoginText.Size = new System.Drawing.Size(313, 41);
             this.LoginText.TabIndex = 3;
+            this.LoginText.TextChanged += new System.EventHandler(this.LoginText_TextChanged);
             // 
             // PassText
             // 

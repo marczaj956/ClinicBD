@@ -41,7 +41,7 @@ namespace MedicalClinic.MainPanel
             get { return LoginText.Text; }
         }
 
-        
+        AdminForm ad = null;
         private void button1_Click(object sender, EventArgs e)
         {
            
@@ -53,14 +53,14 @@ namespace MedicalClinic.MainPanel
 
 
             if (result.Any())
-            {    textBox1.Text = result.First().Role.ToString();
-                
+            {    TEST.Text = result.First().Role.ToString();
+
                 Panel P = new Panel();
                 P.Controls.Clear();
                 this.Hide();
-                
 
-                if (result.First().Role.ToString()=="Admin")
+
+                if (result.First().Role.ToString() == "Admin")
 
                 {
                     this.Parent.Controls.Add(new Admincs());
@@ -90,6 +90,11 @@ namespace MedicalClinic.MainPanel
 
             else
                 MessageBox.Show("User not found","Error");
+
+        }
+
+        private void LoginText_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
