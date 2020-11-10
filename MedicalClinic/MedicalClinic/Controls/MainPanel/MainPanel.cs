@@ -54,13 +54,13 @@ namespace MedicalClinic.MainPanel
 
             if (result.Any())
             {    TEST.Text = result.First().Role.ToString();
-                
+
                 Panel P = new Panel();
                 P.Controls.Clear();
                 this.Hide();
-                
 
-                if (result.First().Role.ToString()=="Admin")
+
+                if (result.First().Role.ToString() == "Admin")
 
                 {
                     this.Parent.Controls.Add(new Admincs());
@@ -90,6 +90,11 @@ namespace MedicalClinic.MainPanel
 
             else
                 MessageBox.Show("User not found","Error");
+
+        }
+
+        private void LoginText_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -16,5 +16,13 @@ namespace MedicalClinic.Registration
         {
             InitializeComponent();
         }
+
+        private void button5_Click(object sender, EventArgs e) //logout
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new MainPanel.MainPanel());
+        }
     }
 }
