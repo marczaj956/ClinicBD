@@ -16,5 +16,29 @@ namespace MedicalClinic.Controls.Doctor
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new NewLabolatoryExaminationcs());
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new EditLabExamination());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            showExaminationLab f2 = new showExaminationLab();
+            
+            f2.ShowDialog();
+        }
     }
 }

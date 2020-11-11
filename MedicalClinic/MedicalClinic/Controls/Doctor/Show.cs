@@ -28,13 +28,15 @@ namespace MedicalClinic.Doctor
 
         private void button4_Click(object sender, EventArgs e)//show physical
         {
-            show_ExaminationPsyhic f2 = new show_ExaminationPsyhic();
+            ShowPhisicExamList f2 = new ShowPhisicExamList();
+            
             f2.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e) //show labo
         {
-            showExaminationLab f2 = new showExaminationLab();
+            ShowLabExamList f2 = new ShowLabExamList();
+            
             f2.ShowDialog();
         }
     }

@@ -237,6 +237,18 @@
     <Compile Include="showExaminationLab.Designer.cs">
       <DependentUpon>showExaminationLab.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowLabExamList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowLabExamList.Designer.cs">
+      <DependentUpon>ShowLabExamList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowPhisicExamList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowPhisicExamList.Designer.cs">
+      <DependentUpon>ShowPhisicExamList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +326,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="showExaminationLab.resx">
       <DependentUpon>showExaminationLab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowLabExamList.resx">
+      <DependentUpon>ShowLabExamList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowPhisicExamList.resx">
+      <DependentUpon>ShowPhisicExamList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="DataClasses.dbml.layout">
