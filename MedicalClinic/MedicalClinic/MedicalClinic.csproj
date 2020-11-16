@@ -179,10 +179,10 @@
     <Compile Include="Controls\Registration\Reg.Designer.cs">
       <DependentUpon>Reg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Registration\Registration.cs">
+    <Compile Include="Controls\bin\Registration.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Registration\Registration.Designer.cs">
+    <Compile Include="Controls\bin\Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Registration\Show.cs">

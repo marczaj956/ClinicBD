@@ -70,5 +70,10 @@ namespace MedicalClinic.Admin
             this.Hide();
             this.Parent.Controls.Add(new Show());
         }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

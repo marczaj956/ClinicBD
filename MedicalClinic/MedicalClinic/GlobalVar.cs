@@ -15,7 +15,11 @@ namespace MedicalClinic
             get { return v_VarOne; }
             set { v_VarOne = value; }
         }
-
-
+        private static int PatientID= 0;
+        public static int SetPatientId
+        {
+            get { return PatientID; }
+            set { PatientID = value; }
+        }
     }
 }

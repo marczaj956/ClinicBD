@@ -15,6 +15,16 @@ namespace MedicalClinic.Controls.Registration
         public Reg()
         {
             InitializeComponent();
+            //dataGridView1.DataSource = 
+           var res=SqlQuerry.GetPatientsList("", "", "");
+           foreach (var order in res)
+           {
+               ListViewItem lvi = new ListViewItem(order.Name.ToString());
+               lvi.SubItems.Add(order.Surname);
+               lvi.SubItems.Add(order.PESEL);
+               listView1.Items.Add(lvi);
+
+           }
         }
 
         private void button5_Click(object sender, EventArgs e) //logout
@@ -35,10 +45,32 @@ namespace MedicalClinic.Controls.Registration
 
         private void button3_Click(object sender, EventArgs e)//visit registarion
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new VisitRegistration());
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+
+               
+                var res = SqlQuerry.GetPatientsList(item.SubItems[0].Text.TrimEnd(), item.SubItems[1].Text.TrimEnd(),item.SubItems[2].Text.TrimEnd());
+                foreach(var x in res)
+                {
+                    GlobalVar.SetPatientId = x.Id_Patient;
+                    
+                }
+                
+                
+                
+
+                Panel P = new Panel();
+                P.Controls.Clear();
+                this.Hide();
+                this.Parent.Controls.Add(new VisitRegistration());
+            }
+            else
+            {
+                MessageBox.Show("Nie wybrano pacjenta");
+            }
+
+              
         }
 
         private void button6_Click(object sender, EventArgs e)//edit
@@ -63,6 +95,25 @@ namespace MedicalClinic.Controls.Registration
             P.Controls.Clear();
             this.Hide();
             this.Parent.Controls.Add(new MainPanel.MainPanel());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            var res = SqlQuerry.GetPatientsList(textBox1.Text,textBox2.Text ,textBox3.Text );
+            foreach (var order in res)
+            {
+                ListViewItem lvi = new ListViewItem(order.Name.ToString());
+                lvi.SubItems.Add(order.Surname);
+                lvi.SubItems.Add(order.PESEL);
+                listView1.Items.Add(lvi);
+
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

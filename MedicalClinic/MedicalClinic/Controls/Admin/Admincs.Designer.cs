@@ -39,14 +39,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.NumerPracownika = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Imie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nazwisko = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rola = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Add = new System.Windows.Forms.Button();
             this.Edit = new System.Windows.Forms.Button();
             this.Show = new System.Windows.Forms.Button();
+            this.Rola = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nazwisko = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Imie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumerPracownika = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +92,7 @@
             this.Search.TabIndex = 8;
             this.Search.Text = "Szukaj";
             this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // Role
             // 
@@ -181,45 +182,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Imie";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NumerPracownika,
-            this.Imie,
-            this.Nazwisko,
-            this.Rola});
-            this.dataGridView1.Location = new System.Drawing.Point(2, 144);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1276, 388);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // NumerPracownika
-            // 
-            this.NumerPracownika.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NumerPracownika.HeaderText = "Numer pracownika";
-            this.NumerPracownika.Name = "NumerPracownika";
-            // 
-            // Imie
-            // 
-            this.Imie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Imie.HeaderText = "Imie";
-            this.Imie.Name = "Imie";
-            // 
-            // Nazwisko
-            // 
-            this.Nazwisko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nazwisko.HeaderText = "Nazwisko";
-            this.Nazwisko.Name = "Nazwisko";
-            // 
-            // Rola
-            // 
-            this.Rola.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Rola.HeaderText = "Rola";
-            this.Rola.Name = "Rola";
-            // 
             // Add
             // 
             this.Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -256,6 +218,45 @@
             this.Show.UseVisualStyleBackColor = true;
             this.Show.Click += new System.EventHandler(this.Show_Click);
             // 
+            // Rola
+            // 
+            this.Rola.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Rola.HeaderText = "Rola";
+            this.Rola.Name = "Rola";
+            // 
+            // Nazwisko
+            // 
+            this.Nazwisko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nazwisko.HeaderText = "Nazwisko";
+            this.Nazwisko.Name = "Nazwisko";
+            // 
+            // Imie
+            // 
+            this.Imie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Imie.HeaderText = "Imie";
+            this.Imie.Name = "Imie";
+            // 
+            // NumerPracownika
+            // 
+            this.NumerPracownika.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NumerPracownika.HeaderText = "Numer pracownika";
+            this.NumerPracownika.Name = "NumerPracownika";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NumerPracownika,
+            this.Imie,
+            this.Nazwisko,
+            this.Rola});
+            this.dataGridView1.Location = new System.Drawing.Point(2, 144);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(1276, 388);
+            this.dataGridView1.TabIndex = 1;
+            // 
             // Admincs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,7 +267,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            //this.Name = "Admincs";
+           // this.Name = "Admincs";
             this.Size = new System.Drawing.Size(1280, 650);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -287,14 +288,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Surname;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumerPracownika;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Imie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nazwisko;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rola;
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Button Edit;
         private System.Windows.Forms.Button Show;
         private System.Windows.Forms.Button SignOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rola;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nazwisko;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Imie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumerPracownika;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

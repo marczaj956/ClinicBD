@@ -25,5 +25,20 @@ namespace MedicalClinic.Controls.Registration
             this.Hide();
             this.Parent.Controls.Add(new Reg());
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (textBox1.TextLength != 0 && textBox2.TextLength != 0 && textBox3.TextLength != 0 )
+            {
+                SqlQuerry.insertPatient(textBox1.Text, textBox2.Text, textBox3.Text);
+                MessageBox.Show("Dodano pacjenta");
+                Panel P = new Panel();
+                P.Controls.Clear();
+                this.Hide();
+                this.Parent.Controls.Add(new Reg());
+            }
+            else MessageBox.Show("Brak Danych");
+           
+        }
     }
 }
