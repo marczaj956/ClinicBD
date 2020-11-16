@@ -16,6 +16,19 @@ namespace MedicalClinic.Admin
         public Admincs()
         {
             InitializeComponent();
+
+            dataGridView1.DataSource = SqlQuerry.GetStaff("", "", "", "");
+
+            //na liste 
+            /*foreach (var order in res)
+            {
+                ListViewItem lvi = new ListViewItem(order.Id_Staff.ToString());
+                lvi.SubItems.Add(order.Name);
+                lvi.SubItems.Add(order.Surname);
+                listView1.Items.Add(lvi);
+                
+            }*/
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

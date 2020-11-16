@@ -205,6 +205,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses.dbml</DependentUpon>
     </Compile>
+    <Compile Include="GlobalVar.cs" />
     <Compile Include="show ExaminationPsyhic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +250,7 @@
     <Compile Include="ShowPhisicExamList.Designer.cs">
       <DependentUpon>ShowPhisicExamList.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlQuerry.cs" />
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>

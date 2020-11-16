@@ -15,6 +15,19 @@ namespace MedicalClinic.Doctor
         public Doctor()
         {
             InitializeComponent();
+
+
+            var res = SqlQuerry.pacjent("", "", "");
+
+            /* foreach (var order in res)
+             {
+                 ListViewItem lvi = new ListViewItem(order.Table1.Id_Appointment.ToString());
+                 lvi.SubItems.Add(order.Table2.Name);
+                 lvi.SubItems.Add(order.Table2.Surname);
+                 listView1.Items.Add(lvi);
+
+             }*/
+
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

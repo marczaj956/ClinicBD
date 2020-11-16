@@ -5,7 +5,7 @@
       <Column Name="Id_Appointment" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Date_Appointment" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Id_Doctor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Id_Eeceptionist" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Receptionist" Storage="_Id_Eeceptionist" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Descirption" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="Diagnosis" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="Id_Patient" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -14,7 +14,7 @@
       <Association Name="Appointment_Examination_Physical" Member="Examination_Physical" ThisKey="Id_Appointment" OtherKey="Id_Appointment" Type="Examination_Physical" />
       <Association Name="Patient_Appointment" Member="Patient" ThisKey="Id_Patient" OtherKey="Id_Patient" Type="Patient" IsForeignKey="true" />
       <Association Name="Staff_Appointment" Member="Staff" ThisKey="Id_Doctor" OtherKey="Id_Staff" Type="Staff" IsForeignKey="true" />
-      <Association Name="Staff_Appointment1" Member="Staff1" ThisKey="Id_Eeceptionist" OtherKey="Id_Staff" Type="Staff" IsForeignKey="true" />
+      <Association Name="Staff_Appointment1" Member="Staff1" ThisKey="Id_Receptionist" OtherKey="Id_Staff" Type="Staff" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Exam_Dictionary" Member="Exam_Dictionary">
@@ -28,7 +28,7 @@
   </Table>
   <Table Name="dbo.Examination_Laboratory" Member="Examination_Laboratory">
     <Type Name="Examination_Laboratory">
-      <Column Name="Id_Examination" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id_Examination" AutoSync="Never" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Comments_Doctor" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="Date_Of_Order" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Result" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
@@ -48,7 +48,7 @@
   </Table>
   <Table Name="dbo.Examination_Physical" Member="Examination_Physical">
     <Type Name="Examination_Physical">
-      <Column Name="Id_Examination" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id_Examination" AutoSync="Never" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Result" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="Exam_Code" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="Id_Appointment" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -67,7 +67,7 @@
   </Table>
   <Table Name="dbo.Staff" Member="Staff">
     <Type Name="Staff">
-      <Column Name="Id_Staff" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id_Staff" AutoSync="Never" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Surname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Role" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
@@ -75,7 +75,7 @@
       <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Active" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
       <Association Name="Staff_Appointment" Member="Appointment" ThisKey="Id_Staff" OtherKey="Id_Doctor" Type="Appointment" />
-      <Association Name="Staff_Appointment1" Member="Appointment1" ThisKey="Id_Staff" OtherKey="Id_Eeceptionist" Type="Appointment" />
+      <Association Name="Staff_Appointment1" Member="Appointment1" ThisKey="Id_Staff" OtherKey="Id_Receptionist" Type="Appointment" />
       <Association Name="Staff_Examination_Laboratory" Member="Examination_Laboratory" ThisKey="Id_Staff" OtherKey="Id_Analyst" Type="Examination_Laboratory" />
       <Association Name="Staff_Examination_Laboratory1" Member="Examination_Laboratory1" ThisKey="Id_Staff" OtherKey="Id_Man_Lab" Type="Examination_Laboratory" />
     </Type>

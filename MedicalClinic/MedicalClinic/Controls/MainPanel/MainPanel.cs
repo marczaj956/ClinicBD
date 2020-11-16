@@ -46,12 +46,13 @@ namespace MedicalClinic.MainPanel
         AdminForm ad = null;
         private void button1_Click(object sender, EventArgs e)
         {
-           
-            DataClassesDataContext db = new DataClassesDataContext();
+
+            /*DataClassesDataContext db = new DataClassesDataContext();
             var result = from s in db.Staff
                          where s.Login == LoginText.Text.ToString() &&
                                s.Password == PassText.Text.ToString()
-                         select s;
+                         select s;*/
+            var result = SqlQuerry.CheckLog(LoginText.Text.ToString(), PassText.Text.ToString());
 
 
             if (result.Any())

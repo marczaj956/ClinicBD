@@ -171,8 +171,8 @@ namespace MedicalClinic
     partial void OnDate_AppointmentChanged();
     partial void OnId_DoctorChanging(int value);
     partial void OnId_DoctorChanged();
-    partial void OnId_EeceptionistChanging(int value);
-    partial void OnId_EeceptionistChanged();
+    partial void OnId_ReceptionistChanging(int value);
+    partial void OnId_ReceptionistChanged();
     partial void OnDescirptionChanging(string value);
     partial void OnDescirptionChanged();
     partial void OnDiagnosisChanging(string value);
@@ -258,7 +258,7 @@ namespace MedicalClinic
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Eeceptionist", DbType="Int NOT NULL")]
-		public int Id_Eeceptionist
+		public int Id_Receptionist
 		{
 			get
 			{
@@ -272,11 +272,11 @@ namespace MedicalClinic
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnId_EeceptionistChanging(value);
+					this.OnId_ReceptionistChanging(value);
 					this.SendPropertyChanging();
 					this._Id_Eeceptionist = value;
-					this.SendPropertyChanged("Id_Eeceptionist");
-					this.OnId_EeceptionistChanged();
+					this.SendPropertyChanged("Id_Receptionist");
+					this.OnId_ReceptionistChanged();
 				}
 			}
 		}
@@ -459,7 +459,7 @@ namespace MedicalClinic
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Staff_Appointment1", Storage="_Staff1", ThisKey="Id_Eeceptionist", OtherKey="Id_Staff", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Staff_Appointment1", Storage="_Staff1", ThisKey="Id_Receptionist", OtherKey="Id_Staff", IsForeignKey=true)]
 		public Staff Staff1
 		{
 			get
@@ -781,7 +781,7 @@ namespace MedicalClinic
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Examination", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Examination", DbType="Int NOT NULL", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id_Examination
 		{
 			get
@@ -1233,7 +1233,7 @@ namespace MedicalClinic
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Examination", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Examination", DbType="Int NOT NULL", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id_Examination
 		{
 			get
@@ -1629,7 +1629,7 @@ namespace MedicalClinic
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Staff", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Staff", DbType="Int NOT NULL", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id_Staff
 		{
 			get
@@ -1782,7 +1782,7 @@ namespace MedicalClinic
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Staff_Appointment1", Storage="_Appointment1", ThisKey="Id_Staff", OtherKey="Id_Eeceptionist")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Staff_Appointment1", Storage="_Appointment1", ThisKey="Id_Staff", OtherKey="Id_Receptionist")]
 		public EntitySet<Appointment> Appointment1
 		{
 			get
