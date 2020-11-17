@@ -179,10 +179,10 @@
     <Compile Include="Controls\Registration\Reg.Designer.cs">
       <DependentUpon>Reg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\bin\Registration.cs">
+    <Compile Include="Controls\Registration\Registration.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\bin\Registration.Designer.cs">
+    <Compile Include="Controls\Registration\Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Registration\Show.cs">
@@ -377,6 +377,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\bin\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
