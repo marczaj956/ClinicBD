@@ -47,6 +47,14 @@
             this.Imie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumerPracownika = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.WindowPanel = new System.Windows.Forms.Panel();
+            this.connector = new System.Windows.Forms.TextBox();
+            this.Mainlist = new System.Windows.Forms.ListView();
+            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Namelist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Surnamelist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Loginlist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Rolelist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -250,29 +258,92 @@
             this.Imie,
             this.Nazwisko,
             this.Rola});
-            this.dataGridView1.Location = new System.Drawing.Point(2, 144);
+            this.dataGridView1.Location = new System.Drawing.Point(1043, 394);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1276, 388);
+            this.dataGridView1.Size = new System.Drawing.Size(235, 138);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.Visible = false;
+            // 
+            // WindowPanel
+            // 
+            this.WindowPanel.Location = new System.Drawing.Point(48, 521);
+            this.WindowPanel.Name = "WindowPanel";
+            this.WindowPanel.Size = new System.Drawing.Size(200, 100);
+            this.WindowPanel.TabIndex = 1;
+            this.WindowPanel.Visible = false;
+            // 
+            // connector
+            // 
+            this.connector.Location = new System.Drawing.Point(420, 590);
+            this.connector.Name = "connector";
+            this.connector.Size = new System.Drawing.Size(100, 20);
+            this.connector.TabIndex = 13;
+            this.connector.Visible = false;
+            this.connector.TextChanged += new System.EventHandler(this.connector_TextChanged_1);
+            // 
+            // Mainlist
+            // 
+            this.Mainlist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Id,
+            this.Namelist,
+            this.Surnamelist,
+            this.Loginlist,
+            this.Rolelist});
+            this.Mainlist.HideSelection = false;
+            this.Mainlist.Location = new System.Drawing.Point(67, 156);
+            this.Mainlist.Name = "Mainlist";
+            this.Mainlist.Size = new System.Drawing.Size(879, 376);
+            this.Mainlist.TabIndex = 12;
+            this.Mainlist.UseCompatibleStateImageBehavior = false;
+            this.Mainlist.View = System.Windows.Forms.View.Details;
+            this.Mainlist.SelectedIndexChanged += new System.EventHandler(this.Mainlist_SelectedIndexChanged);
+            // 
+            // Id
+            // 
+            this.Id.Text = "Numer Pracownika";
+            // 
+            // Namelist
+            // 
+            this.Namelist.Text = "Imię";
+            this.Namelist.Width = 114;
+            // 
+            // Surnamelist
+            // 
+            this.Surnamelist.Text = "Nazwisko";
+            this.Surnamelist.Width = 106;
+            // 
+            // Loginlist
+            // 
+            this.Loginlist.Text = "Login";
+            this.Loginlist.Width = 115;
+            // 
+            // Rolelist
+            // 
+            this.Rolelist.Text = "Rola";
+            this.Rolelist.Width = 108;
             // 
             // Admincs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Mainlist);
+            this.Controls.Add(this.connector);
+            this.Controls.Add(this.WindowPanel);
             this.Controls.Add(this.Show);
             this.Controls.Add(this.Edit);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
-           // this.Name = "Admincs";
+  //          this.Name = "Admincs";
             this.Size = new System.Drawing.Size(1280, 650);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -297,5 +368,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Imie;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumerPracownika;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel WindowPanel;
+        private System.Windows.Forms.TextBox connector;
+        private System.Windows.Forms.ListView Mainlist;
+        private System.Windows.Forms.ColumnHeader Id;
+        private System.Windows.Forms.ColumnHeader Namelist;
+        private System.Windows.Forms.ColumnHeader Surnamelist;
+        private System.Windows.Forms.ColumnHeader Loginlist;
+        private System.Windows.Forms.ColumnHeader Rolelist;
     }
 }

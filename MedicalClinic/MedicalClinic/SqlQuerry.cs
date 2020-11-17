@@ -22,6 +22,21 @@ namespace MedicalClinic
         }
 
 
+        public static IQueryable<Staff> GetStaff(int id)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            var result = from log in db.Staff
+                         where
+                                log.Id_Staff== id                         
+                         select log;
+
+
+
+            return result;
+        }
+
+
         public static IQueryable<Staff> GetStaff(string name, string surname, string login, string role)
         {
             DataClassesDataContext db = new DataClassesDataContext();
@@ -32,12 +47,16 @@ namespace MedicalClinic
                                log.Surname.StartsWith(surname) &&
                                log.Name.StartsWith(name) &&
                                log.Role.StartsWith(role)
+
                          select log;
 
 
 
             return result;
         }
+
+
+
 
 
         public static void insertstaff(string name, string surname, string login, string password, string role, char active)

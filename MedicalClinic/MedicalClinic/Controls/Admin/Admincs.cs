@@ -16,18 +16,25 @@ namespace MedicalClinic.Admin
         public Admincs()
         {
             InitializeComponent();
-
+            dataGridView1.Rows.Clear();
             dataGridView1.DataSource = SqlQuerry.GetStaff("", "", "", "");
-
+            Mainlist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            Mainlist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            //Refresh();
             //na liste 
-            /*foreach (var order in res)
+            var res = SqlQuerry.GetStaff("", "", "", "");
+            foreach (var order in res)
             {
                 ListViewItem lvi = new ListViewItem(order.Id_Staff.ToString());
                 lvi.SubItems.Add(order.Name);
                 lvi.SubItems.Add(order.Surname);
-                listView1.Items.Add(lvi);
+                lvi.SubItems.Add(order.Login);
+                lvi.SubItems.Add(order.Role);
+
+                Mainlist.Items.Add(lvi);
                 
-            }*/
+            }
+            // connector.Visible = true;
 
         }
 
@@ -57,23 +64,70 @@ namespace MedicalClinic.Admin
 
         private void Edit_Click(object sender, EventArgs e)
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Edit());
+            /* Panel P = new Panel();
+             P.Controls.Clear();
+             this.Hide();
+             this.Parent.Controls.Add(new Edit());*/
+            WindowPanel.Controls.Add(new Edit(connector));
+            WindowPanel.Visible = true;
+            WindowPanel.Dock = DockStyle.Fill;
+            WindowPanel.BringToFront();
+
         }
 
         private void Show_Click(object sender, EventArgs e)
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Show());
+            if (Mainlist.SelectedItems.Count > 0)
+            {
+                WindowPanel.Controls.Add(new Show(Selected));
+                WindowPanel.Visible = true;
+                WindowPanel.Dock = DockStyle.Fill;
+                WindowPanel.BringToFront();
+            }
+            else MessageBox.Show("Zaznacz wartość", "Błąd");
         }
 
         private void Search_Click(object sender, EventArgs e)
         {
 
+            Refresh(SqlQuerry.GetStaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), SqlQuerry.translateRoleDB(Role.Text.ToString())));
+           
+        }
+
+
+        public void Refresh(IQueryable<Staff> a)
+        {
+             
+            Mainlist.Items.Clear();
+            foreach (var order in a)
+            {
+                ListViewItem lvi = new ListViewItem(order.Id_Staff.ToString());
+                lvi.SubItems.Add(order.Name);
+                lvi.SubItems.Add(order.Surname);
+                lvi.SubItems.Add(order.Login);
+                lvi.SubItems.Add(order.Role);
+                Mainlist.Items.Add(lvi);
+
+            }
+            dataGridView1.DataSource = a;
+
+        }
+
+        private void connector_TextChanged(object sender, EventArgs e)
+        {
+            Refresh(SqlQuerry.GetStaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), SqlQuerry.translateRoleDB(Role.Text.ToString())));
+        }
+
+        private void connector_TextChanged_1(object sender, EventArgs e)
+        {
+            Refresh(SqlQuerry.GetStaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), SqlQuerry.translateRoleDB(Role.Text.ToString())));
+        }
+
+        private static int Selected;
+        private void Mainlist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Selected = int.Parse(Mainlist.SelectedItems[1].ToString());
+           Selected=1;
         }
     }
 }

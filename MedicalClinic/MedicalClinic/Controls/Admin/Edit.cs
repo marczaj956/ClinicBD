@@ -13,26 +13,34 @@ namespace MedicalClinic.Admin
 {
     public partial class Edit : UserControl
     {
+        private TextBox text;
         public Edit()
         {
             InitializeComponent();
         }
+        public Edit(TextBox textb) : this()
+        {
+            text = textb;
+        }
+
 
         private void SaveAndClose_Click(object sender, EventArgs e)
         {
             //zapis do bazy
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Admincs());
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
+            
+            text.Text = "changed";
         }
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Admincs());
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
+            //this.Parent.Parent.Refresh();
+            //text.Text = "changed";
         }
     }
 }

@@ -20,15 +20,7 @@ namespace MedicalClinic.MainPanel
         public MainPanel()
         {
                InitializeComponent();
-             /*  DataClassesDataContext db = new DataClassesDataContext();
-               var g = from s in db.Staff
-                       //where s.Id_Staff >= 1
-                       select s;
-               var r = g.AsEnumerable().ElementAtOrDefault(0);
-               LoginText.Text = r.Login.ToString();
-
-              // PassText.Text = g.Last().ToString();
-               */
+             
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -43,45 +35,51 @@ namespace MedicalClinic.MainPanel
             get { return LoginText.Text; }
         }
 
-        AdminForm ad = null;
+       
         private void button1_Click(object sender, EventArgs e)
         {
 
-            /*DataClassesDataContext db = new DataClassesDataContext();
-            var result = from s in db.Staff
-                         where s.Login == LoginText.Text.ToString() &&
-                               s.Password == PassText.Text.ToString()
-                         select s;*/
+
             var result = SqlQuerry.CheckLog(LoginText.Text.ToString(), PassText.Text.ToString());
 
 
             if (result.Any())
-            {    
+            {
 
-                Panel P = new Panel();
-                P.Controls.Clear();
-                this.Hide();
+                 Panel P = new Panel();
+                /* P.Controls.Clear();
+                 this.Hide();*/
+
+
+                this.Controls.Clear();
 
 
                 if (result.First().Role.ToString() == "Admin")
 
-                {
-                    this.Parent.Controls.Add(new Admincs());
+                {   //P.Controls.Add(new Admincs());
+                    this.Controls.Add(new Admincs());
+
                 }
 
                 if (result.First().Role.ToString() == "Doc")
 
                 {
+                    P.Controls.Clear();
+                    this.Hide();
                     this.Parent.Controls.Add(new Doctor.Doctor());
                 }
                 if (result.First().Role.ToString() == "Rec")
 
                 {
+                    P.Controls.Clear();
+                    this.Hide();
                     this.Parent.Controls.Add(new Reg());
                 }
                 if (result.First().Role.ToString() == "Lab")
 
                 {
+                    P.Controls.Clear();
+                    this.Hide();
                     this.Parent.Controls.Add(new Lab());
                 }
 
