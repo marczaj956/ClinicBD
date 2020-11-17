@@ -303,21 +303,22 @@
             // Id
             // 
             this.Id.Text = "Numer Pracownika";
+            this.Id.Width = 98;
             // 
             // Namelist
             // 
             this.Namelist.Text = "Imię";
-            this.Namelist.Width = 114;
+            this.Namelist.Width = 178;
             // 
             // Surnamelist
             // 
             this.Surnamelist.Text = "Nazwisko";
-            this.Surnamelist.Width = 106;
+            this.Surnamelist.Width = 167;
             // 
             // Loginlist
             // 
             this.Loginlist.Text = "Login";
-            this.Loginlist.Width = 115;
+            this.Loginlist.Width = 213;
             // 
             // Rolelist
             // 
@@ -337,7 +338,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
-  //          this.Name = "Admincs";
+       //     this.Name = "Admincs";
             this.Size = new System.Drawing.Size(1280, 650);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

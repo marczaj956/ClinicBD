@@ -18,22 +18,26 @@ namespace MedicalClinic.Admin
             InitializeComponent();
             dataGridView1.Rows.Clear();
             dataGridView1.DataSource = SqlQuerry.GetStaff("", "", "", "");
-            Mainlist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            Mainlist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            
+            
+            
             //Refresh();
             //na liste 
             var res = SqlQuerry.GetStaff("", "", "", "");
+            
             foreach (var order in res)
             {
                 ListViewItem lvi = new ListViewItem(order.Id_Staff.ToString());
                 lvi.SubItems.Add(order.Name);
                 lvi.SubItems.Add(order.Surname);
                 lvi.SubItems.Add(order.Login);
-                lvi.SubItems.Add(order.Role);
+                lvi.SubItems.Add(SqlQuerry.translateRolePL(order.Role));
 
                 Mainlist.Items.Add(lvi);
                 
             }
+            Mainlist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            Mainlist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             // connector.Visible = true;
 
         }
@@ -55,11 +59,15 @@ namespace MedicalClinic.Admin
 
         private void Add_Click(object sender, EventArgs e)
         {
-            Panel P = new Panel();
+            /*Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new AddNew());
-            
+            this.Parent.Controls.Add(new AddNew());*/
+            WindowPanel.Controls.Add(new AddNew(connector));
+            WindowPanel.Visible = true;
+            WindowPanel.Dock = DockStyle.Fill;
+            WindowPanel.BringToFront();
+
         }
 
         private void Edit_Click(object sender, EventArgs e)
@@ -68,7 +76,7 @@ namespace MedicalClinic.Admin
              P.Controls.Clear();
              this.Hide();
              this.Parent.Controls.Add(new Edit());*/
-            WindowPanel.Controls.Add(new Edit(connector));
+            WindowPanel.Controls.Add(new Edit(connector,Selected));
             WindowPanel.Visible = true;
             WindowPanel.Dock = DockStyle.Fill;
             WindowPanel.BringToFront();
@@ -105,7 +113,7 @@ namespace MedicalClinic.Admin
                 lvi.SubItems.Add(order.Name);
                 lvi.SubItems.Add(order.Surname);
                 lvi.SubItems.Add(order.Login);
-                lvi.SubItems.Add(order.Role);
+                lvi.SubItems.Add(SqlQuerry.translateRolePL(order.Role));
                 Mainlist.Items.Add(lvi);
 
             }
@@ -126,8 +134,10 @@ namespace MedicalClinic.Admin
         private static int Selected;
         private void Mainlist_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(Mainlist.SelectedItems.Count > 0)
+            Selected = int.Parse(Mainlist.SelectedItems[0].Text.ToString());
             //Selected = int.Parse(Mainlist.SelectedItems[1].ToString());
-           Selected=1;
+           //Selected=1;
         }
     }
 }

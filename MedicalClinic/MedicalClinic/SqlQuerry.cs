@@ -74,6 +74,24 @@ namespace MedicalClinic
             db.SubmitChanges();
         }
 
+        public static void updatestaff(string name, string surname, string password, string role, char active,int id)
+        {   //napisać ifa czy są dane
+            DataClassesDataContext db = new DataClassesDataContext();
+            Staff update = db.Staff.Single(row => row.Id_Staff == id);
+            update.Name = name;
+            update.Surname = surname;
+            update.Password = password;
+            update.Role = role;
+            update.Active = active;
+            db.SubmitChanges();
+            
+        }
+       
+
+
+
+
+
         public static string translateRoleDB(string input)
         {
             string translate = "";

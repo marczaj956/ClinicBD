@@ -12,16 +12,23 @@ namespace MedicalClinic.Admin
 {
     public partial class AddNew : UserControl
     {
+        private TextBox text;
         public AddNew()
         {
             InitializeComponent();
             
-            
-
 
         }
 
-        private void SaveAndClose_Click(object sender, EventArgs e)
+
+        public AddNew(TextBox textb) : this()
+        {
+            text = textb;
+        }
+
+
+
+    private void SaveAndClose_Click(object sender, EventArgs e)
         {  //zapis
             char act = 'F';
             if (Activ.Checked)
@@ -37,19 +44,20 @@ namespace MedicalClinic.Admin
             else MessageBox.Show("Brak Danych");
 
 
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
 
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Admincs());
+            text.Text = "changed";
+
         }
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Admincs());
+
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
         }
     }
 }

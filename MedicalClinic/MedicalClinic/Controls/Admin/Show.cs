@@ -23,7 +23,7 @@ namespace MedicalClinic.Admin
             
             
             
-            Surname.Text = Id.ToString();
+            
             var result= SqlQuerry.GetStaff(id);
             Name.Text = result.First().Name.ToString();
             Name1.Text = result.First().Name.ToString();
