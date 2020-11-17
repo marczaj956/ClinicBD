@@ -12,19 +12,26 @@ namespace MedicalClinic.Controls.Registration
 {
     public partial class Reg : UserControl
     {
+        private int whoami;
         public Reg()
         {
             InitializeComponent();
             //dataGridView1.DataSource = 
-           var res=SqlQuerry.GetPatientsList("", "", "");
-           foreach (var order in res)
-           {
-               ListViewItem lvi = new ListViewItem(order.Name.ToString());
-               lvi.SubItems.Add(order.Surname);
-               lvi.SubItems.Add(order.PESEL);
-               listView1.Items.Add(lvi);
+          
+        }
+        public Reg(int id):this()
+        {
+            whoami = id;
+            connector.Text = whoami.ToString();
+            var res = SqlQuerry.GetPatientsList("", "", "");
+            foreach (var order in res)
+            {
+                ListViewItem lvi = new ListViewItem(order.Name.ToString());
+                lvi.SubItems.Add(order.Surname);
+                lvi.SubItems.Add(order.PESEL);
+                listView1.Items.Add(lvi);
 
-           }
+            }
         }
 
         private void button5_Click(object sender, EventArgs e) //logout
@@ -53,11 +60,18 @@ namespace MedicalClinic.Controls.Registration
                 var res = SqlQuerry.GetPatientsList(item.SubItems[0].Text.TrimEnd(), item.SubItems[1].Text.TrimEnd(),item.SubItems[2].Text.TrimEnd());
                 foreach(var x in res)
                 {
-                    
-                    Panel P = new Panel();
+
+                    /*Panel P = new Panel();
                     P.Controls.Clear();
                     this.Hide();
-                    this.Parent.Controls.Add(new VisitRegistration(x.Id_Patient));
+                    this.Parent.Controls.Add(new VisitRegistration(x.Id_Patient));*/
+
+                    WindowPanel.Controls.Add(new VisitRegistration(x.Id_Patient,connector));
+                    WindowPanel.Visible = true;
+                    WindowPanel.Dock = DockStyle.Fill;
+                    WindowPanel.BringToFront();
+
+
                 }
                 
                 
@@ -114,6 +128,25 @@ namespace MedicalClinic.Controls.Registration
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        private void refresh()
+        {
+            listView1.Items.Clear();
+            var res = SqlQuerry.GetPatientsList(textBox1.Text, textBox2.Text, textBox3.Text);
+            foreach (var order in res)
+            {
+                ListViewItem lvi = new ListViewItem(order.Name.ToString());
+                lvi.SubItems.Add(order.Surname);
+                lvi.SubItems.Add(order.PESEL);
+                listView1.Items.Add(lvi);
+
+            }
+        }
+
+        private void connector_TextChanged(object sender, EventArgs e)
+        {
+            refresh();
+            connector.Text = "";
         }
     }
 }

@@ -12,13 +12,17 @@ namespace MedicalClinic.Doctor
 {
     public partial class Doctor : UserControl
     {
+        private int whoami;
         public Doctor()
         {
             InitializeComponent();
+ 
+        }
 
-
+        public Doctor(int id):this()
+        {
+           
             var res = SqlQuerry.pacjent("", "", "");
-
             /* foreach (var order in res)
              {
                  ListViewItem lvi = new ListViewItem(order.Table1.Id_Appointment.ToString());
@@ -27,8 +31,10 @@ namespace MedicalClinic.Doctor
                  listView1.Items.Add(lvi);
 
              }*/
-
+            whoami = id;
+            connector.Text = whoami.ToString();
         }
+
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {

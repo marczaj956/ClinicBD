@@ -65,8 +65,7 @@ namespace MedicalClinic.Admin
             this.Controls.Clear();
             this.Visible = false;
             this.Parent.Hide();
-            //this.Parent.Parent.Refresh();
-            //text.Text = "changed";
+            
         }
     }
 }

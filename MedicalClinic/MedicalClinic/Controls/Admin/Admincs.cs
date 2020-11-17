@@ -120,15 +120,17 @@ namespace MedicalClinic.Admin
             dataGridView1.DataSource = a;
 
         }
-
+        //sa 2 funkcje bo nie wiem ktora dziala 
         private void connector_TextChanged(object sender, EventArgs e)
         {
             Refresh(SqlQuerry.GetStaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), SqlQuerry.translateRoleDB(Role.Text.ToString())));
+            connector.Text = "";
         }
 
         private void connector_TextChanged_1(object sender, EventArgs e)
         {
             Refresh(SqlQuerry.GetStaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), SqlQuerry.translateRoleDB(Role.Text.ToString())));
+            connector.Text = "";
         }
 
         private static int Selected;
@@ -136,8 +138,7 @@ namespace MedicalClinic.Admin
         {
             if(Mainlist.SelectedItems.Count > 0)
             Selected = int.Parse(Mainlist.SelectedItems[0].Text.ToString());
-            //Selected = int.Parse(Mainlist.SelectedItems[1].ToString());
-           //Selected=1;
+           
         }
     }
 }

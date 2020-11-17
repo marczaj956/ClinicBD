@@ -12,10 +12,21 @@ namespace MedicalClinic.Controls.Laboratory
 {
     public partial class Lab : UserControl
     {
+        private int whoami;
+        private string myrole;
         public Lab()
         {
             InitializeComponent();
         }
+
+        public Lab(int id, string role):this()
+        {
+            whoami = id;
+            myrole = role;
+            textBox2.Text = myrole;
+        }
+
+
 
         private void button2_Click(object sender, EventArgs e)
         {

@@ -46,6 +46,8 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.connector = new System.Windows.Forms.TextBox();
+            this.WindowPanel = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -241,10 +243,29 @@
             this.columnHeader3.Text = "Pesel";
             this.columnHeader3.Width = 172;
             // 
+            // connector
+            // 
+            this.connector.Location = new System.Drawing.Point(1132, 378);
+            this.connector.Name = "connector";
+            this.connector.Size = new System.Drawing.Size(100, 20);
+            this.connector.TabIndex = 17;
+            this.connector.Visible = false;
+            this.connector.TextChanged += new System.EventHandler(this.connector_TextChanged);
+            // 
+            // WindowPanel
+            // 
+            this.WindowPanel.Location = new System.Drawing.Point(1065, 232);
+            this.WindowPanel.Name = "WindowPanel";
+            this.WindowPanel.Size = new System.Drawing.Size(200, 100);
+            this.WindowPanel.TabIndex = 18;
+            this.WindowPanel.Visible = false;
+            // 
             // Reg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.WindowPanel);
+            this.Controls.Add(this.connector);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button4);
@@ -257,6 +278,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -280,5 +302,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.TextBox connector;
+        private System.Windows.Forms.Panel WindowPanel;
     }
 }

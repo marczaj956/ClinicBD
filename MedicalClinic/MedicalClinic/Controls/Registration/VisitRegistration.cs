@@ -14,15 +14,17 @@ namespace MedicalClinic.Controls.Registration
     public partial class VisitRegistration : UserControl
     {
         private int patid;
+        private TextBox textb;
         public VisitRegistration()
         {
             InitializeComponent();
           
 
         }
-           public VisitRegistration(int ID):this ()
+           public VisitRegistration(int ID,TextBox text):this ()
         {
             patid = ID;
+            textb = text;
             var res = SqlQuerry.GetPatientData(patid);
             foreach (var order in res)
             {
@@ -41,10 +43,9 @@ namespace MedicalClinic.Controls.Registration
         private void button1_Click(object sender, EventArgs e)
         {
 
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Reg());
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -53,7 +54,12 @@ namespace MedicalClinic.Controls.Registration
                 datetosql =datetosql+ " "+comboBox2.Text;
             var dateTime = DateTime.Parse(datetosql);
             MessageBox.Show("Stworzono wizyte na date :" + dateTime.ToString());
-             //SqlQuerry.ExecAppointment(dateTime,)
+            //SqlQuerry.ExecAppointment(dateTime,)
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
+
+            textb.Text = "changed";
         }
     }
 }

@@ -29,12 +29,6 @@ namespace MedicalClinic.MainPanel
         }
 
 
-        public string ROLE
-        {
-            set { LoginText.Text = value; }
-            get { return LoginText.Text; }
-        }
-
        
         private void button1_Click(object sender, EventArgs e)
         {
@@ -46,17 +40,13 @@ namespace MedicalClinic.MainPanel
             if (result.Any())
             {
 
-                 Panel P = new Panel();
-                /* P.Controls.Clear();
-                 this.Hide();*/
-
 
                 this.Controls.Clear();
 
 
                 if (result.First().Role.ToString() == "Admin")
 
-                {   //P.Controls.Add(new Admincs());
+                {   
                     this.Controls.Add(new Admincs());
 
                 }
@@ -64,30 +54,26 @@ namespace MedicalClinic.MainPanel
                 if (result.First().Role.ToString() == "Doc")
 
                 {
-                    P.Controls.Clear();
-                    this.Hide();
-                    this.Parent.Controls.Add(new Doctor.Doctor());
+                    
+                    this.Controls.Add(new Doctor.Doctor(result.First().Id_Staff));
+                    
                 }
                 if (result.First().Role.ToString() == "Rec")
 
                 {
-                    P.Controls.Clear();
-                    this.Hide();
-                    this.Parent.Controls.Add(new Reg());
+                    
+                    this.Controls.Add(new Reg(result.FirstOrDefault().Id_Staff));
                 }
-                if (result.First().Role.ToString() == "Lab")
+                if (result.First().Role.ToString() == "Lab"|| result.First().Role.ToString() == "MLab")
 
                 {
-                    P.Controls.Clear();
-                    this.Hide();
-                    this.Parent.Controls.Add(new Lab());
+                    
+                    this.Controls.Add(new Lab(result.First().Id_Staff, result.First().Role));
+                        
                 }
-
+                //brakuje mlab dokładamy go do laba i przekazujemy role i na jej podstawie robimy ograniczenia czy jakoś inaczej??
 
             }
-
-
-
 
             else
                 MessageBox.Show("User not found","Error");
