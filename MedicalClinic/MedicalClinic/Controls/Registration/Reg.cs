@@ -53,17 +53,17 @@ namespace MedicalClinic.Controls.Registration
                 var res = SqlQuerry.GetPatientsList(item.SubItems[0].Text.TrimEnd(), item.SubItems[1].Text.TrimEnd(),item.SubItems[2].Text.TrimEnd());
                 foreach(var x in res)
                 {
-                    GlobalVar.SetPatientId = x.Id_Patient;
                     
+                    Panel P = new Panel();
+                    P.Controls.Clear();
+                    this.Hide();
+                    this.Parent.Controls.Add(new VisitRegistration(x.Id_Patient));
                 }
                 
                 
                 
 
-                Panel P = new Panel();
-                P.Controls.Clear();
-                this.Hide();
-                this.Parent.Controls.Add(new VisitRegistration());
+               
             }
             else
             {
