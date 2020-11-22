@@ -28,6 +28,7 @@ namespace MedicalClinic.Admin
             
             var result = SqlQuerry.GetStaff(Id);
             textBox1.Text = result.First().Name.ToString();
+            textBox2.Text = result.First().Login.ToString();
             Name1.Text = result.First().Name.ToString();
             Surname.Text = Surname2.Text = result.First().Surname.ToString();
             Login.Text = result.First().Login.ToString();
@@ -66,6 +67,26 @@ namespace MedicalClinic.Admin
             this.Visible = false;
             this.Parent.Hide();
             
+        }
+
+        private void Login_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Surname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

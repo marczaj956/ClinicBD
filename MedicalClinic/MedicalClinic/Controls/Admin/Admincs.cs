@@ -97,6 +97,10 @@ namespace MedicalClinic.Admin
 
         private void Search_Click(object sender, EventArgs e)
         {
+            if (Role.Text.ToString() == "brak")
+            {
+                Role.Text = "";
+            }
 
             Refresh(SqlQuerry.GetStaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), SqlQuerry.translateRoleDB(Role.Text.ToString())));
            

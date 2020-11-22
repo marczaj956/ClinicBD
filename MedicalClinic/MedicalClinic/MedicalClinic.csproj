@@ -197,6 +197,12 @@
     <Compile Include="Controls\Registration\VisitRegistration.Designer.cs">
       <DependentUpon>VisitRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Registration\VisitViewercs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Registration\VisitViewercs.Designer.cs">
+      <DependentUpon>VisitViewercs.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataClasses.cs">
       <DependentUpon>DataClasses.dbml</DependentUpon>
     </Compile>
@@ -322,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Registration\VisitRegistration.resx">
       <DependentUpon>VisitRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Registration\VisitViewercs.resx">
+      <DependentUpon>VisitViewercs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="show ExaminationPsyhic.resx">
       <DependentUpon>show ExaminationPsyhic.cs</DependentUpon>

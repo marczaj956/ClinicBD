@@ -148,5 +148,28 @@ namespace MedicalClinic.Controls.Registration
             refresh();
             connector.Text = "";
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void przegladWizytToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void przegladWizytToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void przegladarkaWizytToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new VisitViewercs());
+        }
     }
 }

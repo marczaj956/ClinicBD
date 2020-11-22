@@ -40,5 +40,10 @@ namespace MedicalClinic.Controls.Registration
             else MessageBox.Show("Brak Danych");
            
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

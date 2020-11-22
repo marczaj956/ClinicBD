@@ -27,5 +27,20 @@ namespace MedicalClinic.Controls.Registration
             this.Parent.Controls.Add(new Reg());
 
         }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Show_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

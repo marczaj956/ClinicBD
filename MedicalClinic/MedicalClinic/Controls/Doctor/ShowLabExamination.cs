@@ -25,5 +25,10 @@ namespace MedicalClinic.Controls.Doctor
             this.Hide();
             this.Parent.Controls.Add(new Show());
         }
+
+        private void ShowLabExamination_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

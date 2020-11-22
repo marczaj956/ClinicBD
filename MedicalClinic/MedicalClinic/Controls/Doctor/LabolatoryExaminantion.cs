@@ -26,12 +26,12 @@ namespace MedicalClinic.Controls.Doctor
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)   // TO DO: jeśli przechodzi przed edycje badania to wpisać id badania, jeśli nowy to id puste
         {
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new EditLabExamination());
+            this.Parent.Controls.Add(new NewLabolatoryExaminationcs());
         }
 
         private void button4_Click(object sender, EventArgs e)
