@@ -43,10 +43,18 @@ namespace MedicalClinic.Controls.Laboratory
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Edit());
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+                Panel P = new Panel();
+                P.Controls.Clear();
+                this.Hide();
+                this.Parent.Controls.Add(new Edit(myrole,Int16.Parse(item.SubItems[0].Text.TrimEnd())));
+            }
+            else
+            {
+                MessageBox.Show("Nie wybrano badania");
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -56,11 +64,18 @@ namespace MedicalClinic.Controls.Laboratory
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ListViewItem item = listView1.SelectedItems[0];
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Show(Int16.Parse(item.SubItems[0].Text.TrimEnd())));
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+                Panel P = new Panel();
+                P.Controls.Clear();
+                this.Hide();
+                this.Parent.Controls.Add(new Show(Int16.Parse(item.SubItems[0].Text.TrimEnd())));
+            }
+            else
+            {
+                MessageBox.Show("Nie wybrano badania");
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

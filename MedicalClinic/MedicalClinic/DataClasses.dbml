@@ -5,7 +5,7 @@
       <Column Name="Id_Appointment" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Date_Appointment" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Id_Doctor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Id_Receptionist" Storage="_Id_Eeceptionist" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Receptionist" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Descirption" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="Diagnosis" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="Id_Patient" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

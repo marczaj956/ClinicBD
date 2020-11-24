@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MedicalClinic.Controls.Doctor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -267,6 +268,17 @@ namespace MedicalClinic
 
                          select log;
             return result;
+        }
+        public static void updateLabExam(int id,string state,string result,string comment_lab)
+        {   //napisać ifa czy są dane
+            DataClassesDataContext db = new DataClassesDataContext();
+            Examination_Laboratory update = db.Examination_Laboratory.Single(row => row.Id_Examination == id);
+            update.Result = result;
+            update.State = state;
+            update.Comments_Man_Lab = comment_lab;
+           
+            db.SubmitChanges();
+
         }
     }
 }
