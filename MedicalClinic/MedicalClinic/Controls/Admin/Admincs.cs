@@ -18,9 +18,9 @@ namespace MedicalClinic.Admin
             InitializeComponent();
             dataGridView1.Rows.Clear();
             dataGridView1.DataSource = SqlQuerry.GetStaff("", "", "", "");
-            
-            
-            
+            Mainlist.MultiSelect = false;
+
+
             //Refresh();
             //na liste 
             var res = SqlQuerry.GetStaff("", "", "", "");
@@ -76,10 +76,15 @@ namespace MedicalClinic.Admin
              P.Controls.Clear();
              this.Hide();
              this.Parent.Controls.Add(new Edit());*/
-            WindowPanel.Controls.Add(new Edit(connector,Selected));
+            if (Selected != 0)
+            {
+                WindowPanel.Controls.Add(new Edit(connector,Selected));
             WindowPanel.Visible = true;
             WindowPanel.Dock = DockStyle.Fill;
             WindowPanel.BringToFront();
+            }
+            else MessageBox.Show("Wybierz użytkownika", "Błąd");
+
 
         }
 
@@ -137,7 +142,7 @@ namespace MedicalClinic.Admin
             connector.Text = "";
         }
 
-        private static int Selected;
+        private static int Selected=0;
         private void Mainlist_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(Mainlist.SelectedItems.Count > 0)

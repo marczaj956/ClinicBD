@@ -51,8 +51,10 @@ namespace MedicalClinic.Admin
             {
                 act = 'T';
             }
-            SqlQuerry.updatestaff(Name1.Text.ToString(), Surname2.Text.ToString(), Password.Text.ToString(), Role.Text.ToString(), act, Id);
-
+            if (Name1.TextLength != 0 && Surname2.TextLength != 0 && Password.TextLength != 0)
+            {
+                SqlQuerry.updatestaff(Name1.Text.ToString(), Surname2.Text.ToString(), Password.Text.ToString(), SqlQuerry.translateRoleDB(Role.Text.ToString()), act, Id);
+            }
 
             this.Controls.Clear();
             this.Visible = false;

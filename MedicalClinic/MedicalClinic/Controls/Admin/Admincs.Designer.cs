@@ -71,17 +71,20 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.Name);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(0, 3);
+            this.groupBox1.Location = new System.Drawing.Point(0, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1920, 212);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(1280, 138);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // SignOut
             // 
-            this.SignOut.Location = new System.Drawing.Point(1732, 25);
+            this.SignOut.Location = new System.Drawing.Point(1155, 16);
+            this.SignOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SignOut.Name = "SignOut";
-            this.SignOut.Size = new System.Drawing.Size(141, 48);
+            this.SignOut.Size = new System.Drawing.Size(94, 31);
             this.SignOut.TabIndex = 9;
             this.SignOut.Text = "Wyloguj";
             this.SignOut.UseVisualStyleBackColor = true;
@@ -90,9 +93,10 @@
             // Search
             // 
             this.Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Search.Location = new System.Drawing.Point(1228, 125);
+            this.Search.Location = new System.Drawing.Point(819, 81);
+            this.Search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(142, 49);
+            this.Search.Size = new System.Drawing.Size(95, 32);
             this.Search.TabIndex = 8;
             this.Search.Text = "Szukaj";
             this.Search.UseVisualStyleBackColor = true;
@@ -109,63 +113,70 @@
             "Laborant",
             "Kierownik labolatorium",
             "Administrator"});
-            this.Role.Location = new System.Drawing.Point(790, 125);
+            this.Role.Location = new System.Drawing.Point(527, 81);
+            this.Role.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Role.Name = "Role";
-            this.Role.Size = new System.Drawing.Size(286, 37);
+            this.Role.Size = new System.Drawing.Size(192, 28);
             this.Role.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(675, 125);
+            this.label4.Location = new System.Drawing.Point(450, 81);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 29);
+            this.label4.Size = new System.Drawing.Size(42, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Rola";
             // 
             // Login
             // 
             this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Login.Location = new System.Drawing.Point(790, 62);
+            this.Login.Location = new System.Drawing.Point(527, 40);
+            this.Login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(286, 35);
+            this.Login.Size = new System.Drawing.Size(192, 26);
             this.Login.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(675, 62);
+            this.label3.Location = new System.Drawing.Point(450, 40);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 29);
+            this.label3.Size = new System.Drawing.Size(48, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Login";
             // 
             // Surname
             // 
             this.Surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Surname.Location = new System.Drawing.Point(226, 125);
+            this.Surname.Location = new System.Drawing.Point(151, 81);
+            this.Surname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Surname.Name = "Surname";
-            this.Surname.Size = new System.Drawing.Size(286, 35);
+            this.Surname.Size = new System.Drawing.Size(192, 26);
             this.Surname.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(94, 125);
+            this.label2.Location = new System.Drawing.Point(63, 81);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 29);
+            this.label2.Size = new System.Drawing.Size(76, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nazwisko";
             // 
             // Name
             // 
             this.Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Name.Location = new System.Drawing.Point(226, 62);
+            this.Name.Location = new System.Drawing.Point(151, 40);
+            this.Name.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(286, 35);
+            this.Name.Size = new System.Drawing.Size(192, 26);
             this.Name.TabIndex = 1;
             this.Name.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -173,18 +184,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(94, 62);
+            this.label1.Location = new System.Drawing.Point(63, 40);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 29);
+            this.label1.Size = new System.Drawing.Size(39, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Imie";
             // 
             // Add
             // 
             this.Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Add.Location = new System.Drawing.Point(1294, 891);
+            this.Add.Location = new System.Drawing.Point(863, 579);
+            this.Add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(142, 49);
+            this.Add.Size = new System.Drawing.Size(95, 32);
             this.Add.TabIndex = 9;
             this.Add.Text = "Dodaj";
             this.Add.UseVisualStyleBackColor = true;
@@ -193,9 +206,10 @@
             // Edit
             // 
             this.Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Edit.Location = new System.Drawing.Point(1498, 891);
+            this.Edit.Location = new System.Drawing.Point(999, 579);
+            this.Edit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Edit.Name = "Edit";
-            this.Edit.Size = new System.Drawing.Size(142, 49);
+            this.Edit.Size = new System.Drawing.Size(95, 32);
             this.Edit.TabIndex = 10;
             this.Edit.Text = "Edytuj";
             this.Edit.UseVisualStyleBackColor = true;
@@ -204,9 +218,10 @@
             // Show
             // 
             this.Show.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Show.Location = new System.Drawing.Point(1694, 891);
+            this.Show.Location = new System.Drawing.Point(1129, 579);
+            this.Show.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Show.Name = "Show";
-            this.Show.Size = new System.Drawing.Size(142, 49);
+            this.Show.Size = new System.Drawing.Size(95, 32);
             this.Show.TabIndex = 11;
             this.Show.Text = "Pokaż";
             this.Show.UseVisualStyleBackColor = true;
@@ -244,28 +259,27 @@
             this.Imie,
             this.Nazwisko,
             this.Rola});
-            this.dataGridView1.Location = new System.Drawing.Point(1564, 606);
+            this.dataGridView1.Location = new System.Drawing.Point(1043, 394);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(352, 212);
+            this.dataGridView1.Size = new System.Drawing.Size(235, 138);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.Visible = false;
             // 
             // WindowPanel
             // 
-            this.WindowPanel.Location = new System.Drawing.Point(72, 802);
-            this.WindowPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.WindowPanel.Location = new System.Drawing.Point(48, 521);
             this.WindowPanel.Name = "WindowPanel";
-            this.WindowPanel.Size = new System.Drawing.Size(300, 154);
+            this.WindowPanel.Size = new System.Drawing.Size(200, 100);
             this.WindowPanel.TabIndex = 1;
             this.WindowPanel.Visible = false;
             // 
             // connector
             // 
-            this.connector.Location = new System.Drawing.Point(630, 908);
-            this.connector.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.connector.Location = new System.Drawing.Point(420, 590);
             this.connector.Name = "connector";
-            this.connector.Size = new System.Drawing.Size(148, 26);
+            this.connector.Size = new System.Drawing.Size(100, 20);
             this.connector.TabIndex = 13;
             this.connector.Visible = false;
             this.connector.TextChanged += new System.EventHandler(this.connector_TextChanged_1);
@@ -279,10 +293,9 @@
             this.Loginlist,
             this.Rolelist});
             this.Mainlist.HideSelection = false;
-            this.Mainlist.Location = new System.Drawing.Point(100, 240);
-            this.Mainlist.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Mainlist.Location = new System.Drawing.Point(67, 156);
             this.Mainlist.Name = "Mainlist";
-            this.Mainlist.Size = new System.Drawing.Size(1316, 576);
+            this.Mainlist.Size = new System.Drawing.Size(879, 376);
             this.Mainlist.TabIndex = 12;
             this.Mainlist.UseCompatibleStateImageBehavior = false;
             this.Mainlist.View = System.Windows.Forms.View.Details;
@@ -315,7 +328,7 @@
             // 
             // Admincs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Mainlist);
             this.Controls.Add(this.connector);
@@ -325,8 +338,9 @@
             this.Controls.Add(this.Add);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Name.Text = "Admincs";
-            this.Size = new System.Drawing.Size(1920, 1000);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+           // this.Name = "Admincs";
+            this.Size = new System.Drawing.Size(1280, 650);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
