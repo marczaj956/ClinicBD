@@ -16,13 +16,7 @@ namespace MedicalClinic.Controls.Registration
         public Reg()
         {
             InitializeComponent();
-            //dataGridView1.DataSource = 
-          
-        }
-        public Reg(int id):this()
-        {
-            whoami = id;
-            connector.Text = whoami.ToString();
+            listView1.Items.Clear();
             var res = SqlQuerry.GetPatientsList("", "", "");
             foreach (var order in res)
             {
@@ -32,6 +26,15 @@ namespace MedicalClinic.Controls.Registration
                 listView1.Items.Add(lvi);
 
             }
+            //dataGridView1.DataSource = 
+
+        }
+        public Reg(int id):this()
+        {
+           
+            whoami = id;
+            connector.Text = whoami.ToString();
+           
         }
 
         private void button5_Click(object sender, EventArgs e) //logout

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MedicalClinic.Registration;
+using System.Threading;
+using System.Globalization;
 
 namespace MedicalClinic.Controls.Registration
 {
@@ -50,11 +52,14 @@ namespace MedicalClinic.Controls.Registration
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string datetosql = monthCalendar1.SelectionStart.ToShortDateString();
-                datetosql =datetosql+ " "+comboBox2.Text;
-            var dateTime = DateTime.Parse(datetosql);
-            MessageBox.Show("Stworzono wizyte na date :" + dateTime.ToString());
-            //SqlQuerry.ExecAppointment(dateTime,)
+            string culture = "mn-MN";
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(culture);
+            string datetosql= monthCalendar1.SelectionStart.ToShortDateString();
+            datetosql += " " + comboBox2.Text;
+            
+
+            DateTime dt = DateTime.Parse(datetosql);
+            SqlQuerry.ExecuteAppointment(dt, 1, Int16.Parse(textb.Text), "", "", patid);
             this.Controls.Clear();
             this.Visible = false;
             this.Parent.Hide();

@@ -202,7 +202,7 @@ namespace MedicalClinic
             db.SubmitChanges();
         }
 
-        public static void ExecAppointment(DateTime date, int iddoc, int idrec, string desc, string diagno, int idpat)
+        public static void ExecuteAppointment(DateTime date, int iddoc, int idrec, string desc, string diagno, int idpat)
         {   //napisać ifa czy są dane
             DataClassesDataContext db = new DataClassesDataContext();
 
@@ -215,6 +215,58 @@ namespace MedicalClinic
             addappointment.Id_Patient = idpat;
             db.Appointment.InsertOnSubmit(addappointment);
             db.SubmitChanges();
+        }
+        public class TableJoinResult2
+        {
+            public Examination_Laboratory Table1 { get; set; }
+            public Exam_Dictionary Table2 { get; set; }
+        }
+        public static IQueryable<TableJoinResult2> GetExamination_Laboratories(string type, string state, string date)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+            return (from dic in db.Exam_Dictionary
+                    join lab in db.Examination_Laboratory
+                    on dic.Exam_Code equals lab.Exam_Code
+                    where
+                          lab.State.StartsWith(state) &&
+                          dic.Type.StartsWith(type)
+                         
+                    select new TableJoinResult2
+                    {
+                        Table1 = lab,
+                        Table2 = dic
+                    });
+        }
+        public static IQueryable<TableJoinResult2> GetExamination_Laboratories_ID(int id)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+            return (from dic in db.Exam_Dictionary
+                    join lab in db.Examination_Laboratory
+                    on dic.Exam_Code equals lab.Exam_Code
+                    where
+                          lab.Id_Examination.Equals(id)
+
+                    select new TableJoinResult2
+                    {
+                        Table1 = lab,
+                        Table2 = dic
+                    }) ; 
+        }
+       
+
+        public static IQueryable<Appointment> GetPacjentID(int id)
+
+        {
+
+            
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            var result = from log in db.Appointment
+                         where
+                               log.Id_Appointment == id
+
+                         select log;
+            return result;
         }
     }
 }
