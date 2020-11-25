@@ -33,10 +33,11 @@ namespace MedicalClinic.Controls.Laboratory
             textBox1.Text = temp3.First().Name.ToString();
             textBox2.Text = temp3.First().Surname.ToString();
             textBox3.Text = temp3.First().PESEL.ToString();
-            comboBox1.Text= temp.First().Table1.State.ToString();
+            textBox10.Text= temp.First().Table1.State.ToString();
             if (role =="Lab")
             {
                 textBox7.Enabled = false;
+                button4.Enabled = false;
             }
             
 
@@ -51,8 +52,28 @@ namespace MedicalClinic.Controls.Laboratory
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlQuerry.updateLabExam(idappo, comboBox1.Text, textBox5.Text, textBox7.Text);
+            SqlQuerry.updateLabExam(idappo, "ANU", textBox5.Text, textBox7.Text);
             MessageBox.Show("Zmieniono dane badania");
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new Lab());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SqlQuerry.updateLabExam(idappo, "ZAT", textBox5.Text, textBox7.Text);
+            MessageBox.Show("Zmieniono stan badania");
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new Lab());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SqlQuerry.updateLabExam(idappo, "ZAK", textBox5.Text, textBox7.Text);
+            MessageBox.Show("Zmieniono stan badania");
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();

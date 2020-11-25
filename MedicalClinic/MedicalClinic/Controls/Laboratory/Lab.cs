@@ -17,18 +17,32 @@ namespace MedicalClinic.Controls.Laboratory
         public Lab()
         {
             InitializeComponent();
-            var temp = SqlQuerry.GetExamination_Laboratories("", "", "");
+            
+            string startowadata = dateTimePicker1.Value.Year.ToString();
+            startowadata += "-";
+            startowadata += dateTimePicker1.Value.Month.ToString();
+            startowadata += "-";
+            startowadata += dateTimePicker1.Value.Day.ToString();
+            startowadata += " 00:00:00.000";
             listView1.Items.Clear();
-            foreach (var order in temp)
-            {
-                ListViewItem lvi = new ListViewItem(order.Table1.Id_Examination.ToString());
-                lvi.SubItems.Add(order.Table2.Type.ToString()); 
-                lvi.SubItems.Add(order.Table1.Date_Of_Order.ToString());
-                lvi.SubItems.Add(order.Table1.State.ToString());
-              
-                listView1.Items.Add(lvi);
+           
+            
+               var temp = SqlQuerry.GetExamination_Laboratories("", "PRZET", startowadata);
+                foreach (var order in temp)
+                {
+                    ListViewItem lvi = new ListViewItem(order.Table1.Id_Examination.ToString());
+                    lvi.SubItems.Add(order.Table2.Type.ToString());
+                    lvi.SubItems.Add(order.Table1.Date_Of_Order.ToString());
+                    lvi.SubItems.Add(order.Table1.State.ToString());
 
-            }
+                    listView1.Items.Add(lvi);
+
+                }
+            
+           
+            
+           
+            comboBox1.Text = "PRZET";
         }
 
         public Lab(int id, string role):this()
@@ -36,7 +50,8 @@ namespace MedicalClinic.Controls.Laboratory
             whoami = id;
             myrole = role;
             textBox1.Text = myrole;
-            
+           
+
         }
 
 
@@ -93,17 +108,38 @@ namespace MedicalClinic.Controls.Laboratory
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var temp = SqlQuerry.GetExamination_Laboratories(textBox2.Text, comboBox1.Text, "");
             listView1.Items.Clear();
-            foreach (var order in temp)
+            if (dateTimePicker1.Checked == true)
             {
-                ListViewItem lvi = new ListViewItem(order.Table1.Id_Examination.ToString());
-                lvi.SubItems.Add(order.Table2.Type.ToString());
-                lvi.SubItems.Add(order.Table1.Date_Of_Order.ToString());
-                lvi.SubItems.Add(order.Table1.State.ToString());
+                string tmp = dateTimePicker1.Text;
+                tmp+= " 00:00:00.000";
+                var temp = SqlQuerry.GetExamination_Laboratories(textBox2.Text, comboBox1.Text, tmp);
 
-                listView1.Items.Add(lvi);
 
+                foreach (var order in temp)
+                {
+                    ListViewItem lvi = new ListViewItem(order.Table1.Id_Examination.ToString());
+                    lvi.SubItems.Add(order.Table2.Type.ToString());
+                    lvi.SubItems.Add(order.Table1.Date_Of_Order.ToString());
+                    lvi.SubItems.Add(order.Table1.State.ToString());
+
+                    listView1.Items.Add(lvi);
+
+                }
+            }
+            else
+            {
+                var temp = SqlQuerry.GetExamination_Laboratories2(textBox2.Text, comboBox1.Text);
+                foreach (var order in temp)
+                {
+                    ListViewItem lvi = new ListViewItem(order.Table1.Id_Examination.ToString());
+                    lvi.SubItems.Add(order.Table2.Type.ToString());
+                    lvi.SubItems.Add(order.Table1.Date_Of_Order.ToString());
+                    lvi.SubItems.Add(order.Table1.State.ToString());
+
+                    listView1.Items.Add(lvi);
+
+                }
             }
         }
     }

@@ -230,8 +230,25 @@ namespace MedicalClinic
                     on dic.Exam_Code equals lab.Exam_Code
                     where
                           lab.State.StartsWith(state) &&
+                          dic.Type.StartsWith(type) &&
+                          lab.Date_Of_Order.Equals(date)
+
+                    select new TableJoinResult2
+                    {
+                        Table1 = lab,
+                        Table2 = dic
+                    }) ;
+        }
+        public static IQueryable<TableJoinResult2> GetExamination_Laboratories2(string type, string state)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+            return (from dic in db.Exam_Dictionary
+                    join lab in db.Examination_Laboratory
+                    on dic.Exam_Code equals lab.Exam_Code
+                    where
+                          lab.State.StartsWith(state) &&
                           dic.Type.StartsWith(type)
-                         
+
                     select new TableJoinResult2
                     {
                         Table1 = lab,
