@@ -26,14 +26,14 @@ namespace MedicalClinic.Admin
 
 
             
-            var result = SqlQuerry.GetStaff(Id);
+            var result = SQLAdm.GetStaff(Id);
             textBox1.Text = result.First().Name.ToString();
             textBox2.Text = result.First().Login.ToString();
             Name1.Text = result.First().Name.ToString();
             Surname.Text = Surname2.Text = result.First().Surname.ToString();
             Login.Text = result.First().Login.ToString();
             Password.Text = result.First().Password.ToString();
-            Role.Text = SqlQuerry.translateRolePL(result.First().Role.ToString());
+            Role.Text = SQLAdm.translateRolePL(result.First().Role.ToString());
             if (result.First().Active.ToString() == "T")
                 Activ.Checked = true;
             else Activ.Checked = false;
@@ -53,7 +53,7 @@ namespace MedicalClinic.Admin
             }
             if (Name1.TextLength != 0 && Surname2.TextLength != 0 && Password.TextLength != 0)
             {
-                SqlQuerry.updatestaff(Name1.Text.ToString(), Surname2.Text.ToString(), Password.Text.ToString(), SqlQuerry.translateRoleDB(Role.Text.ToString()), act, Id);
+                SQLAdm.updatestaff(Name1.Text.ToString(), Surname2.Text.ToString(), Password.Text.ToString(), SQLAdm.translateRoleDB(Role.Text.ToString()), act, Id);
             }
 
             this.Controls.Clear();

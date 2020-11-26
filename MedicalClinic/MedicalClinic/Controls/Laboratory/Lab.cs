@@ -27,7 +27,7 @@ namespace MedicalClinic.Controls.Laboratory
             listView1.Items.Clear();
            
             
-               var temp = SqlQuerry.GetExamination_Laboratories("", "PRZET", startowadata);
+               var temp = SQLLab.GetExamination_Laboratories("", "PRZET", startowadata);
                 foreach (var order in temp)
                 {
                     ListViewItem lvi = new ListViewItem(order.Table1.Id_Examination.ToString());
@@ -113,7 +113,7 @@ namespace MedicalClinic.Controls.Laboratory
             {
                 string tmp = dateTimePicker1.Text;
                 tmp+= " 00:00:00.000";
-                var temp = SqlQuerry.GetExamination_Laboratories(textBox2.Text, comboBox1.Text, tmp);
+                var temp = SQLLab.GetExamination_Laboratories(textBox2.Text, comboBox1.Text, tmp);
 
 
                 foreach (var order in temp)
@@ -129,7 +129,7 @@ namespace MedicalClinic.Controls.Laboratory
             }
             else
             {
-                var temp = SqlQuerry.GetExamination_Laboratories2(textBox2.Text, comboBox1.Text);
+                var temp = SQLLab.GetExamination_Laboratories2(textBox2.Text, comboBox1.Text);
                 foreach (var order in temp)
                 {
                     ListViewItem lvi = new ListViewItem(order.Table1.Id_Examination.ToString());

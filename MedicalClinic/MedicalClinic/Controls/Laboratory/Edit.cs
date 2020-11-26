@@ -21,15 +21,15 @@ namespace MedicalClinic.Controls.Laboratory
         public Edit(string role,int t) : this()
         {
             idappo = t;
-            var temp = SqlQuerry.GetExamination_Laboratories_ID(t);
+            var temp = SQLLab.GetExamination_Laboratories_ID(t);
             textBox6.Text = temp.First().Table2.Type.ToString();
             textBox4.Text = temp.First().Table2.Exam_Code.ToString();
             
             textBox5.Text = temp.First().Table1.Result.ToString();
             textBox9.Text = temp.First().Table1.Comments_Doctor.ToString();
             textBox7.Text = temp.First().Table1.Comments_Man_Lab.ToString();
-            var temp2 = SqlQuerry.GetPacjentID(temp.First().Table1.Id_Appointment);
-            var temp3 = SqlQuerry.GetPatientData(temp2.First().Id_Patient);
+            var temp2 = SQLLab.GetPacjentID(temp.First().Table1.Id_Appointment);
+            var temp3 = SQLLab.GetPatientData(temp2.First().Id_Patient);
             textBox1.Text = temp3.First().Name.ToString();
             textBox2.Text = temp3.First().Surname.ToString();
             textBox3.Text = temp3.First().PESEL.ToString();
@@ -52,7 +52,7 @@ namespace MedicalClinic.Controls.Laboratory
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlQuerry.updateLabExam(idappo, "ANU", textBox5.Text, textBox7.Text);
+            SQLLab.updateLabExam(idappo, "ANU", textBox5.Text, textBox7.Text);
             MessageBox.Show("Zmieniono dane badania");
             Panel P = new Panel();
             P.Controls.Clear();
@@ -62,7 +62,7 @@ namespace MedicalClinic.Controls.Laboratory
 
         private void button4_Click(object sender, EventArgs e)
         {
-            SqlQuerry.updateLabExam(idappo, "ZAT", textBox5.Text, textBox7.Text);
+            SQLLab.updateLabExam(idappo, "ZAT", textBox5.Text, textBox7.Text);
             MessageBox.Show("Zmieniono stan badania");
             Panel P = new Panel();
             P.Controls.Clear();
@@ -72,7 +72,7 @@ namespace MedicalClinic.Controls.Laboratory
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SqlQuerry.updateLabExam(idappo, "ZAK", textBox5.Text, textBox7.Text);
+            SQLLab.updateLabExam(idappo, "ZAK", textBox5.Text, textBox7.Text);
             MessageBox.Show("Zmieniono stan badania");
             Panel P = new Panel();
             P.Controls.Clear();

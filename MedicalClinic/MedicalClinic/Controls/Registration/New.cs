@@ -30,7 +30,7 @@ namespace MedicalClinic.Controls.Registration
         {
             if (textBox1.TextLength != 0 && textBox2.TextLength != 0 && textBox3.TextLength != 0 )
             {
-                SqlQuerry.insertPatient(textBox1.Text, textBox2.Text, textBox3.Text);
+                SQLRec.insertPatient(textBox1.Text, textBox2.Text, textBox3.Text);
                 MessageBox.Show("Dodano pacjenta");
                 Panel P = new Panel();
                 P.Controls.Clear();

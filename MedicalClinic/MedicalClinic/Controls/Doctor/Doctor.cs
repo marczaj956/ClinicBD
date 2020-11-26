@@ -22,7 +22,7 @@ namespace MedicalClinic.Doctor
         public Doctor(int id):this()
         {
            
-            var res = SqlQuerry.pacjent("", "", "");
+            var res = SQLAdm.pacjent("", "", "");
             /* foreach (var order in res)
              {
                  ListViewItem lvi = new ListViewItem(order.Table1.Id_Appointment.ToString());

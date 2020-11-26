@@ -27,7 +27,7 @@ namespace MedicalClinic.Controls.Registration
         {
             patid = ID;
             textb = text;
-            var res = SqlQuerry.GetPatientData(patid);
+            var res = SQLLab.GetPatientData(patid);
             foreach (var order in res)
             {
                 textBox1.Text = order.Name;
@@ -35,7 +35,7 @@ namespace MedicalClinic.Controls.Registration
                 textBox3.Text = order.PESEL;
 
             }
-            var docs = SqlQuerry.GetStaff("", "", "", "doc");
+            var docs = SQLAdm.GetStaff("", "", "", "doc");
             foreach (var order in docs)
             {
                 comboBox1.Items.Add(order.Surname);
@@ -59,7 +59,7 @@ namespace MedicalClinic.Controls.Registration
             
 
             DateTime dt = DateTime.Parse(datetosql);
-            SqlQuerry.ExecuteAppointment(dt, 1, Int16.Parse(textb.Text), "", "", patid);
+            SQLRec.ExecuteAppointment(dt, 1, Int16.Parse(textb.Text), "", "", patid);
             this.Controls.Clear();
             this.Visible = false;
             this.Parent.Hide();

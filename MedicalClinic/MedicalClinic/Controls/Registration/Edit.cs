@@ -29,5 +29,10 @@ namespace MedicalClinic.Controls.Registration
             this.Hide();
             this.Parent.Controls.Add(new Reg());
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

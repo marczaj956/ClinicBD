@@ -256,7 +256,11 @@
     <Compile Include="ShowPhisicExamList.Designer.cs">
       <DependentUpon>ShowPhisicExamList.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlQuerry.cs" />
+    <Compile Include="SQLDoc.cs" />
+    <Compile Include="SQLLab.cs" />
+    <Compile Include="SQLAdm.cs" />
+    <Compile Include="SQLMain.cs" />
+    <Compile Include="SQLRec.cs" />
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>

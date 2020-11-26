@@ -24,14 +24,14 @@ namespace MedicalClinic.Admin
             
             
             
-            var result= SqlQuerry.GetStaff(id);
+            var result= SQLAdm.GetStaff(id);
             Name.Text = result.First().Name.ToString();
             Name1.Text = result.First().Name.ToString();
             Surname.Text=Surname2.Text= result.First().Surname.ToString();
             Login.Text= result.First().Login.ToString();
            textBox1.Text = result.First().Login.ToString();
             Password.Text = result.First().Password.ToString();
-            Role.Text =SqlQuerry.translateRolePL (result.First().Role.ToString());
+            Role.Text =SQLAdm.translateRolePL (result.First().Role.ToString());
             if (result.First().Active.ToString() == "T")
                 Activ.Checked = true;
             else Activ.Checked = false;

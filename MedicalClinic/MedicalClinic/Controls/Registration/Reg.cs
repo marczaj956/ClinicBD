@@ -17,7 +17,7 @@ namespace MedicalClinic.Controls.Registration
         {
             InitializeComponent();
             listView1.Items.Clear();
-            var res = SqlQuerry.GetPatientsList("", "", "");
+            var res = SQLRec.GetPatientsList("", "", "");
             foreach (var order in res)
             {
                 ListViewItem lvi = new ListViewItem(order.Name.ToString());
@@ -60,7 +60,7 @@ namespace MedicalClinic.Controls.Registration
                 ListViewItem item = listView1.SelectedItems[0];
 
                
-                var res = SqlQuerry.GetPatientsList(item.SubItems[0].Text.TrimEnd(), item.SubItems[1].Text.TrimEnd(),item.SubItems[2].Text.TrimEnd());
+                var res = SQLRec.GetPatientsList(item.SubItems[0].Text.TrimEnd(), item.SubItems[1].Text.TrimEnd(),item.SubItems[2].Text.TrimEnd());
                 foreach(var x in res)
                 {
 
@@ -117,7 +117,7 @@ namespace MedicalClinic.Controls.Registration
         private void button1_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
-            var res = SqlQuerry.GetPatientsList(textBox1.Text,textBox2.Text ,textBox3.Text );
+            var res = SQLRec.GetPatientsList(textBox1.Text,textBox2.Text ,textBox3.Text );
             foreach (var order in res)
             {
                 ListViewItem lvi = new ListViewItem(order.Name.ToString());
@@ -135,7 +135,7 @@ namespace MedicalClinic.Controls.Registration
         private void refresh()
         {
             listView1.Items.Clear();
-            var res = SqlQuerry.GetPatientsList(textBox1.Text, textBox2.Text, textBox3.Text);
+            var res = SQLRec.GetPatientsList(textBox1.Text, textBox2.Text, textBox3.Text);
             foreach (var order in res)
             {
                 ListViewItem lvi = new ListViewItem(order.Name.ToString());

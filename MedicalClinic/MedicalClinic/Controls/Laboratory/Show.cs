@@ -22,15 +22,15 @@ namespace MedicalClinic.Controls.Laboratory
         {
 
             
-            var temp = SqlQuerry.GetExamination_Laboratories_ID(t);
+            var temp = SQLLab.GetExamination_Laboratories_ID(t);
             textBox6.Text = temp.First().Table2.Type.ToString();
             textBox4.Text = temp.First().Table2.Exam_Code.ToString();
             textBox8.Text = temp.First().Table1.State.ToString();
             textBox5.Text = temp.First().Table1.Result.ToString();
             textBox9.Text = temp.First().Table1.Comments_Doctor.ToString();
             textBox7.Text = temp.First().Table1.Comments_Man_Lab.ToString();
-            var temp2 = SqlQuerry.GetPacjentID(temp.First().Table1.Id_Appointment);
-            var temp3 = SqlQuerry.GetPatientData(temp2.First().Id_Patient);
+            var temp2 = SQLLab.GetPacjentID(temp.First().Table1.Id_Appointment);
+            var temp3 = SQLLab.GetPatientData(temp2.First().Id_Patient);
             textBox1.Text = temp3.First().Name.ToString();
             textBox2.Text = temp3.First().Surname.ToString();
             textBox3.Text = temp3.First().PESEL.ToString();

@@ -34,7 +34,7 @@ namespace MedicalClinic.MainPanel
         {
 
 
-            var result = SqlQuerry.CheckLog(LoginText.Text.ToString(), PassText.Text.ToString());
+            var result = SQLMain.CheckLog(LoginText.Text.ToString(), PassText.Text.ToString());
 
 
             if (result.Any())

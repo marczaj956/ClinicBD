@@ -17,13 +17,13 @@ namespace MedicalClinic.Admin
         {
             InitializeComponent();
             dataGridView1.Rows.Clear();
-            dataGridView1.DataSource = SqlQuerry.GetStaff("", "", "", "");
+            dataGridView1.DataSource = SQLAdm.GetStaff("", "", "", "");
             Mainlist.MultiSelect = false;
 
 
             //Refresh();
             //na liste 
-            var res = SqlQuerry.GetStaff("", "", "", "");
+            var res = SQLAdm.GetStaff("", "", "", "");
             
             foreach (var order in res)
             {
@@ -31,7 +31,7 @@ namespace MedicalClinic.Admin
                 lvi.SubItems.Add(order.Name);
                 lvi.SubItems.Add(order.Surname);
                 lvi.SubItems.Add(order.Login);
-                lvi.SubItems.Add(SqlQuerry.translateRolePL(order.Role));
+                lvi.SubItems.Add(SQLAdm.translateRolePL(order.Role));
 
                 Mainlist.Items.Add(lvi);
                 
@@ -107,7 +107,7 @@ namespace MedicalClinic.Admin
                 Role.Text = "";
             }
 
-            Refresh(SqlQuerry.GetStaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), SqlQuerry.translateRoleDB(Role.Text.ToString())));
+            Refresh(SQLAdm.GetStaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), SQLAdm.translateRoleDB(Role.Text.ToString())));
            
         }
 
@@ -122,7 +122,7 @@ namespace MedicalClinic.Admin
                 lvi.SubItems.Add(order.Name);
                 lvi.SubItems.Add(order.Surname);
                 lvi.SubItems.Add(order.Login);
-                lvi.SubItems.Add(SqlQuerry.translateRolePL(order.Role));
+                lvi.SubItems.Add(SQLAdm.translateRolePL(order.Role));
                 Mainlist.Items.Add(lvi);
 
             }
@@ -132,13 +132,13 @@ namespace MedicalClinic.Admin
         //sa 2 funkcje bo nie wiem ktora dziala 
         private void connector_TextChanged(object sender, EventArgs e)
         {
-            Refresh(SqlQuerry.GetStaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), SqlQuerry.translateRoleDB(Role.Text.ToString())));
+            Refresh(SQLAdm.GetStaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), SQLAdm.translateRoleDB(Role.Text.ToString())));
             connector.Text = "";
         }
 
         private void connector_TextChanged_1(object sender, EventArgs e)
         {
-            Refresh(SqlQuerry.GetStaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), SqlQuerry.translateRoleDB(Role.Text.ToString())));
+            Refresh(SQLAdm.GetStaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), SQLAdm.translateRoleDB(Role.Text.ToString())));
             connector.Text = "";
         }
 
