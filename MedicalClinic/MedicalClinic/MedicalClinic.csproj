@@ -101,6 +101,24 @@
     <Compile Include="Controls\Doctor\Handle.Designer.cs">
       <DependentUpon>Handle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Doctor\HistoryLaboratoryExamination.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Doctor\HistoryLaboratoryExamination.Designer.cs">
+      <DependentUpon>HistoryLaboratoryExamination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Doctor\HistoryPhysicalExamination.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Doctor\HistoryPhysicalExamination.Designer.cs">
+      <DependentUpon>HistoryPhysicalExamination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Doctor\HistoryVisits.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Doctor\HistoryVisits.Designer.cs">
+      <DependentUpon>HistoryVisits.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Doctor\LabolatoryExaminantion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -287,6 +305,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Doctor\Handle.resx">
       <DependentUpon>Handle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Doctor\HistoryLaboratoryExamination.resx">
+      <DependentUpon>HistoryLaboratoryExamination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Doctor\HistoryPhysicalExamination.resx">
+      <DependentUpon>HistoryPhysicalExamination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Doctor\HistoryVisits.resx">
+      <DependentUpon>HistoryVisits.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Doctor\LabolatoryExaminantion.resx">
       <DependentUpon>LabolatoryExaminantion.cs</DependentUpon>

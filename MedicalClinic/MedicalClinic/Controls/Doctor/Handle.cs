@@ -39,5 +39,39 @@ namespace MedicalClinic.Doctor
             this.Hide();
             this.Parent.Controls.Add(new Doctor());
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new HistoryVisits());
+        }
+
+        private void Handle_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new HistoryLaboratoryExamination());
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new HistoryPhysicalExamination());
+        }
     }
 }
