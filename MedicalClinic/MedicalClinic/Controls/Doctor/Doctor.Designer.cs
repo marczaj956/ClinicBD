@@ -36,19 +36,19 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IDwizyty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nazwisko = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Imie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataWizyty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lekarz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.connector = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.ID_wizyty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Data_wizyty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.stan_wizyty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Nazwisko_lekarza = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Imie_pacjenta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Nazwisko_pacjenta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Pesel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -75,6 +75,8 @@
             this.dateTimePicker1.ShowCheckBox = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(453, 35);
             this.dateTimePicker1.TabIndex = 9;
+            this.dateTimePicker1.Value = new System.DateTime(2020, 12, 1, 10, 49, 51, 0);
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // button5
             // 
@@ -95,6 +97,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Szukaj";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -119,6 +122,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(264, 37);
             this.comboBox2.TabIndex = 3;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -143,58 +147,6 @@
             this.checkBox1.Text = "Tylko moje wizyty";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDwizyty,
-            this.Nazwisko,
-            this.Imie,
-            this.Stan,
-            this.DataWizyty,
-            this.Lekarz});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 338);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1914, 463);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // IDwizyty
-            // 
-            this.IDwizyty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.IDwizyty.HeaderText = "Identyfikator wizyty";
-            this.IDwizyty.Name = "IDwizyty";
-            // 
-            // Nazwisko
-            // 
-            this.Nazwisko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nazwisko.HeaderText = "Nazwisko";
-            this.Nazwisko.Name = "Nazwisko";
-            // 
-            // Imie
-            // 
-            this.Imie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Imie.HeaderText = "Imie";
-            this.Imie.Name = "Imie";
-            // 
-            // Stan
-            // 
-            this.Stan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Stan.HeaderText = "Stan";
-            this.Stan.Name = "Stan";
-            // 
-            // DataWizyty
-            // 
-            this.DataWizyty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DataWizyty.HeaderText = "Data wizyty";
-            this.DataWizyty.Name = "DataWizyty";
-            // 
-            // Lekarz
-            // 
-            this.Lekarz.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Lekarz.HeaderText = "Lekarz";
-            this.Lekarz.Name = "Lekarz";
             // 
             // button2
             // 
@@ -236,21 +188,75 @@
             this.panel1.TabIndex = 9;
             this.panel1.Visible = false;
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID_wizyty,
+            this.stan_wizyty,
+            this.Imie_pacjenta,
+            this.Nazwisko_pacjenta,
+            this.Pesel,
+            this.Data_wizyty,
+            this.Nazwisko_lekarza});
+            this.listView1.Location = new System.Drawing.Point(3, 331);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(1917, 470);
+            this.listView1.TabIndex = 10;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // ID_wizyty
+            // 
+            this.ID_wizyty.Text = "Identyfikator wizyty";
+            // 
+            // Data_wizyty
+            // 
+            this.Data_wizyty.Text = "Data wizyty";
+            this.Data_wizyty.Width = 144;
+            // 
+            // stan_wizyty
+            // 
+            this.stan_wizyty.Text = "Stan";
+            this.stan_wizyty.Width = 123;
+            // 
+            // Nazwisko_lekarza
+            // 
+            this.Nazwisko_lekarza.DisplayIndex = 3;
+            this.Nazwisko_lekarza.Text = "Nazwisko lekarza";
+            // 
+            // Imie_pacjenta
+            // 
+            this.Imie_pacjenta.DisplayIndex = 1;
+            this.Imie_pacjenta.Text = "Imie";
+            this.Imie_pacjenta.Width = 145;
+            // 
+            // Nazwisko_pacjenta
+            // 
+            this.Nazwisko_pacjenta.DisplayIndex = 2;
+            this.Nazwisko_pacjenta.Text = "Nazwisko";
+            this.Nazwisko_pacjenta.Width = 127;
+            // 
+            // Pesel
+            // 
+            this.Pesel.DisplayIndex = 3;
+            this.Pesel.Text = "Pesel";
+            this.Pesel.Width = 169;
+            // 
             // Doctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.connector);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Doctor";
             this.Size = new System.Drawing.Size(1920, 1000);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,18 +270,19 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDwizyty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nazwisko;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Imie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataWizyty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lekarz;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox connector;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader ID_wizyty;
+        private System.Windows.Forms.ColumnHeader stan_wizyty;
+        private System.Windows.Forms.ColumnHeader Imie_pacjenta;
+        private System.Windows.Forms.ColumnHeader Nazwisko_pacjenta;
+        private System.Windows.Forms.ColumnHeader Pesel;
+        private System.Windows.Forms.ColumnHeader Data_wizyty;
+        private System.Windows.Forms.ColumnHeader Nazwisko_lekarza;
     }
 }

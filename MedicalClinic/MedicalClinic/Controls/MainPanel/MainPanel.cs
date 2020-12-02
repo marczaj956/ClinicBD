@@ -13,6 +13,12 @@ using MedicalClinic.Controls.Doctor;
 using MedicalClinic.Controls.Registration;
 using MedicalClinic.Controls.Laboratory;
 
+
+static class Globals
+{
+    public static int id; //dla zapisania kto jest zalogowany
+}
+
 namespace MedicalClinic.MainPanel
 {
     public partial class MainPanel : UserControl
@@ -40,6 +46,8 @@ namespace MedicalClinic.MainPanel
             if (result.Any())
             {
 
+                int id_temp = result.First().Id_Staff;
+                Globals.id = id_temp; //zapisanie kto jest zalogowany
 
                 this.Controls.Clear();
 
