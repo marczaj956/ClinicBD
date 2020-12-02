@@ -100,10 +100,28 @@ namespace MedicalClinic.Controls.Registration
 
         private void button4_Click(object sender, EventArgs e)//show
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Show());
+
+
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+
+
+                var res = SQLRec.GetPatientsList(item.SubItems[0].Text.TrimEnd(), item.SubItems[1].Text.TrimEnd(), item.SubItems[2].Text.TrimEnd());
+                foreach (var x in res)
+                {
+
+
+
+                    WindowPanel.Controls.Add(new VisitViewercs(x.Id_Patient, connector));
+                    WindowPanel.Visible = true;
+                    WindowPanel.Dock = DockStyle.Fill;
+                    WindowPanel.BringToFront();
+
+
+                }
+
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)

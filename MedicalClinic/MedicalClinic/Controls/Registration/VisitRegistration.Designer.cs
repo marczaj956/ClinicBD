@@ -42,7 +42,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -156,7 +155,7 @@
             this.comboBox1.Location = new System.Drawing.Point(180, 161);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(251, 28);
+            this.comboBox1.Size = new System.Drawing.Size(269, 28);
             this.comboBox1.TabIndex = 78;
             // 
             // label6
@@ -198,7 +197,7 @@
             this.comboBox2.Location = new System.Drawing.Point(180, 460);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(251, 28);
+            this.comboBox2.Size = new System.Drawing.Size(269, 28);
             this.comboBox2.TabIndex = 81;
             // 
             // button1
@@ -225,18 +224,9 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "yyy-MM-dd";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(180, 239);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(251, 20);
-            this.dateTimePicker1.TabIndex = 87;
-            // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(623, 252);
+            this.monthCalendar1.Location = new System.Drawing.Point(180, 239);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 88;
             // 
@@ -245,7 +235,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox2);
@@ -280,7 +269,6 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }

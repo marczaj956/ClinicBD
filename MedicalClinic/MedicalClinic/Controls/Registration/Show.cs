@@ -19,6 +19,32 @@ namespace MedicalClinic.Controls.Registration
             InitializeComponent();
         }
 
+        private int patid;
+        private TextBox textb;
+        private IQueryable<Staff> docs;
+       
+        public Show(int ID, TextBox text) : this()
+        {
+            patid = ID;
+            textb = text;
+            var res = SQLLab.GetPatientData(patid);
+            foreach (var order in res)
+            {
+                textBox1.Text = order.Name;
+                textBox2.Text = order.Surname;
+                textBox3.Text = order.PESEL;
+
+            }
+            
+            docs = SQLAdm.GetStaff("", "", "", "doc");
+            foreach (var order in docs)
+            {
+                //comboBox1.Items.Add(order.Surname);
+            }
+        }
+
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             Panel P = new Panel();

@@ -17,6 +17,7 @@ namespace MedicalClinic.Controls.Registration
     {
         private int patid;
         private TextBox textb;
+        private IQueryable<Staff> docs;
         public VisitRegistration()
         {
             InitializeComponent();
@@ -35,12 +36,13 @@ namespace MedicalClinic.Controls.Registration
                 textBox3.Text = order.PESEL;
 
             }
-            var docs = SQLAdm.GetStaff("", "", "", "doc");
+            docs = SQLAdm.GetStaff("", "", "", "doc");
             foreach (var order in docs)
             {
                 comboBox1.Items.Add(order.Surname);
             }
         }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -56,10 +58,14 @@ namespace MedicalClinic.Controls.Registration
             Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(culture);
             string datetosql= monthCalendar1.SelectionStart.ToShortDateString();
             datetosql += " " + comboBox2.Text;
+
+            var doc = docs.AsEnumerable<Staff>();
             
+            int docid = doc.ElementAt<Staff>(comboBox1.SelectedIndex).Id_Staff;
 
             DateTime dt = DateTime.Parse(datetosql);
-            SQLRec.ExecuteAppointment(dt, 1, Int16.Parse(textb.Text), "", "", patid);
+          
+            SQLRec.ExecuteAppointment(dt, docid, 1, "a", "a", patid,"ZLE");
             this.Controls.Clear();
             this.Visible = false;
             this.Parent.Hide();
