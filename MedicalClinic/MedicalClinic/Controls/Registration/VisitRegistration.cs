@@ -16,6 +16,7 @@ namespace MedicalClinic.Controls.Registration
     public partial class VisitRegistration : UserControl
     {
         private int patid;
+        private int idrec;
         private TextBox textb;
         private IQueryable<Staff> docs;
         public VisitRegistration()
@@ -24,10 +25,11 @@ namespace MedicalClinic.Controls.Registration
           
 
         }
-           public VisitRegistration(int ID,TextBox text):this ()
+           public VisitRegistration(int ID,TextBox text,int whoami):this ()
         {
             patid = ID;
             textb = text;
+            idrec = whoami;
             var res = SQLLab.GetPatientData(patid);
             foreach (var order in res)
             {
@@ -65,7 +67,7 @@ namespace MedicalClinic.Controls.Registration
 
             DateTime dt = DateTime.Parse(datetosql);
           
-            SQLRec.ExecuteAppointment(dt, docid, 1, "a", "a", patid,"ZLE");
+            SQLRec.ExecuteAppointment(dt, docid, idrec, "", "", patid,"ZLE");//zamiast 1 idrec
             this.Controls.Clear();
             this.Visible = false;
             this.Parent.Hide();

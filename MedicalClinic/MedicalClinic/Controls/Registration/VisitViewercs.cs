@@ -25,6 +25,8 @@ namespace MedicalClinic.Controls.Registration
         private string startowadata;
         public VisitViewercs(int ID, TextBox text) : this()
         {
+            listView1.FullRowSelect = true;
+            listView1.GridLines = true;
             patid = ID;
             textb = text;
             var res = SQLLab.GetPatientData(patid);
@@ -45,7 +47,7 @@ namespace MedicalClinic.Controls.Registration
             var temp = SQLRec.GetApo(patid);
             foreach (var order in temp)
             {
-                ListViewItem lvi = new ListViewItem(order.Id_Patient.ToString());
+                ListViewItem lvi = new ListViewItem(order.Id_Appointment.ToString());
                 lvi.SubItems.Add(order.Id_Doctor.ToString());
                 lvi.SubItems.Add(order.Date_Appointment.ToString());
                 lvi.SubItems.Add(order.State.ToString());
@@ -67,104 +69,149 @@ namespace MedicalClinic.Controls.Registration
         }
 
         private void przegladarkaPacjentowToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Reg());
+        {//edytuj
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Edit());
+        {//edytuj
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+
+
+                {
+
+
+
+                    WindowPanel.Controls.Add(new Registration.Edit(Int32.Parse(item.Text), connector));
+                    WindowPanel.Visible = true;
+                    WindowPanel.Dock = DockStyle.Fill;
+                    WindowPanel.BringToFront();
+
+
+                }
+                listView1.SelectedItems.Clear();
+
+            }
+            else MessageBox.Show("Wybierz wizytę");
         }
 
         private void button5_Click(object sender, EventArgs e)
-        {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Show());
+        {//pokaż
+
+
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+
+
+                {
+
+                  
+
+                    WindowPanel.Controls.Add(new Registration.Show(Int32.Parse(item.Text), connector));
+                    WindowPanel.Visible = true;
+                    WindowPanel.Dock = DockStyle.Fill;
+                    WindowPanel.BringToFront();
+
+
+                }
+                listView1.SelectedItems.Clear();
+            }
+            else MessageBox.Show("Wybierz wizytę");
         }
 
         private void button7_Click(object sender, EventArgs e)
-        {
+        {//wyloguj
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
             this.Parent.Controls.Add(new MainPanel.MainPanel());
         }
+        private string datetostring()
+        {
+            startowadata = dateTimePicker1.Value.Year.ToString();
+            startowadata += "-";
+            startowadata += dateTimePicker1.Value.Month.ToString();
+            startowadata += "-";
+            startowadata += dateTimePicker1.Value.Day.ToString();
+           // startowadata += " 00:00:00.000";
+            return startowadata;
+        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {   if (dateTimePicker1.Checked == true)
+        private void listupdate(IQueryable<Appointment> temp)
+        {
+            listView1.Items.Clear();
+           
+            foreach (var order in temp)
             {
-                var doc = docs.AsEnumerable<Staff>();
+                ListViewItem lvi = new ListViewItem(order.Id_Appointment.ToString());
+                lvi.SubItems.Add(order.Id_Doctor.ToString());
+                lvi.SubItems.Add(order.Date_Appointment.ToString());
+                lvi.SubItems.Add(order.State.ToString());
+
+                listView1.Items.Add(lvi);
+
+            }
+        }
+
+
+        private void reload()
+        { 
+            var doc = docs.AsEnumerable<Staff>();
+            if (dateTimePicker1.Checked == true)
+            {
                 if (comboBox3.SelectedIndex >= 0)
                 {
                     int docid = doc.ElementAt<Staff>(comboBox3.SelectedIndex).Id_Staff;
-
-                    startowadata = dateTimePicker1.Value.Year.ToString();
-                    startowadata += "-";
-                    startowadata += dateTimePicker1.Value.Month.ToString();
-                    startowadata += "-";
-                    startowadata += dateTimePicker1.Value.Day.ToString();
-                    startowadata += " 00:00:00.000";
-                    listView1.Items.Clear();
-                    var temp = SQLRec.GetApo(patid, comboBox1.Text.ToString(), docid, startowadata);
-                    foreach (var order in temp)
-                    {
-                        ListViewItem lvi = new ListViewItem(order.Id_Patient.ToString());
-                        lvi.SubItems.Add(order.Id_Doctor.ToString());
-                        lvi.SubItems.Add(order.Date_Appointment.ToString());
-                        lvi.SubItems.Add(order.State.ToString());
-
-                        listView1.Items.Add(lvi);
-
-                    }
+                    var temp = SQLRec.GetApo(patid, comboBox1.Text.ToString(), docid, datetostring());
+                    listupdate(temp);
                 }
                 else
                 {
-                    listView1.Items.Clear();
-                    var temp = SQLRec.GetApo(patid, comboBox1.Text.ToString());
-                    foreach (var order in temp)
-                    {
-                        ListViewItem lvi = new ListViewItem(order.Id_Patient.ToString());
-                        lvi.SubItems.Add(order.Id_Doctor.ToString());
-                        lvi.SubItems.Add(order.Date_Appointment.ToString());
-                        lvi.SubItems.Add(order.State.ToString());
-
-                        listView1.Items.Add(lvi);
-
-                    }
+                    var temp = SQLRec.GetApo(patid, comboBox1.Text.ToString(), datetostring());
+                    listupdate(temp);
                 }
+               
+
             }
-            else
+
+            else 
             {
-                var doc = docs.AsEnumerable<Staff>();
                 if (comboBox3.SelectedIndex >= 0)
                 {
                     int docid = doc.ElementAt<Staff>(comboBox3.SelectedIndex).Id_Staff;
-
-                    listView1.Items.Clear();
                     var temp = SQLRec.GetApo(patid, comboBox1.Text.ToString(), docid);
-                    foreach (var order in temp)
-                    {
-                        ListViewItem lvi = new ListViewItem(order.Id_Patient.ToString());
-                        lvi.SubItems.Add(order.Id_Doctor.ToString());
-                        lvi.SubItems.Add(order.Date_Appointment.ToString());
-                        lvi.SubItems.Add(order.State.ToString());
-
-                        listView1.Items.Add(lvi);
-
-                    }
+                    listupdate(temp);
                 }
-                
+                else
+                {
+                    var temp = SQLRec.GetApo(patid, comboBox1.Text.ToString());
+                    listupdate(temp);
+                }
             }
 
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+            reload();
+
+
+
+
+            }
+
+        private void connector_TextChanged(object sender, EventArgs e)
+        {
+            reload();
+            connector.Text = "";
         }
     }
     }
+    
 

@@ -37,7 +37,7 @@ namespace MedicalClinic
             db.Patient.InsertOnSubmit(addPatient);
             db.SubmitChanges();
         }
-        public static void ExecuteAppointment(DateTime date, int iddoc, int idrec, string desc, string diagno, int idpat,string state)
+        public static void ExecuteAppointment(DateTime date, int iddoc, int idrec, string desc, string diagno, int idpat, string state)
         {   //napisać ifa czy są dane
             DataClassesDataContext db = new DataClassesDataContext();
 
@@ -54,7 +54,7 @@ namespace MedicalClinic
         }
 
         public static IQueryable<Appointment> GetApo(int idpat)
-        { 
+        {
             DataClassesDataContext db = new DataClassesDataContext();
 
             var result = from apo in db.Appointment
@@ -67,6 +67,87 @@ namespace MedicalClinic
 
             return result;
         }
+        public static IQueryable<Appointment> GetApo(int idpat, string state)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            var result = from apo in db.Appointment
+                         where
+                               apo.Id_Patient.Equals(idpat) &&
+                               apo.State.StartsWith(state)
+
+
+                         select apo;
+
+
+
+            return result;
+        }
+        /*public static IQueryable<Appointment> GetApo(int idpat, int iddoc)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            var result = from apo in db.Appointment
+                         where
+                               apo.Id_Patient.Equals(idpat) &&
+                               apo.Id_Doctor.Equals(iddoc)
+
+                         select apo;
+
+
+
+            return result;
+        }
+        public static IQueryable<Appointment> GetApod(int idpat, string date)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            var result = from apo in db.Appointment
+                         where
+                               apo.Id_Patient.Equals(idpat) &&                              
+                               apo.Date_Appointment.Equals(date)
+
+                         select apo;
+
+
+
+            return result;
+        }*/
+
+        public static IQueryable<Appointment> GetApo(int idpat, string state, int iddoc)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            var result = from apo in db.Appointment
+                         where
+                               apo.Id_Patient.Equals(idpat) &&
+                               apo.State.StartsWith(state) &&
+                               apo.Id_Doctor.Equals(iddoc)
+
+
+                         select apo;
+
+
+
+            return result;
+        }
+        public static IQueryable<Appointment> GetApo(int idpat, string state, string date)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            var result = from apo in db.Appointment
+                         where
+                               apo.Id_Patient.Equals(idpat) &&
+                               apo.State.StartsWith(state) &&
+                               apo.Date_Appointment.Date.Equals(date)
+
+                         select apo;
+
+
+
+            return result;
+        }
+
 
         public static IQueryable<Appointment> GetApo(int idpat, string state, int iddoc, string date)
         {
@@ -77,7 +158,7 @@ namespace MedicalClinic
                                apo.Id_Patient.Equals(idpat) &&
                                apo.State.StartsWith(state) &&
                                apo.Id_Doctor.Equals(iddoc) &&
-                               apo.Date_Appointment.Equals(date)
+                               apo.Date_Appointment.Date.Equals(date)
 
                          select apo;
 
@@ -85,16 +166,17 @@ namespace MedicalClinic
 
             return result;
         }
-        public static IQueryable<Appointment> GetApo(int idpat, string state, int iddoc)
+
+
+
+
+        public static IQueryable<Appointment> GetApoSE(int idapo)
         {
             DataClassesDataContext db = new DataClassesDataContext();
 
             var result = from apo in db.Appointment
                          where
-                               apo.Id_Patient.Equals(idpat) &&
-                               apo.State.StartsWith(state) &&
-                               apo.Id_Doctor.Equals(iddoc) 
-                               
+                               apo.Id_Appointment.Equals(idapo)
 
                          select apo;
 
@@ -103,24 +185,37 @@ namespace MedicalClinic
             return result;
         }
 
-        public static IQueryable<Appointment> GetApo(int idpat, string state)
-        {
+
+        public static void updateApo(int id, string state, int iddoc, DateTime date)
+        {   //napisać ifa czy są dane
+
             DataClassesDataContext db = new DataClassesDataContext();
+            Appointment update = db.Appointment.Single(row => row.Id_Appointment == id);
+            update.Id_Doctor = iddoc;
+            update.State = state;
+            update.Date_Appointment = date;
 
-            var result = from apo in db.Appointment
-                         where
-                               apo.Id_Patient.Equals(idpat) &&
-                               apo.State.StartsWith(state) 
+            db.SubmitChanges();
 
-
-                         select apo;
-
-
-
-            return result;
         }
 
+        public static void deleteApo(int id)
+        {   //napisać ifa czy są dane
 
+            DataClassesDataContext db = new DataClassesDataContext();
+            
+
+            Appointment update = db.Appointment.Single(row => row.Id_Appointment == id);
+            
+
+            db.Appointment.DeleteOnSubmit(update);
+            db.SubmitChanges();
+
+
+
+
+
+        }
 
     }
 }

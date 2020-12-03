@@ -15,6 +15,7 @@ namespace MedicalClinic.Controls.Registration
         private int whoami;
         public Reg()
         {
+            
             InitializeComponent();
             listView1.Items.Clear();
             var res = SQLRec.GetPatientsList("", "", "");
@@ -26,8 +27,8 @@ namespace MedicalClinic.Controls.Registration
                 listView1.Items.Add(lvi);
 
             }
-            //dataGridView1.DataSource = 
-
+            listView1.FullRowSelect = true;
+            listView1.GridLines = true;
         }
         public Reg(int id):this()
         {
@@ -64,12 +65,9 @@ namespace MedicalClinic.Controls.Registration
                 foreach(var x in res)
                 {
 
-                    /*Panel P = new Panel();
-                    P.Controls.Clear();
-                    this.Hide();
-                    this.Parent.Controls.Add(new VisitRegistration(x.Id_Patient));*/
+                   
 
-                    WindowPanel.Controls.Add(new VisitRegistration(x.Id_Patient,connector));
+                    WindowPanel.Controls.Add(new VisitRegistration(x.Id_Patient,connector,whoami));
                     WindowPanel.Visible = true;
                     WindowPanel.Dock = DockStyle.Fill;
                     WindowPanel.BringToFront();
