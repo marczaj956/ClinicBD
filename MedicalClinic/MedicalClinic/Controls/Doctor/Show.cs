@@ -13,9 +13,28 @@ namespace MedicalClinic.Doctor
 {
     public partial class Show : UserControl
     {
-        public Show()
+        public Show(int IDP, string IDV)
         {
             InitializeComponent();
+
+            var res = SQLDoc.GetPatient(IDP);
+            foreach (var order in res)
+            {
+                textBox1.Text = order.patientTable.Name;
+                textBox2.Text = order.patientTable.Surname;
+                textBox3.Text = order.patientTable.PESEL;
+
+            }
+            int x = Int32.Parse(IDV);
+            var res1 = SQLDoc.GetAppointment(x);
+            foreach (var order in res1)
+            {
+                textBox4.Text = order.Descirption;
+                textBox5.Text = order.Diagnosis;
+                
+
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e) //return
@@ -38,6 +57,16 @@ namespace MedicalClinic.Doctor
             ShowLabExamList f2 = new ShowLabExamList();
             
             f2.ShowDialog();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Show_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

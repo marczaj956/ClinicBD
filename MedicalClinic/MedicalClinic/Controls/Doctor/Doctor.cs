@@ -11,6 +11,7 @@ using static MedicalClinic.SQLDoc;
 
 namespace MedicalClinic.Doctor
 {
+
     public partial class Doctor : UserControl
     {
         private int whoami;
@@ -23,7 +24,7 @@ namespace MedicalClinic.Doctor
         public Doctor(int id) : this()
         {
 
-            var res = SQLAdm.pacjent("", "", "");
+         //   var res = SQLAdm.pacjent("", "", "");
             /* foreach (var order in res)
              {
                  ListViewItem lvi = new ListViewItem(order.Table1.Id_Appointment.ToString());
@@ -36,6 +37,7 @@ namespace MedicalClinic.Doctor
             connector.Text = whoami.ToString();
         }
 
+       
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -52,10 +54,37 @@ namespace MedicalClinic.Doctor
 
         private void button2_Click(object sender, EventArgs e) //show
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Show());
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+
+
+                var res = SQLDoc.GetPatientsList(item.SubItems[4].Text.TrimEnd());
+                foreach (var x in res)
+                {
+                    panel1.Controls.Add(new Show(x.Id_Patient, item.SubItems[0].Text.TrimEnd()));
+                    panel1.Visible = true;
+                    panel1.Dock = DockStyle.Fill;
+                    panel1.BringToFront();
+
+
+                }
+
+
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Nie wybrano pacjenta");
+            }
+
+
+          //  Panel P = new Panel();
+           // P.Controls.Clear();
+           // this.Hide();
+          //  this.Parent.Controls.Add(new Show());
         }
 
         private void button3_Click(object sender, EventArgs e) //handle
@@ -67,18 +96,18 @@ namespace MedicalClinic.Doctor
         }
 
 
-        private void Refresh(IQueryable<TableJoinResult3> a)
+        private void Refresh(IQueryable<TableJoinResult> a)
         {
             listView1.Items.Clear();
             foreach (var order in a)
             {
-                ListViewItem lvi = new ListViewItem(order.Table1.Id_Appointment.ToString());
-                lvi.SubItems.Add(order.Table1.State); //stan
-                lvi.SubItems.Add(order.Table3.Name); //imie
-                lvi.SubItems.Add(order.Table3.Surname); //nazwisko 
-                lvi.SubItems.Add(order.Table3.PESEL); //pesel
-                lvi.SubItems.Add(order.Table1.Date_Appointment.ToString()); //data
-                lvi.SubItems.Add(order.Table2.Surname.ToString()); //nazwisko
+                ListViewItem lvi = new ListViewItem(order.appointmentTable.Id_Appointment.ToString());
+                lvi.SubItems.Add(order.appointmentTable.State); //stan
+                lvi.SubItems.Add(order.patientTable.Name); //imie
+                lvi.SubItems.Add(order.patientTable.Surname); //nazwisko 
+                lvi.SubItems.Add(order.patientTable.PESEL); //pesel
+                lvi.SubItems.Add(order.appointmentTable.Date_Appointment.ToString()); //data
+                lvi.SubItems.Add(order.staffTable.Surname.ToString()); //nazwisko
                 
                 listView1.Items.Add(lvi);
 
@@ -86,14 +115,15 @@ namespace MedicalClinic.Doctor
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
-            {
-                Refresh(SQLDoc.GetVisit(comboBox2.Text.ToString(), dateTimePicker1.Value.Date));
-            }
-            else
-            {
-                Refresh(SQLDoc.GetAllVisit(comboBox2.Text.ToString(), dateTimePicker1.Value.Date));
-            }
+
+            State stateTemp =  (State)Enum.Parse(typeof(State), comboBox2.Text);
+
+            VisitsSearchCriteria searchCriteria = new VisitsSearchCriteria();
+            searchCriteria.setDate(dateTimePicker1.Value.Date);
+            searchCriteria.setState(stateTemp);
+            searchCriteria.setOnlyVisitsForDoctor(checkBox1.Checked);
+            searchCriteria.setDoctorId(this.whoami);
+            Refresh(SQLDoc.GetVisits(searchCriteria));
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

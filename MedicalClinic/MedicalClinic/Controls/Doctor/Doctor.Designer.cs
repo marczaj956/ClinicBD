@@ -1,4 +1,6 @@
-﻿namespace MedicalClinic.Doctor
+﻿using System;
+
+namespace MedicalClinic.Doctor
 {
     partial class Doctor
     {
@@ -42,12 +44,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
             this.ID_wizyty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Data_wizyty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stan_wizyty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Nazwisko_lekarza = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Imie_pacjenta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Nazwisko_pacjenta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pesel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Data_wizyty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Nazwisko_lekarza = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +77,7 @@
             this.dateTimePicker1.ShowCheckBox = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(453, 35);
             this.dateTimePicker1.TabIndex = 9;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 12, 1, 10, 49, 51, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2020, 12, 7, 20, 46, 35, 244);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // button5
@@ -113,16 +115,14 @@
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "-",
-            "Anulowana",
-            "Zakończona",
-            "Zarejestrowana"});
             this.comboBox2.Location = new System.Drawing.Point(226, 70);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(264, 37);
             this.comboBox2.TabIndex = 3;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            comboBox2.DataSource = Enum.GetValues(typeof(State));
+
+
             // 
             // label2
             // 
@@ -210,38 +210,34 @@
             // 
             this.ID_wizyty.Text = "Identyfikator wizyty";
             // 
-            // Data_wizyty
-            // 
-            this.Data_wizyty.Text = "Data wizyty";
-            this.Data_wizyty.Width = 144;
-            // 
             // stan_wizyty
             // 
             this.stan_wizyty.Text = "Stan";
             this.stan_wizyty.Width = 123;
             // 
-            // Nazwisko_lekarza
-            // 
-            this.Nazwisko_lekarza.DisplayIndex = 3;
-            this.Nazwisko_lekarza.Text = "Nazwisko lekarza";
-            // 
             // Imie_pacjenta
             // 
-            this.Imie_pacjenta.DisplayIndex = 1;
             this.Imie_pacjenta.Text = "Imie";
             this.Imie_pacjenta.Width = 145;
             // 
             // Nazwisko_pacjenta
             // 
-            this.Nazwisko_pacjenta.DisplayIndex = 2;
             this.Nazwisko_pacjenta.Text = "Nazwisko";
             this.Nazwisko_pacjenta.Width = 127;
             // 
             // Pesel
             // 
-            this.Pesel.DisplayIndex = 3;
             this.Pesel.Text = "Pesel";
             this.Pesel.Width = 169;
+            // 
+            // Data_wizyty
+            // 
+            this.Data_wizyty.Text = "Data wizyty";
+            this.Data_wizyty.Width = 144;
+            // 
+            // Nazwisko_lekarza
+            // 
+            this.Nazwisko_lekarza.Text = "Nazwisko lekarza";
             // 
             // Doctor
             // 

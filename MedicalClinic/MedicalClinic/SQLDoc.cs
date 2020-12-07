@@ -9,14 +9,14 @@ namespace MedicalClinic
     class SQLDoc
     {
 
-        public class TableJoinResult3
+        public class TableJoinResult
         {
-            public Appointment Table1 { get; set; }
-            public Staff Table2 { get; set; }
-            public Patient Table3 { get; set; }
+            public Appointment appointmentTable { get; set; }
+            public Staff staffTable { get; set; }
+            public Patient patientTable { get; set; }
         }
 
-        public static IQueryable<TableJoinResult3> GetAppointments_ID(int id)
+        public static IQueryable<TableJoinResult> GetAppointments_ID(int id)
         {
             DataClassesDataContext db = new DataClassesDataContext();
             return (from st in db.Staff
@@ -25,58 +25,104 @@ namespace MedicalClinic
                     where
                           app.Id_Doctor.Equals(id)
 
-                    select new TableJoinResult3
+                    select new TableJoinResult
                     {
-                        Table1 = app,
-                        Table2 = st
+                        appointmentTable = app,
+                        staffTable = st
                     });
         }
 
-        public static IQueryable<TableJoinResult3> GetVisit(string state, DateTime date)
+        public static IQueryable<TableJoinResult> GetVisits(VisitsSearchCriteria searchCriteria)
         {
-          
-           DateTime date1 = date;
-           TimeSpan ts = new TimeSpan(23, 59, 59);
-           date = date +  ts;
-
             DataClassesDataContext db = new DataClassesDataContext();
-            Globals.id = 6;
-            return (from app in db.Appointment
-                    join pt in db.Patient
-                    on app.Id_Patient equals pt.Id_Patient
-                    join st in db.Staff
-                    on app.Id_Doctor equals st.Id_Staff
-                    where
-                   app.Id_Doctor.Equals(Globals.id) &&
-                   // app.State.Equals(state) &&
-                    app.Date_Appointment > date && app.Date_Appointment <= date1
 
-                    select new TableJoinResult3
-                    {
-                        Table1 = app,
-                        Table2 = st,
-                        Table3 = pt
-                    });
-          
+            IQueryable<TableJoinResult> query = (from app in db.Appointment
+                                                 join pt in db.Patient
+                                                 on app.Id_Patient equals pt.Id_Patient
+                                                 join st in db.Staff
+                                                 on app.Id_Doctor equals st.Id_Staff
+
+                                                  select new TableJoinResult
+                                                  {
+                                                      appointmentTable = app,
+                                                      staffTable = st,
+                                                      patientTable = pt
+                                                  });
+
+            if (searchCriteria.getOnlyVisitsForDoctor())
+            {
+                query = query.Where(app => app.appointmentTable.Id_Doctor.Equals(searchCriteria.getDoctorId()));
+            }
+
+            if (searchCriteria.getState() != State.Wszystkie) //&& searchCriteria.getState() != "")
+            {
+                query = query.Where(app => app.appointmentTable.State.Equals(searchCriteria.getState()));
+            }
+
+            if (searchCriteria.getDate() != null)
+            {
+                query = query.Where(app => app.appointmentTable.Date_Appointment >= searchCriteria.getDate() && app.appointmentTable.Date_Appointment <= searchCriteria.getDateWithLastTimeOfTheDay());
+            }
+
+            return query;
         }
-        public static IQueryable<TableJoinResult3> GetAllVisit(string state, DateTime date)
+
+        public static IQueryable<TableJoinResult> GetPatient(int id)
         {
             DataClassesDataContext db = new DataClassesDataContext();
-            Globals.id = 1;
             return (from app in db.Appointment
                     join pt in db.Patient
                     on app.Id_Patient equals pt.Id_Patient
+                    where
+                         app.Id_Patient == id
+
+                    select new TableJoinResult
+                    {
+                        appointmentTable = app,
+                        patientTable = pt
+                    });
+        }
+
+        public static IQueryable<Patient> GetPatientsList(string pesel)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            var result = from log in db.Patient
+                         where
+                               log.PESEL.StartsWith(pesel)
+
+                         select log;
+            
+            return result;
+        }
+
+        public static IQueryable<Appointment> GetAppointment(int id)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            var result = from log in db.Appointment
+                         where
+                               log.Id_Appointment==id
+
+                         select log;
+            
+            return result;
+        }
+
+       
+        public static IQueryable<TableJoinResult> GetAppointmentP(int id)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+            return (from app in db.Appointment
                     join st in db.Staff
                     on app.Id_Doctor equals st.Id_Staff
                     where
-                         app.State.Equals(state) &&
-                         app.Date_Appointment.Equals(date)
+                         app.Id_Patient == id
 
-                    select new TableJoinResult3
+                    select new TableJoinResult
                     {
-                        Table1 = app,
-                        Table2 = st,
-                        Table3 = pt
+                        appointmentTable = app,
+                        staffTable = st
                     });
         }
     }

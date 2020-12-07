@@ -74,5 +74,10 @@ namespace MedicalClinic.Controls.Registration
 
             textb.Text = "changed";
         }
+
+        private void VisitRegistration_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

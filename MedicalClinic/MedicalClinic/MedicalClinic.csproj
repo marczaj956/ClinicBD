@@ -248,9 +248,7 @@
     <Compile Include="Controls\Laboratory\Laboratory.Designer.cs">
       <DependentUpon>Laboratory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\MainPanel\MainPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Controls\MainPanel\MainPanel.cs" />
     <Compile Include="Controls\MainPanel\MainPanel.Designer.cs">
       <DependentUpon>MainPanel.cs</DependentUpon>
     </Compile>
@@ -279,6 +277,8 @@
     <Compile Include="SQLAdm.cs" />
     <Compile Include="SQLMain.cs" />
     <Compile Include="SQLRec.cs" />
+    <Compile Include="StateEnum.cs" />
+    <Compile Include="VisitsSearchCriteria.cs" />
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
