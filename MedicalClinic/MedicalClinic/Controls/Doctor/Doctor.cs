@@ -102,7 +102,9 @@ namespace MedicalClinic.Doctor
             foreach (var order in a)
             {
                 ListViewItem lvi = new ListViewItem(order.appointmentTable.Id_Appointment.ToString());
-                lvi.SubItems.Add(order.appointmentTable.State); //stan
+                char st = char.Parse(order.appointmentTable.State);
+                string state = Enum.GetName(typeof(State), st);
+                lvi.SubItems.Add(state); //stan
                 lvi.SubItems.Add(order.patientTable.Name); //imie
                 lvi.SubItems.Add(order.patientTable.Surname); //nazwisko 
                 lvi.SubItems.Add(order.patientTable.PESEL); //pesel
@@ -142,6 +144,16 @@ namespace MedicalClinic.Doctor
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
         }

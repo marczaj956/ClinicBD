@@ -113,16 +113,23 @@ namespace MedicalClinic.Doctor
             // 
             // comboBox2
             // 
+            this.comboBox2.DataSource = new MedicalClinic.State[] {
+        MedicalClinic.State.Wszystkie,
+        MedicalClinic.State.Anulowana,
+        MedicalClinic.State.Zakonczona,
+        MedicalClinic.State.Zarejestrowana};
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox2.FormattingEnabled = true;
+            //this.comboBox2.Items.AddRange(new object[] {
+            //MedicalClinic.State.Wszystkie,
+            //MedicalClinic.State.Anulowana,
+            //MedicalClinic.State.Zakonczona,
+            //MedicalClinic.State.Zarejestrowana});
             this.comboBox2.Location = new System.Drawing.Point(226, 70);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(264, 37);
             this.comboBox2.TabIndex = 3;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            comboBox2.DataSource = Enum.GetValues(typeof(State));
-
-
             // 
             // label2
             // 

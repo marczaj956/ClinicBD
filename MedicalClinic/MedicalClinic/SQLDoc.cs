@@ -34,6 +34,7 @@ namespace MedicalClinic
 
         public static IQueryable<TableJoinResult> GetVisits(VisitsSearchCriteria searchCriteria)
         {
+            
             DataClassesDataContext db = new DataClassesDataContext();
 
             IQueryable<TableJoinResult> query = (from app in db.Appointment
@@ -56,7 +57,7 @@ namespace MedicalClinic
 
             if (searchCriteria.getState() != State.Wszystkie) //&& searchCriteria.getState() != "")
             {
-                query = query.Where(app => app.appointmentTable.State.Equals(searchCriteria.getState()));
+                query = query.Where(app => app.appointmentTable.State.Equals(searchCriteria.getStateValue()));
             }
 
             if (searchCriteria.getDate() != null)

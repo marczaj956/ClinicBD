@@ -18,6 +18,11 @@ namespace MedicalClinic
         {
             return state;
         }
+        public char getStateValue()
+        {
+            char z = (char) state;
+            return z;
+        }
 
         public void setState(State state)
         {
