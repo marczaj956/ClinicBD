@@ -17,14 +17,14 @@ namespace MedicalClinic.Controls.Doctor
         {
             InitializeComponent();
 
-            var res = SQLDoc.GetPatient(1);
-            foreach (var order in res)
-            {
-                textBox1.Text = order.patientTable.Name;
-                textBox2.Text = order.patientTable.Surname;
-                textBox3.Text = order.patientTable.PESEL;
+            //var res = SQLDoc.GetPatient(1);
+            //foreach (var order in res)
+            //{
+            //    textBox1.Text = order.patientTable.Name;
+            //    textBox2.Text = order.patientTable.Surname;
+            //    textBox3.Text = order.patientTable.PESEL;
 
-            }
+            //}
         }
 
         private void button2_Click(object sender, EventArgs e)

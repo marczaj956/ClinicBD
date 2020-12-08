@@ -12,9 +12,16 @@ namespace MedicalClinic
 {
     public partial class ShowPhisicExamList : Form
     {
-        public ShowPhisicExamList()
+        public ShowPhisicExamList(int IdPatient)
         {
             InitializeComponent();
+
+            //var res = SQLDoc.GetPatient(IdPatient);
+            //foreach (var order in res)
+            //{
+                
+
+            //}
         }
     }
 }

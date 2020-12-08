@@ -55,7 +55,7 @@ namespace MedicalClinic
                 query = query.Where(app => app.appointmentTable.Id_Doctor.Equals(searchCriteria.getDoctorId()));
             }
 
-            if (searchCriteria.getState() != State.Wszystkie) //&& searchCriteria.getState() != "")
+            if (searchCriteria.getState() != State.Wszystkie) 
             {
                 query = query.Where(app => app.appointmentTable.State.Equals(searchCriteria.getStateValue()));
             }
@@ -68,34 +68,73 @@ namespace MedicalClinic
             return query;
         }
 
-        public static IQueryable<TableJoinResult> GetPatient(int id)
-        {
-            DataClassesDataContext db = new DataClassesDataContext();
-            return (from app in db.Appointment
-                    join pt in db.Patient
-                    on app.Id_Patient equals pt.Id_Patient
-                    where
-                         app.Id_Patient == id
 
-                    select new TableJoinResult
-                    {
-                        appointmentTable = app,
-                        patientTable = pt
-                    });
-        }
-
-        public static IQueryable<Patient> GetPatientsList(string pesel)
+        public static IQueryable<TableJoinResult> GetPatient(PatientsSearchCriteria searchCriteria)
         {
+
             DataClassesDataContext db = new DataClassesDataContext();
 
-            var result = from log in db.Patient
-                         where
-                               log.PESEL.StartsWith(pesel)
+            IQueryable<TableJoinResult> query = (from app in db.Appointment
+                                                 join pt in db.Patient
+                                                 on app.Id_Patient equals pt.Id_Patient
+                                                 select new TableJoinResult
+                                                 {
+                                                     appointmentTable = app,
+                                                     patientTable = pt
+                                                 });
 
-                         select log;
-            
-            return result;
+            if (searchCriteria.getPatientId() != 0)
+            {
+                query = query.Where(app => app.appointmentTable.Id_Patient.Equals(searchCriteria.getPatientId()));
+            }
+
+            if (searchCriteria.getName() != null) 
+            {
+                query = query.Where(pt => pt.patientTable.Name.Equals(searchCriteria.getName()));
+            }
+            if (searchCriteria.getSurname() != null) 
+            {
+                query = query.Where(pt => pt.patientTable.Name.Equals(searchCriteria.getSurname()));
+            }
+
+            if (searchCriteria.getPesel() != 0 )
+            {
+                query = query.Where(pt => pt.patientTable.PESEL.Equals(searchCriteria.getPesel()));
+            }
+
+            return query;
         }
+
+
+
+        //public static IQueryable<TableJoinResult> GetPatient(int id)
+        //{
+        //    DataClassesDataContext db = new DataClassesDataContext();
+        //    return (from app in db.Appointment
+        //            join pt in db.Patient
+        //            on app.Id_Patient equals pt.Id_Patient
+        //            where
+        //                 app.Id_Patient == id
+
+        //            select new TableJoinResult
+        //            {
+        //                appointmentTable = app,
+        //                patientTable = pt
+        //            });
+        //}
+
+        //public static IQueryable<Patient> GetPatientsList(string pesel)
+        //{
+        //    DataClassesDataContext db = new DataClassesDataContext();
+
+        //    var result = from log in db.Patient
+        //                 where
+        //                       log.PESEL.StartsWith(pesel)
+
+        //                 select log;
+
+        //    return result;
+        //}
 
         public static IQueryable<Appointment> GetAppointment(int id)
         {

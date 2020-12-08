@@ -17,22 +17,22 @@ namespace MedicalClinic.Doctor
         {
             InitializeComponent();
 
-            var res = SQLDoc.GetPatient(1);
-            foreach (var order in res)
-            {
-                textBox1.Text = order.patientTable.Name;
-                textBox2.Text = order.patientTable.Surname;
-                textBox3.Text = order.patientTable.PESEL;
-                textBox6.Text = order.patientTable.Id_Patient.ToString();
+            //var res = SQLDoc.GetPatient(1);
+            //foreach (var order in res)
+            //{
+            //    textBox1.Text = order.patientTable.Name;
+            //    textBox2.Text = order.patientTable.Surname;
+            //    textBox3.Text = order.patientTable.PESEL;
+            //    textBox6.Text = order.patientTable.Id_Patient.ToString();
 
-            }
+            //}
         }
 
         private void button4_Click(object sender, EventArgs e) //show phisical
         {
-            ShowPhisicExamList f2 = new ShowPhisicExamList();
+            //ShowPhisicExamList f2 = new ShowPhisicExamList();
 
-            f2.ShowDialog();
+            //f2.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e) //show labo

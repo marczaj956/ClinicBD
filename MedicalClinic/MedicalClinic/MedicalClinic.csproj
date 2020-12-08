@@ -230,6 +230,7 @@
       <DependentUpon>DataClasses.dbml</DependentUpon>
     </Compile>
     <Compile Include="GlobalVar.cs" />
+    <Compile Include="PatientsSearchCriteria.cs" />
     <Compile Include="show ExaminationPsyhic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,7 +249,9 @@
     <Compile Include="Controls\Laboratory\Laboratory.Designer.cs">
       <DependentUpon>Laboratory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\MainPanel\MainPanel.cs" />
+    <Compile Include="Controls\MainPanel\MainPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\MainPanel\MainPanel.Designer.cs">
       <DependentUpon>MainPanel.cs</DependentUpon>
     </Compile>

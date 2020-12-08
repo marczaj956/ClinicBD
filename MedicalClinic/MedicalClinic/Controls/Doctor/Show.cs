@@ -17,14 +17,22 @@ namespace MedicalClinic.Doctor
         {
             InitializeComponent();
 
-            var res = SQLDoc.GetPatient(IDP);
+
+
+            PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
+            searchCriteria.setPatientId(IDP);
+            
+            var res = SQLDoc.GetPatient(searchCriteria);
             foreach (var order in res)
             {
                 textBox1.Text = order.patientTable.Name;
                 textBox2.Text = order.patientTable.Surname;
                 textBox3.Text = order.patientTable.PESEL;
 
+
             }
+
+            
             int x = Int32.Parse(IDV);
             var res1 = SQLDoc.GetAppointment(x);
             foreach (var order in res1)
@@ -47,9 +55,24 @@ namespace MedicalClinic.Doctor
 
         private void button4_Click(object sender, EventArgs e)//show physical
         {
-            ShowPhisicExamList f2 = new ShowPhisicExamList();
+            PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
+            long pesel = long.Parse(textBox3.Text.ToString());
+            //searchCriteria.setName(textBox1.Text.ToString());
+           // searchCriteria.setSurname(textBox2.Text.ToString());
+            searchCriteria.setPesel(pesel);
+            var res = SQLDoc.GetPatient(searchCriteria);
+            int id =-1;
+            foreach(var order in res)
+            {
+                id = order.patientTable.Id_Patient;
+            }
+            if (id != -1)
+            {
+                ShowPhisicExamList f2 = new ShowPhisicExamList(id);
+                f2.ShowDialog();
+            }
             
-            f2.ShowDialog();
+           
         }
 
         private void button3_Click(object sender, EventArgs e) //show labo
@@ -67,6 +90,17 @@ namespace MedicalClinic.Doctor
         private void Show_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            //var res = SQLDoc.GetPatient(IDP);
+            //foreach (var order in res)
+            //{
+            //    textBox6.Text = order.patientTable.Id_Patient;
+               
+
+            //}
         }
     }
 }
