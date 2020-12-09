@@ -47,7 +47,7 @@
             // 
             this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Cancel.Location = new System.Drawing.Point(967, 525);
-            this.Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(95, 32);
             this.Cancel.TabIndex = 55;
@@ -59,7 +59,7 @@
             // 
             this.SaveAndClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.SaveAndClose.Location = new System.Drawing.Point(770, 525);
-            this.SaveAndClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SaveAndClose.Margin = new System.Windows.Forms.Padding(2);
             this.SaveAndClose.Name = "SaveAndClose";
             this.SaveAndClose.Size = new System.Drawing.Size(131, 32);
             this.SaveAndClose.TabIndex = 54;
@@ -69,6 +69,7 @@
             // 
             // Role
             // 
+            this.Role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Role.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Role.FormattingEnabled = true;
             this.Role.Items.AddRange(new object[] {
@@ -78,7 +79,7 @@
             "Kierownik labolatorium",
             "Administrator"});
             this.Role.Location = new System.Drawing.Point(99, 361);
-            this.Role.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Role.Margin = new System.Windows.Forms.Padding(2);
             this.Role.Name = "Role";
             this.Role.Size = new System.Drawing.Size(274, 28);
             this.Role.TabIndex = 51;
@@ -109,7 +110,7 @@
             // 
             this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Login.Location = new System.Drawing.Point(99, 252);
-            this.Login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Login.Margin = new System.Windows.Forms.Padding(2);
             this.Login.MaxLength = 50;
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(279, 26);
@@ -130,7 +131,7 @@
             // 
             this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Password.Location = new System.Drawing.Point(620, 252);
-            this.Password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Password.Margin = new System.Windows.Forms.Padding(2);
             this.Password.MaxLength = 50;
             this.Password.Name = "Password";
             this.Password.PasswordChar = '*';
@@ -152,7 +153,7 @@
             // 
             this.Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Name.Location = new System.Drawing.Point(99, 151);
-            this.Name.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name.Margin = new System.Windows.Forms.Padding(2);
             this.Name.MaxLength = 50;
             this.Name.Name = "Name";
             this.Name.Size = new System.Drawing.Size(279, 26);
@@ -173,7 +174,7 @@
             // 
             this.Surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Surname.Location = new System.Drawing.Point(620, 151);
-            this.Surname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Surname.Margin = new System.Windows.Forms.Padding(2);
             this.Surname.MaxLength = 50;
             this.Surname.Name = "Surname";
             this.Surname.Size = new System.Drawing.Size(282, 26);
@@ -184,7 +185,7 @@
             this.Activ.AutoSize = true;
             this.Activ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Activ.Location = new System.Drawing.Point(510, 361);
-            this.Activ.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Activ.Margin = new System.Windows.Forms.Padding(2);
             this.Activ.Name = "Activ";
             this.Activ.Size = new System.Drawing.Size(86, 24);
             this.Activ.TabIndex = 56;
@@ -208,8 +209,8 @@
             this.Controls.Add(this.Name);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Surname);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-         //   this.Name = "AddNew";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            //this.Name = "AddNew";
             this.Size = new System.Drawing.Size(1280, 650);
             this.ResumeLayout(false);
             this.PerformLayout();

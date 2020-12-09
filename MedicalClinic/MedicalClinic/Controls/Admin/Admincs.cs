@@ -38,6 +38,8 @@ namespace MedicalClinic.Admin
             }
             Mainlist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             Mainlist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            Mainlist.FullRowSelect = true;
+            Mainlist.GridLines = true;
             // connector.Visible = true;
 
         }

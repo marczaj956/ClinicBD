@@ -54,13 +54,14 @@ namespace MedicalClinic.Admin
             if (Name1.TextLength != 0 && Surname2.TextLength != 0 && Password.TextLength != 0)
             {
                 SQLAdm.updatestaff(Name1.Text.ToString(), Surname2.Text.ToString(), Password.Text.ToString(), SQLAdm.translateRoleDB(Role.Text.ToString()), act, Id);
-            }
+                this.Controls.Clear();
+                this.Visible = false;
+                this.Parent.Hide();
 
-            this.Controls.Clear();
-            this.Visible = false;
-            this.Parent.Hide();
-            
-            text.Text = "changed";
+                text.Text = "changed";
+            }
+            else MessageBox.Show("Brak Danych");
+
         }
 
         private void Cancel_Click(object sender, EventArgs e)

@@ -40,15 +40,17 @@ namespace MedicalClinic.Admin
             if (Name.TextLength != 0 && Surname.TextLength != 0 && Login.TextLength != 0 && Password.TextLength != 0)
             {
                 SQLAdm.insertstaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), Password.Text.ToString(), SQLAdm.translateRoleDB(Role.Text.ToString()), act);
+                
+                this.Controls.Clear();
+                this.Visible = false;
+                this.Parent.Hide();
+
+                text.Text = "changed";
             }
             else MessageBox.Show("Brak Danych");
 
 
-            this.Controls.Clear();
-            this.Visible = false;
-            this.Parent.Hide();
-
-            text.Text = "changed";
+           
 
         }
 
