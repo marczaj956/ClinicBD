@@ -60,7 +60,7 @@ namespace MedicalClinic
                 query = query.Where(app => app.appointmentTable.State.Equals(searchCriteria.getStateValue()));
             }
 
-            if (searchCriteria.getDate() != null)
+            if (searchCriteria.getDate() != default && searchCriteria.getDate() != null)
             {
                 query = query.Where(app => app.appointmentTable.Date_Appointment >= searchCriteria.getDate() && app.appointmentTable.Date_Appointment <= searchCriteria.getDateWithLastTimeOfTheDay());
             }

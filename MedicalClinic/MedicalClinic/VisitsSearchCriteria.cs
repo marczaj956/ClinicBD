@@ -9,7 +9,7 @@ namespace MedicalClinic
     class VisitsSearchCriteria
     {
         private  State state;
-        private DateTime date;
+        private  DateTime date;
         private DateTime dateWithLastTimeOfTheDay;
         private bool onlyVisitsForDoctor;
         private int doctorId;
@@ -54,10 +54,18 @@ namespace MedicalClinic
             return date;
         }
 
-        public void setDate(DateTime date)
+        public void setDate(DateTime date, bool check)
         {
-            this.date = date;
-            this.dateWithLastTimeOfTheDay = date + new TimeSpan(23, 59, 59);
+            if (check == true)
+            {
+                this.date = date;
+                this.dateWithLastTimeOfTheDay = date + new TimeSpan(23, 59, 59);
+            }
+            else
+            {
+                this.date = default;
+                this.dateWithLastTimeOfTheDay = default;
+            }
         }
 
         public DateTime getDateWithLastTimeOfTheDay()

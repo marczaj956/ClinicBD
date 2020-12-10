@@ -19,6 +19,8 @@ namespace MedicalClinic.Doctor
         {
             InitializeComponent();
 
+            listView1.FullRowSelect = true;
+            listView1.GridLines = true;
         }
 
         public Doctor(int id) : this()
@@ -124,14 +126,16 @@ namespace MedicalClinic.Doctor
         private void button1_Click(object sender, EventArgs e)
         {
 
-            State stateTemp =  (State)Enum.Parse(typeof(State), comboBox2.Text);
+            State stateTemp = (State)Enum.Parse(typeof(State), comboBox2.Text);
 
             VisitsSearchCriteria searchCriteria = new VisitsSearchCriteria();
-            searchCriteria.setDate(dateTimePicker1.Value.Date);
+            searchCriteria.setDate(dateTimePicker1.Value.Date, dateTimePicker1.Checked);
             searchCriteria.setState(stateTemp);
             searchCriteria.setOnlyVisitsForDoctor(checkBox1.Checked);
             searchCriteria.setDoctorId(this.whoami);
             Refresh(SQLDoc.GetVisits(searchCriteria));
+
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
