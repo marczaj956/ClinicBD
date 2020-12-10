@@ -18,6 +18,16 @@ namespace MedicalClinic.Controls.Laboratory
         {
             InitializeComponent();
             
+            
+           
+            
+        }
+
+        public Lab(int id, string role):this()
+        {
+            whoami = id;
+            myrole = role;
+            textBox1.Text = myrole;
             string startowadata = dateTimePicker1.Value.Year.ToString();
             startowadata += "-";
             startowadata += dateTimePicker1.Value.Month.ToString();
@@ -25,9 +35,12 @@ namespace MedicalClinic.Controls.Laboratory
             startowadata += dateTimePicker1.Value.Day.ToString();
             startowadata += " 00:00:00.000";
             listView1.Items.Clear();
-           
-            
-               var temp = SQLLab.GetExamination_Laboratories("", "PRZET", startowadata);
+
+            if (myrole == "Lab")
+            {
+                var temp = SQLLab.GetExamination_Laboratories("", "ZLE", startowadata);
+
+
                 foreach (var order in temp)
                 {
                     ListViewItem lvi = new ListViewItem(order.Table1.Id_Examination.ToString());
@@ -38,19 +51,25 @@ namespace MedicalClinic.Controls.Laboratory
                     listView1.Items.Add(lvi);
 
                 }
-            
-           
-            
-           
-            comboBox1.Text = "PRZET";
-        }
+                comboBox1.Text = "Zlecone";
+            }
+            if (myrole == "MLab")
+            {
+                var temp = SQLLab.GetExamination_Laboratories("", "ZAT", startowadata);
 
-        public Lab(int id, string role):this()
-        {
-            whoami = id;
-            myrole = role;
-            textBox1.Text = myrole;
-           
+
+                foreach (var order in temp)
+                {
+                    ListViewItem lvi = new ListViewItem(order.Table1.Id_Examination.ToString());
+                    lvi.SubItems.Add(order.Table2.Type.ToString());
+                    lvi.SubItems.Add(order.Table1.Date_Of_Order.ToString());
+                    lvi.SubItems.Add(order.Table1.State.ToString());
+
+                    listView1.Items.Add(lvi);
+
+                }
+                comboBox1.Text = "Zatwierdzone";
+            }
 
         }
 
@@ -113,7 +132,7 @@ namespace MedicalClinic.Controls.Laboratory
             {
                 string tmp = dateTimePicker1.Text;
                 tmp+= " 00:00:00.000";
-                var temp = SQLLab.GetExamination_Laboratories(textBox2.Text, comboBox1.Text, tmp);
+                var temp = SQLLab.GetExamination_Laboratories(textBox2.Text, SQLLab.translateRoleDB(comboBox1.Text), tmp);
 
 
                 foreach (var order in temp)
@@ -121,7 +140,7 @@ namespace MedicalClinic.Controls.Laboratory
                     ListViewItem lvi = new ListViewItem(order.Table1.Id_Examination.ToString());
                     lvi.SubItems.Add(order.Table2.Type.ToString());
                     lvi.SubItems.Add(order.Table1.Date_Of_Order.ToString());
-                    lvi.SubItems.Add(order.Table1.State.ToString());
+                    lvi.SubItems.Add(SQLLab.translateRolePL(order.Table1.State.ToString()));
 
                     listView1.Items.Add(lvi);
 
@@ -129,13 +148,13 @@ namespace MedicalClinic.Controls.Laboratory
             }
             else
             {
-                var temp = SQLLab.GetExamination_Laboratories2(textBox2.Text, comboBox1.Text);
+                var temp = SQLLab.GetExamination_Laboratories2(textBox2.Text, SQLLab.translateRoleDB(comboBox1.Text));
                 foreach (var order in temp)
                 {
                     ListViewItem lvi = new ListViewItem(order.Table1.Id_Examination.ToString());
                     lvi.SubItems.Add(order.Table2.Type.ToString());
                     lvi.SubItems.Add(order.Table1.Date_Of_Order.ToString());
-                    lvi.SubItems.Add(order.Table1.State.ToString());
+                    lvi.SubItems.Add(SQLLab.translateRolePL(order.Table1.State.ToString()));
 
                     listView1.Items.Add(lvi);
 
