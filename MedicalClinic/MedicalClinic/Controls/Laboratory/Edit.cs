@@ -13,13 +13,15 @@ namespace MedicalClinic.Controls.Laboratory
     public partial class Edit : UserControl
     {
         int idappo = 0;
+        private TextBox text;
         public Edit()
         {
             InitializeComponent();
            
         }
-        public Edit(string role,int t) : this()
+        public Edit(string role,int t, TextBox textb) : this()
         {
+            text = textb;
             idappo = t;
             var temp = SQLLab.GetExamination_Laboratories_ID(t);
             textBox6.Text = temp.First().Table2.Type.ToString();
@@ -33,7 +35,7 @@ namespace MedicalClinic.Controls.Laboratory
             textBox1.Text = temp3.First().Name.ToString();
             textBox2.Text = temp3.First().Surname.ToString();
             textBox3.Text = temp3.First().PESEL.ToString();
-            textBox10.Text= temp.First().Table1.State.ToString();
+            textBox10.Text= SQLLab.translateRolePL(temp.First().Table1.State.ToString());
             if (role =="Lab")
             {
                 textBox7.Enabled = false;
@@ -44,40 +46,48 @@ namespace MedicalClinic.Controls.Laboratory
         }
             private void button2_Click(object sender, EventArgs e)
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Lab());
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
+
+            text.Text = "changed";
+            //Panel P = new Panel();
+            //P.Controls.Clear();
+            //this.Hide();
+            //this.Parent.Controls.Add(new Lab());
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             SQLLab.updateLabExam(idappo, "ANU", textBox5.Text, textBox7.Text);
             MessageBox.Show("Zmieniono dane badania");
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Lab());
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
+
+            text.Text = "changed";
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             SQLLab.updateLabExam(idappo, "ZAT", textBox5.Text, textBox7.Text);
             MessageBox.Show("Zmieniono stan badania");
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Lab());
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
+
+            text.Text = "changed";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             SQLLab.updateLabExam(idappo, "ZAK", textBox5.Text, textBox7.Text);
             MessageBox.Show("Zmieniono stan badania");
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Lab());
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
+
+            text.Text = "changed";
         }
     }
 }

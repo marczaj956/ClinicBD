@@ -45,6 +45,8 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.WindowPanel = new System.Windows.Forms.Panel();
+            this.connector = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -227,10 +229,29 @@
             this.textBox1.TabIndex = 15;
             this.textBox1.Visible = false;
             // 
+            // WindowPanel
+            // 
+            this.WindowPanel.Location = new System.Drawing.Point(1039, 312);
+            this.WindowPanel.Name = "WindowPanel";
+            this.WindowPanel.Size = new System.Drawing.Size(200, 100);
+            this.WindowPanel.TabIndex = 16;
+            this.WindowPanel.Visible = false;
+            // 
+            // connector
+            // 
+            this.connector.Location = new System.Drawing.Point(1067, 436);
+            this.connector.Name = "connector";
+            this.connector.Size = new System.Drawing.Size(100, 20);
+            this.connector.TabIndex = 14;
+            this.connector.Visible = false;
+            this.connector.TextChanged += new System.EventHandler(this.connector_TextChanged_2);
+            // 
             // Lab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.connector);
+            this.Controls.Add(this.WindowPanel);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.groupBox1);
@@ -263,5 +284,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Panel WindowPanel;
+        private System.Windows.Forms.TextBox connector;
     }
 }

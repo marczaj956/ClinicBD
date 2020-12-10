@@ -70,7 +70,8 @@ namespace MedicalClinic.Controls.Laboratory
                 }
                 comboBox1.Text = "Zatwierdzone";
             }
-
+            listView1.FullRowSelect = true;
+            listView1.GridLines = true;
         }
 
 
@@ -79,11 +80,18 @@ namespace MedicalClinic.Controls.Laboratory
         {
             if (listView1.SelectedItems.Count > 0)
             {
+
                 ListViewItem item = listView1.SelectedItems[0];
-                Panel P = new Panel();
-                P.Controls.Clear();
-                this.Hide();
-                this.Parent.Controls.Add(new Edit(myrole,Int16.Parse(item.SubItems[0].Text.TrimEnd())));
+                WindowPanel.Controls.Add(new Edit(myrole, Int16.Parse(item.SubItems[0].Text.TrimEnd()),connector));
+                WindowPanel.Visible = true;
+                WindowPanel.Dock = DockStyle.Fill;
+                WindowPanel.BringToFront();
+
+                //ListViewItem item = listView1.SelectedItems[0];
+                //Panel P = new Panel();
+                //P.Controls.Clear();
+                //this.Hide();
+                //this.Parent.Controls.Add(new Edit(myrole,Int16.Parse(item.SubItems[0].Text.TrimEnd())));
             }
             else
             {
@@ -101,10 +109,16 @@ namespace MedicalClinic.Controls.Laboratory
             if (listView1.SelectedItems.Count > 0)
             {
                 ListViewItem item = listView1.SelectedItems[0];
-                Panel P = new Panel();
-                P.Controls.Clear();
-                this.Hide();
-                this.Parent.Controls.Add(new Show(Int16.Parse(item.SubItems[0].Text.TrimEnd())));
+                WindowPanel.Controls.Add(new Show(Int16.Parse(item.SubItems[0].Text.TrimEnd()),connector));
+                WindowPanel.Visible = true;
+                WindowPanel.Dock = DockStyle.Fill;
+                WindowPanel.BringToFront();
+
+                //ListViewItem item = listView1.SelectedItems[0];
+                //Panel P = new Panel();
+                //P.Controls.Clear();
+                //this.Hide();
+                //this.Parent.Controls.Add(new Show(Int16.Parse(item.SubItems[0].Text.TrimEnd())));
             }
             else
             {
@@ -127,11 +141,27 @@ namespace MedicalClinic.Controls.Laboratory
 
         private void button1_Click(object sender, EventArgs e)
         {
+            refreshlistview();
+        }
+        private void connector_TextChanged(object sender, EventArgs e)
+        {
+            refreshlistview();
+
+            connector.Text = "";
+        }
+        private void connector_TextChanged_1(object sender, EventArgs e)
+        {
+            refreshlistview();
+
+            connector.Text = "";
+        }
+        private void refreshlistview()
+        {
             listView1.Items.Clear();
             if (dateTimePicker1.Checked == true)
             {
                 string tmp = dateTimePicker1.Text;
-                tmp+= " 00:00:00.000";
+                tmp += " 00:00:00.000";
                 var temp = SQLLab.GetExamination_Laboratories(textBox2.Text, SQLLab.translateRoleDB(comboBox1.Text), tmp);
 
 
@@ -160,6 +190,13 @@ namespace MedicalClinic.Controls.Laboratory
 
                 }
             }
+        }
+
+        private void connector_TextChanged_2(object sender, EventArgs e)
+        {
+            refreshlistview();
+
+            connector.Text = "";
         }
     }
 }
