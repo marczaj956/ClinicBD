@@ -14,6 +14,9 @@ namespace MedicalClinic
             public Appointment appointmentTable { get; set; }
             public Staff staffTable { get; set; }
             public Patient patientTable { get; set; }
+            public Examination_Laboratory LabTab { get; set; }
+            public Examination_Physical PhyTab { get; set; }
+
         }
 
         public static IQueryable<TableJoinResult> GetAppointments_ID(int id)
@@ -189,6 +192,84 @@ namespace MedicalClinic
                                log.PESEL.StartsWith(pesel)
 
                          select log;
+
+
+
+            return result;
+        }
+
+
+       
+        public static IQueryable<TableJoinResult> GetLab(int id)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+            return (from app in db.Appointment
+                    join st in db.Staff
+                    on app.Id_Doctor equals st.Id_Staff
+                    join lab in db.Examination_Laboratory
+                    on app.Id_Appointment equals lab.Id_Appointment
+                    
+                    where
+                         app.Id_Patient == id
+
+                    select new TableJoinResult
+                    {
+                        appointmentTable = app,
+                        LabTab = lab,
+                        staffTable = st
+                    });
+        }
+
+
+
+        public static IQueryable<Examination_Laboratory> GetHisL(int id)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            var result = from lab in db.Examination_Laboratory
+                         where
+                               lab.Id_Examination==id
+
+                         select lab;
+
+
+
+            return result;
+        }
+
+
+
+        public static IQueryable<TableJoinResult> GetPhy(int id)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+            return (from app in db.Appointment
+                    join st in db.Staff
+                    on app.Id_Doctor equals st.Id_Staff
+                    join phy in db.Examination_Physical
+                    on app.Id_Appointment equals phy.Id_Appointment
+
+                    where
+                         app.Id_Patient == id
+
+                    select new TableJoinResult
+                    {
+                        appointmentTable = app,
+                        PhyTab = phy,
+                        staffTable = st
+                    });
+        }
+
+
+
+        public static IQueryable<Examination_Physical> GetHisP(int id)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            var result = from phy in db.Examination_Physical
+                         where
+                               phy.Id_Examination==id
+
+                         select phy;
 
 
 

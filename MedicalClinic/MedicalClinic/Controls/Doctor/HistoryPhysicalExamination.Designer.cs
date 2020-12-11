@@ -92,6 +92,7 @@
             this.button1.TabIndex = 28;
             this.button1.Text = "Pokaż";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox4
             // 
@@ -120,7 +121,7 @@
             // 
             // Type
             // 
-            this.Type.Text = "Rodzaj badania";
+            this.Type.Text = "Id Badania";
             this.Type.Width = 127;
             // 
             // Date

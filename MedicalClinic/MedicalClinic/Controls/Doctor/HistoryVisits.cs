@@ -36,6 +36,8 @@ namespace MedicalClinic.Controls.Doctor
                 Mainlist.Items.Add(lvi);
 
             }
+            Mainlist.FullRowSelect = true;
+            Mainlist.GridLines = true;
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)

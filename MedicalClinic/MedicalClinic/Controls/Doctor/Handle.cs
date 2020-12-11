@@ -91,12 +91,12 @@ namespace MedicalClinic.Doctor
 
         private void button9_Click(object sender, EventArgs e)
         {
+            WindowPanel.Controls.Add(new HistoryVisits(idpat));
+            WindowPanel.Visible = true;
+            WindowPanel.Dock = DockStyle.Fill;
+            WindowPanel.BringToFront();
+           
 
-           // int id = Int32.Parse(textBox6.Text.ToString()); 
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new HistoryVisits(idpat));
         }
 
         private void Handle_Load(object sender, EventArgs e)
@@ -111,18 +111,24 @@ namespace MedicalClinic.Doctor
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new HistoryLaboratoryExamination());
+
+            WindowPanel.Controls.Add(new HistoryLaboratoryExamination(idpat));
+            WindowPanel.Visible = true;
+            WindowPanel.Dock = DockStyle.Fill;
+            WindowPanel.BringToFront();
+            
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new HistoryPhysicalExamination());
+
+
+            WindowPanel.Controls.Add(new HistoryPhysicalExamination(idpat));
+            WindowPanel.Visible = true;
+            WindowPanel.Dock = DockStyle.Fill;
+            WindowPanel.BringToFront();
+
+           
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

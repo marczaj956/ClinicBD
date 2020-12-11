@@ -51,6 +51,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.save = new System.Windows.Forms.Button();
+            this.WindowPanel = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -322,10 +323,19 @@
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
+            // WindowPanel
+            // 
+            this.WindowPanel.Location = new System.Drawing.Point(1248, 477);
+            this.WindowPanel.Name = "WindowPanel";
+            this.WindowPanel.Size = new System.Drawing.Size(200, 100);
+            this.WindowPanel.TabIndex = 32;
+            this.WindowPanel.Visible = false;
+            // 
             // Handle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.WindowPanel);
             this.Controls.Add(this.save);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.groupBox2);
@@ -377,5 +387,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button save;
+        private System.Windows.Forms.Panel WindowPanel;
     }
 }
