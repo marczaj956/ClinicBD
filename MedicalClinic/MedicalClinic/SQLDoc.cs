@@ -168,8 +168,7 @@ namespace MedicalClinic
 
 
         public static void updateDescDia(int id, string diag, string desc, string state)
-        {   //napisać ifa czy są dane
-
+        {  
             DataClassesDataContext db = new DataClassesDataContext();
             Appointment update = db.Appointment.Single(row => row.Id_Appointment == id);
             update.Descirption = desc;
@@ -179,7 +178,22 @@ namespace MedicalClinic
 
         }
 
+        public static IQueryable<Patient> GetPatientsList(string name, string surname, string pesel)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
 
+            var result = from log in db.Patient
+                         where
+                               log.Surname.StartsWith(surname) &&
+                               log.Name.StartsWith(name) &&
+                               log.PESEL.StartsWith(pesel)
+
+                         select log;
+
+
+
+            return result;
+        }
 
 
 

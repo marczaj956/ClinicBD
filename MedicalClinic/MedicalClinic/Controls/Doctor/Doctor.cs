@@ -103,17 +103,16 @@ namespace MedicalClinic.Doctor
                 long pesel = long.Parse(item.SubItems[4].Text.TrimEnd());
                 searchCriteria.setPesel(pesel);
                 // Refresh(SQLDoc.GetPatient(searchCriteria));
-                var x = SQLRec.GetPatientsList("", "", item.SubItems[4].Text.TrimEnd().ToString());
-               // var res = SQLDoc.GetPatient(searchCriteria);
-               // foreach (var x in res)
-                {
-                    panel1.Controls.Add(new Handle(x.First().Id_Patient, item.SubItems[0].Text.TrimEnd()));
+                var x = SQLDoc.GetPatientsList("", "", item.SubItems[4].Text.TrimEnd().ToString());
+               
+                
+                    panel1.Controls.Add(new Handle(connector,x.First().Id_Patient, item.SubItems[0].Text.TrimEnd()));
                     panel1.Visible = true;
                     panel1.Dock = DockStyle.Fill;
                     panel1.BringToFront();
 
 
-                }
+                
 
 
 
@@ -189,6 +188,21 @@ namespace MedicalClinic.Doctor
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void connector_TextChanged(object sender, EventArgs e)
+        {   if (connector.Text == "changed")
+            {
+                State stateTemp = (State)Enum.Parse(typeof(State), comboBox2.Text);
+
+                VisitsSearchCriteria searchCriteria = new VisitsSearchCriteria();
+                searchCriteria.setDate(dateTimePicker1.Value.Date, dateTimePicker1.Checked);
+                searchCriteria.setState(stateTemp);
+                searchCriteria.setOnlyVisitsForDoctor(checkBox1.Checked);
+                searchCriteria.setDoctorId(this.whoami);
+                Refresh(SQLDoc.GetVisits(searchCriteria));
+                connector.Text = "";
+            }
         }
     }
 }

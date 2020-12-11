@@ -13,6 +13,8 @@ namespace MedicalClinic.Doctor
 {
     public partial class Handle : UserControl
     { private string IDVis;
+      private TextBox textb;
+        private int idpat;
         public Handle()
         {
             InitializeComponent();
@@ -28,12 +30,13 @@ namespace MedicalClinic.Doctor
             //}
         }
 
-        public Handle(int IDP, string IDV)
+        public Handle(TextBox text,int IDP, string IDV)
         {
             InitializeComponent();
 
             IDVis = IDV;
-
+            textb = text;
+            idpat = IDP;
             PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
             searchCriteria.setPatientId(IDP);
 
@@ -81,20 +84,19 @@ namespace MedicalClinic.Doctor
 
         private void button2_Click(object sender, EventArgs e) //back
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Doctor());
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
 
-            int id = Int32.Parse(textBox6.Text.ToString()); 
+           // int id = Int32.Parse(textBox6.Text.ToString()); 
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new HistoryVisits(id));
+            this.Parent.Controls.Add(new HistoryVisits(idpat));
         }
 
         private void Handle_Load(object sender, EventArgs e)
@@ -128,19 +130,31 @@ namespace MedicalClinic.Doctor
 
         }
 
-        private void save_Click(object sender, EventArgs e)
+        private void save_Click(object sender, EventArgs e)//zapisz
         {
             SQLDoc.updateDescDia(Int32.Parse(IDVis), textBox5.Text.ToString(), textBox4.Text.ToString(), "R");
             MessageBox.Show("Zapisano");
+
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)//zakończ
         {
             SQLDoc.updateDescDia(Int32.Parse(IDVis), textBox5.Text.ToString(), textBox4.Text.ToString(), "E");
             MessageBox.Show("Zapisano i zakończono wizytę");
             this.Controls.Clear();
             this.Visible = false;
             this.Parent.Hide();
+            textb.Text = "changed";
+        }
+
+        private void button6_Click(object sender, EventArgs e)//anulowanie
+        {
+            SQLDoc.updateDescDia(Int32.Parse(IDVis), textBox5.Text.ToString(), textBox4.Text.ToString(), "C");
+            MessageBox.Show("Zapisano i anulowano wizytę");
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
+            textb.Text = "changed";
         }
     }
 }

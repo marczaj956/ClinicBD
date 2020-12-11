@@ -62,29 +62,31 @@ namespace MedicalClinic.Doctor
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 0);
+            this.groupBox1.Location = new System.Drawing.Point(2, 0);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1917, 325);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(1278, 211);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(233, 216);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker1.Location = new System.Drawing.Point(155, 140);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowCheckBox = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(453, 35);
+            this.dateTimePicker1.Size = new System.Drawing.Size(303, 26);
             this.dateTimePicker1.TabIndex = 9;
             this.dateTimePicker1.Value = new System.DateTime(2020, 12, 7, 20, 46, 35, 244);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(1732, 25);
+            this.button5.Location = new System.Drawing.Point(1155, 16);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(141, 48);
+            this.button5.Size = new System.Drawing.Size(94, 31);
             this.button5.TabIndex = 8;
             this.button5.Text = "Wyloguj";
             this.button5.UseVisualStyleBackColor = true;
@@ -93,9 +95,10 @@ namespace MedicalClinic.Doctor
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(1184, 216);
+            this.button1.Location = new System.Drawing.Point(789, 140);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 49);
+            this.button1.Size = new System.Drawing.Size(95, 32);
             this.button1.TabIndex = 5;
             this.button1.Text = "Szukaj";
             this.button1.UseVisualStyleBackColor = true;
@@ -105,9 +108,10 @@ namespace MedicalClinic.Doctor
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(86, 216);
+            this.label3.Location = new System.Drawing.Point(57, 140);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 29);
+            this.label3.Size = new System.Drawing.Size(44, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Data";
             // 
@@ -120,14 +124,15 @@ namespace MedicalClinic.Doctor
         MedicalClinic.State.Zarejestrowana};
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox2.FormattingEnabled = true;
-            //this.comboBox2.Items.AddRange(new object[] {
-            //MedicalClinic.State.Wszystkie,
-            //MedicalClinic.State.Anulowana,
-            //MedicalClinic.State.Zakonczona,
-            //MedicalClinic.State.Zarejestrowana});
-            this.comboBox2.Location = new System.Drawing.Point(226, 70);
+            /*this.comboBox2.Items.AddRange(new object[] {
+            MedicalClinic.State.Wszystkie,
+            MedicalClinic.State.Anulowana,
+            MedicalClinic.State.Zakonczona,
+            MedicalClinic.State.Zarejestrowana});*/
+            this.comboBox2.Location = new System.Drawing.Point(151, 45);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(264, 37);
+            this.comboBox2.Size = new System.Drawing.Size(177, 28);
             this.comboBox2.TabIndex = 3;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -135,9 +140,10 @@ namespace MedicalClinic.Doctor
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(86, 70);
+            this.label2.Location = new System.Drawing.Point(57, 45);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 29);
+            this.label2.Size = new System.Drawing.Size(43, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Stan";
             // 
@@ -147,9 +153,10 @@ namespace MedicalClinic.Doctor
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBox1.Location = new System.Drawing.Point(689, 74);
+            this.checkBox1.Location = new System.Drawing.Point(459, 48);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(227, 33);
+            this.checkBox1.Size = new System.Drawing.Size(147, 24);
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "Tylko moje wizyty";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -158,9 +165,10 @@ namespace MedicalClinic.Doctor
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(1354, 886);
+            this.button2.Location = new System.Drawing.Point(903, 576);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 49);
+            this.button2.Size = new System.Drawing.Size(95, 32);
             this.button2.TabIndex = 6;
             this.button2.Text = "Pokaż";
             this.button2.UseVisualStyleBackColor = true;
@@ -169,9 +177,10 @@ namespace MedicalClinic.Doctor
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(1542, 886);
+            this.button3.Location = new System.Drawing.Point(1028, 576);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(142, 49);
+            this.button3.Size = new System.Drawing.Size(95, 32);
             this.button3.TabIndex = 7;
             this.button3.Text = "Obsłuż";
             this.button3.UseVisualStyleBackColor = true;
@@ -179,19 +188,18 @@ namespace MedicalClinic.Doctor
             // 
             // connector
             // 
-            this.connector.Location = new System.Drawing.Point(489, 897);
-            this.connector.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.connector.Location = new System.Drawing.Point(326, 583);
             this.connector.Name = "connector";
-            this.connector.Size = new System.Drawing.Size(148, 26);
+            this.connector.Size = new System.Drawing.Size(100, 20);
             this.connector.TabIndex = 8;
             this.connector.Visible = false;
+            this.connector.TextChanged += new System.EventHandler(this.connector_TextChanged);
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(114, 809);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(76, 526);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 154);
+            this.panel1.Size = new System.Drawing.Size(200, 100);
             this.panel1.TabIndex = 9;
             this.panel1.Visible = false;
             // 
@@ -205,9 +213,11 @@ namespace MedicalClinic.Doctor
             this.Pesel,
             this.Data_wizyty,
             this.Nazwisko_lekarza});
-            this.listView1.Location = new System.Drawing.Point(3, 331);
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(2, 215);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1917, 470);
+            this.listView1.Size = new System.Drawing.Size(1279, 307);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -248,7 +258,7 @@ namespace MedicalClinic.Doctor
             // 
             // Doctor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.panel1);
@@ -256,8 +266,9 @@ namespace MedicalClinic.Doctor
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Doctor";
-            this.Size = new System.Drawing.Size(1920, 1000);
+            this.Size = new System.Drawing.Size(1280, 650);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
