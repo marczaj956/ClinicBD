@@ -165,5 +165,24 @@ namespace MedicalClinic
                         staffTable = st
                     });
         }
+
+
+        public static void updateDescDia(int id, string diag, string desc, string state)
+        {   //napisać ifa czy są dane
+
+            DataClassesDataContext db = new DataClassesDataContext();
+            Appointment update = db.Appointment.Single(row => row.Id_Appointment == id);
+            update.Descirption = desc;
+            update.State = state;
+            update.Diagnosis = diag;
+            db.SubmitChanges();
+
+        }
+
+
+
+
+
+
     }
 }

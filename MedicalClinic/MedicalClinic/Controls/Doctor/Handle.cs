@@ -12,7 +12,7 @@ using MedicalClinic.Controls.Doctor;
 namespace MedicalClinic.Doctor
 {
     public partial class Handle : UserControl
-    {
+    { private string IDVis;
         public Handle()
         {
             InitializeComponent();
@@ -27,6 +27,43 @@ namespace MedicalClinic.Doctor
 
             //}
         }
+
+        public Handle(int IDP, string IDV)
+        {
+            InitializeComponent();
+
+            IDVis = IDV;
+
+            PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
+            searchCriteria.setPatientId(IDP);
+
+            var res = SQLDoc.GetPatient(searchCriteria);
+            foreach (var order in res)
+            {
+                textBox1.Text = order.patientTable.Name;
+                textBox2.Text = order.patientTable.Surname;
+                textBox3.Text = order.patientTable.PESEL;
+
+
+            }
+
+
+            int x = Int32.Parse(IDV);
+            var res1 = SQLDoc.GetAppointment(x);
+            foreach (var order in res1)
+            {
+                textBox4.Text = order.Descirption;
+                textBox5.Text = order.Diagnosis;
+
+
+            }
+
+        }
+
+
+
+
+
 
         private void button4_Click(object sender, EventArgs e) //show phisical
         {
@@ -89,6 +126,21 @@ namespace MedicalClinic.Doctor
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            SQLDoc.updateDescDia(Int32.Parse(IDVis), textBox5.Text.ToString(), textBox4.Text.ToString(), "R");
+            MessageBox.Show("Zapisano");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SQLDoc.updateDescDia(Int32.Parse(IDVis), textBox5.Text.ToString(), textBox4.Text.ToString(), "E");
+            MessageBox.Show("Zapisano i zakończono wizytę");
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
         }
     }
 }

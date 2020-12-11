@@ -89,18 +89,41 @@ namespace MedicalClinic.Doctor
             }
 
 
-          //  Panel P = new Panel();
-           // P.Controls.Clear();
-           // this.Hide();
-          //  this.Parent.Controls.Add(new Show());
         }
 
         private void button3_Click(object sender, EventArgs e) //handle
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Handle());
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+
+
+
+                PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
+                long pesel = long.Parse(item.SubItems[4].Text.TrimEnd());
+                searchCriteria.setPesel(pesel);
+                // Refresh(SQLDoc.GetPatient(searchCriteria));
+                var x = SQLRec.GetPatientsList("", "", item.SubItems[4].Text.TrimEnd().ToString());
+               // var res = SQLDoc.GetPatient(searchCriteria);
+               // foreach (var x in res)
+                {
+                    panel1.Controls.Add(new Handle(x.First().Id_Patient, item.SubItems[0].Text.TrimEnd()));
+                    panel1.Visible = true;
+                    panel1.Dock = DockStyle.Fill;
+                    panel1.BringToFront();
+
+
+                }
+
+
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Nie wybrano pacjenta");
+            }
         }
 
 

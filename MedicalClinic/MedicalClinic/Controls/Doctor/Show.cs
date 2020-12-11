@@ -47,10 +47,9 @@ namespace MedicalClinic.Doctor
 
         private void button2_Click(object sender, EventArgs e) //return
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Doctor());
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)//show physical
