@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.showPhysicalExamination1 = new MedicalClinic.Controls.Doctor.ShowPhysicalExamination();
+            //this.showPhysicalExamination1 = new MedicalClinic.Controls.Doctor.ShowPhysicalExamination();
             this.SuspendLayout();
             // 
             // showPhysicalExamination1

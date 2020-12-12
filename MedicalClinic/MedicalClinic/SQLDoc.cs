@@ -16,6 +16,7 @@ namespace MedicalClinic
             public Patient patientTable { get; set; }
             public Examination_Laboratory LabTab { get; set; }
             public Examination_Physical PhyTab { get; set; }
+            public Exam_Dictionary DicTab { get; set; }
 
         }
 
@@ -276,6 +277,29 @@ namespace MedicalClinic
             return result;
         }
 
+
+        public static IQueryable<TableJoinResult> GetPhyVis(int id)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+            return (from app in db.Appointment
+                    join st in db.Staff
+                    on app.Id_Doctor equals st.Id_Staff
+                    join phy in db.Examination_Physical
+                    on app.Id_Appointment equals phy.Id_Appointment
+                    join dic in db.Exam_Dictionary
+                    on phy.Exam_Code equals dic.Exam_Code
+
+                    where
+                         app.Id_Appointment == id
+
+                    select new TableJoinResult
+                    {
+                        appointmentTable = app,
+                        PhyTab = phy,
+                        staffTable = st,
+                        DicTab = dic
+                    }); ;
+        }
 
 
 
