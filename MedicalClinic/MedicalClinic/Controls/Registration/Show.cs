@@ -27,7 +27,7 @@ namespace MedicalClinic.Controls.Registration
         {
             apoid = ID;
             textb = text;
-            monthCalendar1.Enabled = false;
+            
             var a = SQLRec.GetApoSE(apoid);
 
 
@@ -41,10 +41,11 @@ namespace MedicalClinic.Controls.Registration
             }
             var doc = SQLAdm.GetStaff(a.First().Id_Doctor);
             textBox4.Text = doc.First().Name.ToString();//lekarz
-            monthCalendar1.SetDate(a.First().Date_Appointment);//data
-            textBox6.Text = a.First().State.ToString();//stan
+           
+            textBox7.Text = a.First().Date_Appointment.ToString();//data
+            textBox6.Text =SQLRec.translateRolePL( a.First().State.ToString());//stan
             string time = a.First().Date_Appointment.TimeOfDay.ToString();
-            textBox5.Text =time;//godzina
+           
             
            
         }

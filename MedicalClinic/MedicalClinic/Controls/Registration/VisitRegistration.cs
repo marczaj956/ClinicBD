@@ -56,23 +56,30 @@ namespace MedicalClinic.Controls.Registration
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string culture = "mn-MN";
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(culture);
-            string datetosql= monthCalendar1.SelectionStart.ToShortDateString();
-            datetosql += " " + comboBox2.Text;
+            if (comboBox1.SelectedIndex!=-1&&comboBox2.SelectedIndex!=-1)
+            {
+                string culture = "mn-MN";
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(culture);
+                string datetosql = monthCalendar1.SelectionStart.ToShortDateString();
+                datetosql += " " + comboBox2.Text;
 
-            var doc = docs.AsEnumerable<Staff>();
-            
-            int docid = doc.ElementAt<Staff>(comboBox1.SelectedIndex).Id_Staff;
+                var doc = docs.AsEnumerable<Staff>();
 
-            DateTime dt = DateTime.Parse(datetosql);
-          
-            SQLRec.ExecuteAppointment(dt, docid, idrec, "", "", patid,"ZLE");//zamiast 1 idrec
-            this.Controls.Clear();
-            this.Visible = false;
-            this.Parent.Hide();
+                int docid = doc.ElementAt<Staff>(comboBox1.SelectedIndex).Id_Staff;
 
-            textb.Text = "changed";
+                DateTime dt = DateTime.Parse(datetosql);
+
+                SQLRec.ExecuteAppointment(dt, docid, idrec, "", "", patid, "R");//zamiast 1 idrec
+                this.Controls.Clear();
+                this.Visible = false;
+                this.Parent.Hide();
+
+                textb.Text = "changed";
+            }
+            else
+            {
+                MessageBox.Show("Wybierz doktora oraz dane wizyty");
+            }
         }
 
         private void VisitRegistration_Load(object sender, EventArgs e)

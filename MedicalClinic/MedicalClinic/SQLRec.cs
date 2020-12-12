@@ -216,6 +216,39 @@ namespace MedicalClinic
 
 
         }
+        public static string translateRoleDB(string input)
+        {
+            string translate = "";
+            if (input == "Zarejestrowana") translate = "R";
+            else if (input == "Anulowana") translate = "C";
+            else if (input == "Zakonczona") translate = "E";
+            else if (input == "Wszystkie") translate = "";
+            
+            return translate;
+        }
 
+        public static string translateRolePL(string input)
+        {
+            string translate = "";
+            if (input == "R") translate = "Zarejestrowana";
+            else if (input == "C") translate = "Anulowana";
+            else if (input == "E") translate = "Zakonczona";
+            
+            return translate;
+        }
+        public static IQueryable<Staff> GetDocData(int id)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            var result = from log in db.Staff
+                         where
+                               log.Id_Staff == id
+
+                         select log;
+
+
+
+            return result;
+        }
     }
 }

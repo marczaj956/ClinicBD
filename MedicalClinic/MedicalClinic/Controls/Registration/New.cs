@@ -13,17 +13,23 @@ namespace MedicalClinic.Controls.Registration
 {
     public partial class New : UserControl
     {
+        private TextBox textb;
         public New()
         {
             InitializeComponent();
         }
+        public New(TextBox text) : this()
+        {
+            textb = text;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new Reg());
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
+
+            textb.Text = "changed";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -32,10 +38,11 @@ namespace MedicalClinic.Controls.Registration
             {
                 SQLRec.insertPatient(textBox1.Text, textBox2.Text, textBox3.Text);
                 MessageBox.Show("Dodano pacjenta");
-                Panel P = new Panel();
-                P.Controls.Clear();
-                this.Hide();
-                this.Parent.Controls.Add(new Reg());
+                this.Controls.Clear();
+                this.Visible = false;
+                this.Parent.Hide();
+
+                textb.Text = "changed";
             }
             else MessageBox.Show("Brak Danych");
            

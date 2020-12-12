@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button6 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -51,18 +50,6 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button6.Location = new System.Drawing.Point(1132, 512);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(133, 76);
-            this.button6.TabIndex = 15;
-            this.button6.Text = "Edytuj wizyte//chyba do usuniecia";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -71,7 +58,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(111, 42);
             this.button4.TabIndex = 13;
-            this.button4.Text = "Pokaż wizyte";
+            this.button4.Text = "Pokaż wizyty pacjenta";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -267,7 +254,6 @@
             this.Controls.Add(this.WindowPanel);
             this.Controls.Add(this.connector);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -283,8 +269,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;

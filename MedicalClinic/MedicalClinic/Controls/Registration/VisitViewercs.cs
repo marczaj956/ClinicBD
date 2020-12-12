@@ -48,9 +48,11 @@ namespace MedicalClinic.Controls.Registration
             foreach (var order in temp)
             {
                 ListViewItem lvi = new ListViewItem(order.Id_Appointment.ToString());
-                lvi.SubItems.Add(order.Id_Doctor.ToString());
+                var tmp =SQLRec.GetDocData(order.Id_Doctor);
+                string name = tmp.FirstOrDefault().Name + " " + tmp.FirstOrDefault().Surname;
+                lvi.SubItems.Add(name);
                 lvi.SubItems.Add(order.Date_Appointment.ToString());
-                lvi.SubItems.Add(order.State.ToString());
+                lvi.SubItems.Add(SQLRec.translateRolePL( order.State.ToString()));
 
                 listView1.Items.Add(lvi);
 
@@ -147,11 +149,13 @@ namespace MedicalClinic.Controls.Registration
             foreach (var order in temp)
             {
                 ListViewItem lvi = new ListViewItem(order.Id_Appointment.ToString());
-                lvi.SubItems.Add(order.Id_Doctor.ToString());
+                var tmp = SQLRec.GetDocData(order.Id_Doctor);
+                string name = tmp.FirstOrDefault().Name + " " + tmp.FirstOrDefault().Surname;
+                lvi.SubItems.Add(name);
                 lvi.SubItems.Add(order.Date_Appointment.ToString());
-                lvi.SubItems.Add(order.State.ToString());
+                lvi.SubItems.Add(SQLRec.translateRolePL(order.State.ToString()));
 
-                listView1.Items.Add(lvi);
+                listView1.Items.Add(lvi); ;
 
             }
         }
@@ -165,12 +169,12 @@ namespace MedicalClinic.Controls.Registration
                 if (comboBox3.SelectedIndex >= 0)
                 {
                     int docid = doc.ElementAt<Staff>(comboBox3.SelectedIndex).Id_Staff;
-                    var temp = SQLRec.GetApo(patid, comboBox1.Text.ToString(), docid, datetostring());
+                    var temp = SQLRec.GetApo(patid, SQLRec.translateRoleDB(comboBox1.Text.ToString()), docid, datetostring());
                     listupdate(temp);
                 }
                 else
                 {
-                    var temp = SQLRec.GetApo(patid, comboBox1.Text.ToString(), datetostring());
+                    var temp = SQLRec.GetApo(patid,SQLRec.translateRoleDB( comboBox1.Text.ToString()), datetostring());
                     listupdate(temp);
                 }
                
@@ -182,12 +186,12 @@ namespace MedicalClinic.Controls.Registration
                 if (comboBox3.SelectedIndex >= 0)
                 {
                     int docid = doc.ElementAt<Staff>(comboBox3.SelectedIndex).Id_Staff;
-                    var temp = SQLRec.GetApo(patid, comboBox1.Text.ToString(), docid);
+                    var temp = SQLRec.GetApo(patid, SQLRec.translateRoleDB(comboBox1.Text.ToString()), docid);
                     listupdate(temp);
                 }
                 else
                 {
-                    var temp = SQLRec.GetApo(patid, comboBox1.Text.ToString());
+                    var temp = SQLRec.GetApo(patid, SQLRec.translateRoleDB(comboBox1.Text.ToString()));
                     listupdate(temp);
                 }
             }
@@ -210,6 +214,13 @@ namespace MedicalClinic.Controls.Registration
         {
             reload();
             connector.Text = "";
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            this.Visible = false;
+            this.Parent.Hide();
         }
     }
     }

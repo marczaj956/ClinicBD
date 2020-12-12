@@ -48,10 +48,10 @@ namespace MedicalClinic.Controls.Registration
 
         private void button2_Click(object sender, EventArgs e) //new
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new New());
+            WindowPanel.Controls.Add(new New(connector));
+            WindowPanel.Visible = true;
+            WindowPanel.Dock = DockStyle.Fill;
+            WindowPanel.BringToFront();
         }
 
         private void button3_Click(object sender, EventArgs e)//visit registarion
