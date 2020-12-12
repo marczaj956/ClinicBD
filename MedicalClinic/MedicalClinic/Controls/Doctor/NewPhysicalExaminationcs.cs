@@ -12,26 +12,9 @@ namespace MedicalClinic.Doctor
 {
     public partial class NewPhysicalExaminationcs : UserControl
     {
-        private string IDVis;
-        private int idpat;
-        public NewPhysicalExaminationcs(int IDP, string IDV)
+        public NewPhysicalExaminationcs()
         {
             InitializeComponent();
-
-            IDVis = IDV;
-            idpat = IDP;
-            PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
-            searchCriteria.setPatientId(IDP);
-
-            var res = SQLDoc.GetPatient(searchCriteria);
-            foreach (var order in res)
-            {
-                textBox1.Text = order.patientTable.Name;
-                textBox2.Text = order.patientTable.Surname;
-                textBox3.Text = order.patientTable.PESEL;
-
-
-            }
 
             //var res = SQLDoc.GetPatient(1);
             //foreach (var order in res)
@@ -48,15 +31,10 @@ namespace MedicalClinic.Doctor
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new PhysicalExamination(idpat, IDVis));
+            this.Parent.Controls.Add(new PhysicalExamination());
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
         {
 
         }

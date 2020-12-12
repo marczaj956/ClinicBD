@@ -70,10 +70,9 @@ namespace MedicalClinic.Doctor
 
         private void button4_Click(object sender, EventArgs e) //show phisical
         {
-            WindowPanel.Controls.Add(new PhysicalExamination(idpat, IDVis));
-            WindowPanel.Visible = true;
-            WindowPanel.Dock = DockStyle.Fill;
-            WindowPanel.BringToFront();
+            //ShowPhisicExamList f2 = new ShowPhisicExamList();
+
+            //f2.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e) //show labo
