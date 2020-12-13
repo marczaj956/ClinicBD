@@ -70,7 +70,7 @@ namespace MedicalClinic.Doctor
 
         private void button4_Click(object sender, EventArgs e) //show phisical
         {
-            int procedure = 1;
+            int procedure = 2;
             WindowPanel.Controls.Add(new PhysicalExamination(idpat, IDVis, procedure));
             WindowPanel.Visible = true;
             WindowPanel.Dock = DockStyle.Fill;
