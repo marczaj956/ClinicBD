@@ -12,18 +12,34 @@ namespace MedicalClinic.Controls.Doctor
 {
     public partial class LabolatoryExaminantion : UserControl
     {
-        public LabolatoryExaminantion()
+        private string IDVis;
+        private int idpat;
+
+        public LabolatoryExaminantion(int IdPatient, string IdVisit, int procedure) // procedure informuje o trybie formatki czy edytowalna (zlec badanie )- "2" czy tylko pokazujemy badanka - "1"
         {
             InitializeComponent();
+            if (procedure == 1)
+            {
+                button2.Visible = false;
+                button3.Visible = false;
+            }
+            IDVis = IdVisit;
+            idpat = IdPatient;
+            PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
+            searchCriteria.setPatientId(IdPatient);
 
-            //var res = SQLDoc.GetPatient(1);
-            //foreach (var order in res)
-            //{
-            //    textBox1.Text = order.patientTable.Name;
-            //    textBox2.Text = order.patientTable.Surname;
-            //    textBox3.Text = order.patientTable.PESEL;
+            var res = SQLDoc.GetPatient(searchCriteria);
+            foreach (var order in res)
+            {
+                textBox1.Text = order.patientTable.Name;
+                textBox2.Text = order.patientTable.Surname;
+                textBox3.Text = order.patientTable.PESEL;
 
-            //}
+
+            }
+
+            Mainlist.FullRowSelect = true;
+            Mainlist.GridLines = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -51,6 +67,16 @@ namespace MedicalClinic.Controls.Doctor
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabolatoryExaminantion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

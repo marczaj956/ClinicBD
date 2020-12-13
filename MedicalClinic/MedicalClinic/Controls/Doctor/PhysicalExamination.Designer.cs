@@ -218,6 +218,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "PhysicalExamination";
             this.Size = new System.Drawing.Size(1920, 1000);
+            this.Load += new System.EventHandler(this.PhysicalExamination_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

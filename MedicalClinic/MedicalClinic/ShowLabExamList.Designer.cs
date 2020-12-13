@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labolatoryExaminantion1 = new MedicalClinic.Controls.Doctor.LabolatoryExaminantion();
+          //  this.labolatoryExaminantion1 = new MedicalClinic.Controls.Doctor.LabolatoryExaminantion();
             this.SuspendLayout();
             // 
             // labolatoryExaminantion1

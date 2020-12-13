@@ -67,9 +67,12 @@ namespace MedicalClinic.Doctor
 
         private void button3_Click(object sender, EventArgs e) //show labo
         {
-            ShowLabExamList f2 = new ShowLabExamList(IdPatient,IdVisit);
-            
-            f2.ShowDialog();
+            int procedure = 1;
+            int IdVisitInt = Int32.Parse(IdVisit);
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new LabolatoryExaminantion(IdPatient, IdVisit, procedure));
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

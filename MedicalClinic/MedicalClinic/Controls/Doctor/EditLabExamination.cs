@@ -30,7 +30,7 @@ namespace MedicalClinic.Controls.Doctor
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new LabolatoryExaminantion());
+            this.Parent.Controls.Add(new LabolatoryExaminantion(0,"0",2)); //spr czy git
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

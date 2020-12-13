@@ -15,7 +15,7 @@ namespace MedicalClinic.Doctor
     {
         private string IDVis;
         private int idpat;
-        public PhysicalExamination(int IdPatient, string IdVisit, int procedure)  // procedure informuje o trybie formatki czy edytowalna (zlec badanie)- "2" czy tylko pokazujemy badanka - "1"
+        public PhysicalExamination(int IdPatient, string IdVisit, int procedure)  // procedure informuje o trybie formatki czy edytowalna (zlec badanie i edytuj)- "2" czy tylko pokazujemy badanka - "1"
         {
             InitializeComponent();
             if (procedure == 1)
@@ -128,6 +128,11 @@ namespace MedicalClinic.Doctor
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PhysicalExamination_Load(object sender, EventArgs e)
         {
 
         }

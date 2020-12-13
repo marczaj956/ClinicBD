@@ -36,17 +36,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID_badania = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Wynik = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.Mainlist = new System.Windows.Forms.ListView();
+            this.IdBadania = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.RodzajBdania = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Stan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.WynikBadania = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.data = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -133,52 +132,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_badania,
-            this.Nazwa,
-            this.Stan,
-            this.Wynik,
-            this.Data});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 258);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1917, 525);
-            this.dataGridView1.TabIndex = 31;
-            // 
-            // ID_badania
-            // 
-            this.ID_badania.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID_badania.HeaderText = "ID badania";
-            this.ID_badania.Name = "ID_badania";
-            // 
-            // Nazwa
-            // 
-            this.Nazwa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nazwa.HeaderText = "Rozdaj badania";
-            this.Nazwa.Name = "Nazwa";
-            // 
-            // Stan
-            // 
-            this.Stan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Stan.HeaderText = "Stan";
-            this.Stan.Name = "Stan";
-            // 
-            // Wynik
-            // 
-            this.Wynik.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Wynik.HeaderText = "Wynik badania";
-            this.Wynik.MaxInputLength = 254;
-            this.Wynik.Name = "Wynik";
-            // 
-            // Data
-            // 
-            this.Data.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Data.HeaderText = "Data wykonania";
-            this.Data.Name = "Data";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -211,21 +164,62 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // Mainlist
+            // 
+            this.Mainlist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.IdBadania,
+            this.RodzajBdania,
+            this.Stan,
+            this.WynikBadania,
+            this.data});
+            this.Mainlist.HideSelection = false;
+            this.Mainlist.Location = new System.Drawing.Point(0, 266);
+            this.Mainlist.Name = "Mainlist";
+            this.Mainlist.Size = new System.Drawing.Size(1914, 561);
+            this.Mainlist.TabIndex = 36;
+            this.Mainlist.UseCompatibleStateImageBehavior = false;
+            this.Mainlist.View = System.Windows.Forms.View.Details;
+            // 
+            // IdBadania
+            // 
+            this.IdBadania.Text = "Id badania";
+            this.IdBadania.Width = 210;
+            // 
+            // RodzajBdania
+            // 
+            this.RodzajBdania.Text = "Rodzaj badania";
+            this.RodzajBdania.Width = 151;
+            // 
+            // Stan
+            // 
+            this.Stan.Text = "Stan";
+            this.Stan.Width = 200;
+            // 
+            // WynikBadania
+            // 
+            this.WynikBadania.Text = "Wynik badania";
+            this.WynikBadania.Width = 196;
+            // 
+            // data
+            // 
+            this.data.Text = "Data wykonania";
+            this.data.Width = 228;
+            // 
             // LabolatoryExaminantion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Mainlist);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
             this.Name = "LabolatoryExaminantion";
             this.Size = new System.Drawing.Size(1920, 1000);
+            this.Load += new System.EventHandler(this.LabolatoryExaminantion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,14 +235,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_badania;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nazwa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Wynik;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.ListView Mainlist;
+        private System.Windows.Forms.ColumnHeader IdBadania;
+        private System.Windows.Forms.ColumnHeader RodzajBdania;
+        private System.Windows.Forms.ColumnHeader Stan;
+        private System.Windows.Forms.ColumnHeader WynikBadania;
+        private System.Windows.Forms.ColumnHeader data;
     }
 }
