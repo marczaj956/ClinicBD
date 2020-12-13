@@ -14,27 +14,12 @@ namespace MedicalClinic
             public Appointment appointmentTable { get; set; }
             public Staff staffTable { get; set; }
             public Patient patientTable { get; set; }
-            public Examination_Laboratory LabTab { get; set; }
-            public Examination_Physical PhyTab { get; set; }
-            public Exam_Dictionary DicTab { get; set; }
+            public Examination_Laboratory laboratoryExaminationTable { get; set; }
+            public Examination_Physical physicalExaminationTable { get; set; }
+            public Exam_Dictionary examDictionaryTable { get; set; }
 
         }
-
-        public static IQueryable<TableJoinResult> GetAppointments_ID(int id)
-        {
-            DataClassesDataContext db = new DataClassesDataContext();
-            return (from st in db.Staff
-                    join app in db.Appointment
-                    on st.Id_Staff equals app.Id_Doctor
-                    where
-                          app.Id_Doctor.Equals(id)
-
-                    select new TableJoinResult
-                    {
-                        appointmentTable = app,
-                        staffTable = st
-                    });
-        }
+        
 
         public static IQueryable<TableJoinResult> GetVisits(VisitsSearchCriteria searchCriteria)
         {
@@ -64,7 +49,7 @@ namespace MedicalClinic
                 query = query.Where(app => app.appointmentTable.State.Equals(searchCriteria.getStateValue()));
             }
 
-            if (searchCriteria.getDate() != default && searchCriteria.getDate() != null)
+            if (searchCriteria.getDate() != default(DateTime) && searchCriteria.getDate() != null)
             {
                 query = query.Where(app => app.appointmentTable.Date_Appointment >= searchCriteria.getDate() && app.appointmentTable.Date_Appointment <= searchCriteria.getDateWithLastTimeOfTheDay());
             }
@@ -109,36 +94,73 @@ namespace MedicalClinic
             return query;
         }
 
+        public static IQueryable<TableJoinResult> GetPhysicalExamination(ExaminationsSearchCriteria searchCriteria)
+        {
+
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            IQueryable<TableJoinResult> query = (from app in db.Appointment
+                                                 join st in db.Staff
+                                                 on app.Id_Doctor equals st.Id_Staff
+                                                 join phy in db.Examination_Physical
+                                                 on app.Id_Appointment equals phy.Id_Appointment
+                                                 join dic in db.Exam_Dictionary
+                                                 on phy.Exam_Code equals dic.Exam_Code
+                                                 select new TableJoinResult
+                                                 {
+                                                     appointmentTable = app,
+                                                     physicalExaminationTable = phy,
+                                                     staffTable = st,
+                                                     examDictionaryTable = dic
+                                                 });
+
+            if (searchCriteria.getPatientId() != 0)
+            {
+                query = query.Where(app => app.appointmentTable.Id_Patient.Equals(searchCriteria.getPatientId()));
+            }
+
+            if (searchCriteria.getAppointmentId() != 0)
+            {
+                query = query.Where(app => app.appointmentTable.Id_Appointment.Equals(searchCriteria.getAppointmentId()));
+            }
+           
+            
+            return query;
+        }
+
+        public static IQueryable<TableJoinResult> GetLaboratoryExamination(ExaminationsSearchCriteria searchCriteria)
+        {
+
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            IQueryable<TableJoinResult> query = (from app in db.Appointment
+                                                 join st in db.Staff
+                                                 on app.Id_Doctor equals st.Id_Staff
+                                                 join lab in db.Examination_Laboratory
+                                                 on app.Id_Appointment equals lab.Id_Appointment
+                                                 join dic in db.Exam_Dictionary
+                                                 on lab.Exam_Code equals dic.Exam_Code
+                                                 select new TableJoinResult
+                                                 {
+                                                     appointmentTable = app,
+                                                     laboratoryExaminationTable=lab,
+                                                     staffTable = st,
+                                                     examDictionaryTable = dic
+                                                 });
+
+            if (searchCriteria.getPatientId() != 0)
+            {
+                query = query.Where(app => app.appointmentTable.Id_Patient.Equals(searchCriteria.getPatientId()));
+            }
+
+            if (searchCriteria.getAppointmentId() != 0)
+            {
+                query = query.Where(app => app.appointmentTable.Id_Appointment.Equals(searchCriteria.getAppointmentId()));
+            }
 
 
-        //public static IQueryable<TableJoinResult> GetPatient(int id)
-        //{
-        //    DataClassesDataContext db = new DataClassesDataContext();
-        //    return (from app in db.Appointment
-        //            join pt in db.Patient
-        //            on app.Id_Patient equals pt.Id_Patient
-        //            where
-        //                 app.Id_Patient == id
-
-        //            select new TableJoinResult
-        //            {
-        //                appointmentTable = app,
-        //                patientTable = pt
-        //            });
-        //}
-
-        //public static IQueryable<Patient> GetPatientsList(string pesel)
-        //{
-        //    DataClassesDataContext db = new DataClassesDataContext();
-
-        //    var result = from log in db.Patient
-        //                 where
-        //                       log.PESEL.StartsWith(pesel)
-
-        //                 select log;
-
-        //    return result;
-        //}
+            return query;
+        }
 
         public static IQueryable<Appointment> GetAppointment(int id)
         {
@@ -216,7 +238,7 @@ namespace MedicalClinic
                     select new TableJoinResult
                     {
                         appointmentTable = app,
-                        LabTab = lab,
+                        laboratoryExaminationTable = lab,
                         staffTable = st
                     });
         }
@@ -255,7 +277,7 @@ namespace MedicalClinic
                     select new TableJoinResult
                     {
                         appointmentTable = app,
-                        PhyTab = phy,
+                        physicalExaminationTable = phy,
                         staffTable = st
                     });
         }
@@ -295,9 +317,9 @@ namespace MedicalClinic
                     select new TableJoinResult
                     {
                         appointmentTable = app,
-                        PhyTab = phy,
+                        physicalExaminationTable = phy,
                         staffTable = st,
-                        DicTab = dic
+                        examDictionaryTable = dic
                     }); ;
         }
 

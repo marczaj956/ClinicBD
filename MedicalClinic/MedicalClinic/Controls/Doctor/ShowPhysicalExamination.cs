@@ -15,15 +15,15 @@ namespace MedicalClinic.Controls.Doctor
     {
         private string IDVis;
         private int idpat;
-        public ShowPhysicalExamination(int IDP, string IDV)
+        public ShowPhysicalExamination(int IDPatient, string IDVisit, string IDExamination)
         {
             InitializeComponent();
 
-            IDVis = IDV;
-            idpat = IDP;
-
-            PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
-            searchCriteria.setPatientId(IDP);
+            IDVis = IDVisit;
+            idpat = IDPatient;
+            textBox4.Text = IDExamination;
+           PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
+            searchCriteria.setPatientId(IDPatient);
 
             var res = SQLDoc.GetPatient(searchCriteria);
             foreach (var order in res)
@@ -34,14 +34,17 @@ namespace MedicalClinic.Controls.Doctor
 
 
             }
-            //var res = SQLDoc.GetPatient(1);
-            //foreach (var order in res)
-            //{
-            //    textBox1.Text = order.patientTable.Name;
-            //    textBox2.Text = order.patientTable.Surname;
-            //    textBox3.Text = order.patientTable.PESEL;
 
-            //}
+            // textBox6 rodzaj badania
+            // textBox5 wynik
+
+            ExaminationsSearchCriteria examSearchCriteria = new ExaminationsSearchCriteria();
+            examSearchCriteria.setAppointmentId(Int32.Parse(IDVisit));
+            examSearchCriteria.setPatientId(IDPatient);
+            var a = SQLDoc.GetPhysicalExamination(examSearchCriteria);
+            textBox6.Text = a.First().examDictionaryTable.Name;
+            textBox5.Text = a.First().physicalExaminationTable.Result;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -74,9 +77,15 @@ namespace MedicalClinic.Controls.Doctor
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            this.Controls.Clear();
-            this.Visible = false;
-            this.Parent.Hide();
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new PhysicalExamination(idpat, IDVis,1));
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

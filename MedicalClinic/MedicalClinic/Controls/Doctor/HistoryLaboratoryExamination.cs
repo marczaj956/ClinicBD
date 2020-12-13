@@ -34,10 +34,10 @@ namespace MedicalClinic.Controls.Doctor
             {
 
 
-                ListViewItem lvi = new ListViewItem(order.LabTab.Id_Examination.ToString());
+                ListViewItem lvi = new ListViewItem(order.laboratoryExaminationTable.Id_Examination.ToString());
                 lvi.SubItems.Add(order.appointmentTable.Date_Appointment.ToString()); //data
                 lvi.SubItems.Add(order.staffTable.Surname); //nazwisko lekarza
-                lvi.SubItems.Add(order.LabTab.State); //stan
+                lvi.SubItems.Add(order.laboratoryExaminationTable.State); //stan
 
 
                 Mainlist.Items.Add(lvi);

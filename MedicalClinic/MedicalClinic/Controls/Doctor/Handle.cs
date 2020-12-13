@@ -70,7 +70,8 @@ namespace MedicalClinic.Doctor
 
         private void button4_Click(object sender, EventArgs e) //show phisical
         {
-            WindowPanel.Controls.Add(new PhysicalExamination(idpat, IDVis));
+            int procedure = 1;
+            WindowPanel.Controls.Add(new PhysicalExamination(idpat, IDVis, procedure));
             WindowPanel.Visible = true;
             WindowPanel.Dock = DockStyle.Fill;
             WindowPanel.BringToFront();
@@ -78,7 +79,7 @@ namespace MedicalClinic.Doctor
 
         private void button3_Click(object sender, EventArgs e) //show labo
         {
-            ShowLabExamList f2 = new ShowLabExamList();
+            ShowLabExamList f2 = new ShowLabExamList(idpat,IDVis);
 
             f2.ShowDialog();
         }

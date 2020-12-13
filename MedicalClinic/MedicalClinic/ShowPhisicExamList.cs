@@ -12,7 +12,7 @@ namespace MedicalClinic
 {
     public partial class ShowPhisicExamList : Form
     {
-        public ShowPhisicExamList(int IdPatient)
+        public ShowPhisicExamList(int IdPatient, int IdVisit)
         {
             InitializeComponent();
 

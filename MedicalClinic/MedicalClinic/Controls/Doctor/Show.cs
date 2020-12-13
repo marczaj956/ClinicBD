@@ -13,17 +13,17 @@ namespace MedicalClinic.Doctor
 {
     public partial class Show : UserControl
     {
-        private string IDVis;
-        private int idpat;
-        public Show(int IDP, string IDV)
+        private string IdVisit;
+        private int IdPatient;
+        public Show(int IDPatient, string IDVisit)
         {
             InitializeComponent();
 
-            IDVis = IDV;
-            idpat = IDP;
+            IdVisit = IDVisit;
+            IdPatient = IDPatient;
 
             PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
-            searchCriteria.setPatientId(IDP);
+            searchCriteria.setPatientId(IDPatient);
             
             var res = SQLDoc.GetPatient(searchCriteria);
             foreach (var order in res)
@@ -36,7 +36,7 @@ namespace MedicalClinic.Doctor
             }
 
             
-            int x = Int32.Parse(IDV);
+            int x = Int32.Parse(IDVisit);
             var res1 = SQLDoc.GetAppointment(x);
             foreach (var order in res1)
             {
@@ -57,32 +57,17 @@ namespace MedicalClinic.Doctor
 
         private void button4_Click(object sender, EventArgs e)//show physical
         {
-            // PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
-            // long pesel = long.Parse(textBox3.Text.ToString());
-            // //searchCriteria.setName(textBox1.Text.ToString());
-            //// searchCriteria.setSurname(textBox2.Text.ToString());
-            // searchCriteria.setPesel(pesel);
-            // var res = SQLDoc.GetPatient(searchCriteria);
-            // int id =-1;
-            // foreach(var order in res)
-            // {
-            //     id = order.patientTable.Id_Patient;
-            // }
-            // if (id != -1)
-            // {
-            //     ShowPhisicExamList f2 = new ShowPhisicExamList(id);
-            //     f2.ShowDialog();
-            // }
-
+            int procedure = 1;
+            int IdVisitInt = Int32.Parse(IdVisit);
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new ShowPhysicalExamination(idpat, IDVis));
+            this.Parent.Controls.Add(new PhysicalExamination(IdPatient, IdVisit,procedure));
         }
 
         private void button3_Click(object sender, EventArgs e) //show labo
         {
-            ShowLabExamList f2 = new ShowLabExamList();
+            ShowLabExamList f2 = new ShowLabExamList(IdPatient,IdVisit);
             
             f2.ShowDialog();
         }

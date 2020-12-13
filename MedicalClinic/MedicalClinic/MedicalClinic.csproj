@@ -229,6 +229,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses.dbml</DependentUpon>
     </Compile>
+    <Compile Include="ExaminationsSearchCriteria.cs" />
     <Compile Include="GlobalVar.cs" />
     <Compile Include="PatientsSearchCriteria.cs" />
     <Compile Include="show ExaminationPsyhic.cs">

@@ -63,8 +63,8 @@ namespace MedicalClinic
             }
             else
             {
-                this.date = default;
-                this.dateWithLastTimeOfTheDay = default;
+                this.date = default(DateTime);
+                this.dateWithLastTimeOfTheDay = default(DateTime);
             }
         }
 

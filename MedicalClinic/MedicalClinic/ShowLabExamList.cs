@@ -12,9 +12,10 @@ namespace MedicalClinic
 {
     public partial class ShowLabExamList : Form
     {
-        public ShowLabExamList()
+        public ShowLabExamList(int IDP, string IDV)
         {
             InitializeComponent();
+          
         }
     }
 }

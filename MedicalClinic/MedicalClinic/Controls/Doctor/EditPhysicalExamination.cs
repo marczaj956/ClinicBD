@@ -37,10 +37,11 @@ namespace MedicalClinic.Controls.Doctor
 
         private void button2_Click(object sender, EventArgs e)
         {
+            int procedure = 1;
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new PhysicalExamination(idpat, IDVis));
+            this.Parent.Controls.Add(new PhysicalExamination(idpat, IDVis,procedure));
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -50,7 +51,11 @@ namespace MedicalClinic.Controls.Doctor
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            int procedure = 1;
+            Panel P = new Panel();
+            P.Controls.Clear();
+            this.Hide();
+            this.Parent.Controls.Add(new PhysicalExamination(idpat, IDVis,procedure));
         }
     }
 }
