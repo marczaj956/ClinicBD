@@ -45,6 +45,7 @@
             this.Stan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.WynikBadania = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.data = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,6 +121,7 @@
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(228, 35);
             this.textBox3.TabIndex = 6;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // button2
             // 
@@ -179,6 +181,7 @@
             this.Mainlist.TabIndex = 36;
             this.Mainlist.UseCompatibleStateImageBehavior = false;
             this.Mainlist.View = System.Windows.Forms.View.Details;
+            this.Mainlist.SelectedIndexChanged += new System.EventHandler(this.Mainlist_SelectedIndexChanged);
             // 
             // IdBadania
             // 
@@ -205,10 +208,22 @@
             this.data.Text = "Data wykonania";
             this.data.Width = 228;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(1701, 869);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(142, 49);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Powrót";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // LabolatoryExaminantion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Mainlist);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -244,5 +259,6 @@
         private System.Windows.Forms.ColumnHeader Stan;
         private System.Windows.Forms.ColumnHeader WynikBadania;
         private System.Windows.Forms.ColumnHeader data;
+        private System.Windows.Forms.Button button1;
     }
 }

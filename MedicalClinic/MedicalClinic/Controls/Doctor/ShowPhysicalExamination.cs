@@ -15,7 +15,7 @@ namespace MedicalClinic.Controls.Doctor
     {
         private string IDVis;
         private int idpat;
-        public ShowPhysicalExamination(int IDPatient, string IDVisit, string IDExamination)
+        public ShowPhysicalExamination(int IDPatient, string IDVisit, string IDExamination)  
         {
             InitializeComponent();
 
