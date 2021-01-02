@@ -33,7 +33,15 @@ namespace MedicalClinic.Doctor
 
             }
 
-           
+            var result = SQLDoc.GetPhysicalExamination();
+            foreach (var order in result)
+            {
+                comboBox1.Items.Add(order.Name);
+
+            }
+
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -51,6 +59,16 @@ namespace MedicalClinic.Doctor
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NewPhysicalExaminationcs_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

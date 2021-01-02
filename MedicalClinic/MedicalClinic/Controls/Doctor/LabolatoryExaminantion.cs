@@ -26,10 +26,7 @@ namespace MedicalClinic.Controls.Doctor
                 button3.Visible = false;
                 
             }
-            else
-            {
-                button1.Visible = false;
-            }
+           
 
             IDVis = IdVisit;
             idpat = IdPatient;
@@ -82,7 +79,7 @@ namespace MedicalClinic.Controls.Doctor
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new NewLabolatoryExaminationcs());
+            this.Parent.Controls.Add(new NewLabolatoryExaminationcs(idpat,IDVis));
 
         }
 
@@ -91,7 +88,7 @@ namespace MedicalClinic.Controls.Doctor
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new NewLabolatoryExaminationcs());
+            this.Parent.Controls.Add(new NewLabolatoryExaminationcs(idpat,IDVis));
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -133,7 +130,24 @@ namespace MedicalClinic.Controls.Doctor
         {
             this.Controls.Clear();
             this.Hide();
-            this.Controls.Add(new MedicalClinic.Doctor.Show(idpat, IDVis));
+            if (procedure == 1)
+            {
+                this.Controls.Add(new MedicalClinic.Doctor.Show(idpat, IDVis));
+            }
+            else
+            {
+                int x = Int32.Parse(IDVis);
+                var res1 = SQLDoc.GetAppointment(x);
+                foreach (var order in res1)
+                {
+                    x = order.Id_Doctor;
+
+
+                }
+                TextBox idDoc = new TextBox();
+                idDoc.Text = x.ToString();
+                this.Controls.Add(new MedicalClinic.Doctor.Handle(idDoc,idpat,IDVis));
+            }
             this.Visible = true;
             this.Dock = DockStyle.Fill;
             this.BringToFront();

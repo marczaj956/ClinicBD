@@ -33,11 +33,11 @@
             // 
             // labolatoryExaminantion1
             // 
-            this.labolatoryExaminantion1.Location = new System.Drawing.Point(1, 2);
-            this.labolatoryExaminantion1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.labolatoryExaminantion1.Name = "labolatoryExaminantion1";
-            this.labolatoryExaminantion1.Size = new System.Drawing.Size(1280, 650);
-            this.labolatoryExaminantion1.TabIndex = 0;
+
+            //this.labolatoryExaminantion1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            //this.labolatoryExaminantion1.Name = "labolatoryExaminantion1";
+            //this.labolatoryExaminantion1.Size = new System.Drawing.Size(1280, 650);
+            //this.labolatoryExaminantion1.TabIndex = 0;
             // 
             // ShowLabExamList
             // 

@@ -213,6 +213,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "NewLabolatoryExaminationcs";
             this.Size = new System.Drawing.Size(1920, 1000);
+            this.Load += new System.EventHandler(this.NewLabolatoryExaminationcs_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

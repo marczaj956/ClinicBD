@@ -174,8 +174,31 @@ namespace MedicalClinic
             
             return result;
         }
+        public static IQueryable<Exam_Dictionary> GetLabolatoryExamination()
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
 
-       
+            var result = from log in db.Exam_Dictionary
+                         where
+                               log.Type == "LAB"
+
+                         select log;
+
+            return result;
+        }
+        public static IQueryable<Exam_Dictionary> GetPhysicalExamination()
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            var result = from log in db.Exam_Dictionary
+                         where
+                               log.Type == "PHY"
+
+            select log;
+
+            return result;
+        }
+
         public static IQueryable<TableJoinResult> GetAppointmentP(int id)
         {
             DataClassesDataContext db = new DataClassesDataContext();

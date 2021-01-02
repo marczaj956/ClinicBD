@@ -15,20 +15,20 @@ namespace MedicalClinic.Doctor
     { private string IDVis;
       private TextBox textb;
         private int idpat;
-        public Handle()
-        {
-            InitializeComponent();
+        //public Handle()
+        //{
+        //    InitializeComponent();
 
-            //var res = SQLDoc.GetPatient(1);
-            //foreach (var order in res)
-            //{
-            //    textBox1.Text = order.patientTable.Name;
-            //    textBox2.Text = order.patientTable.Surname;
-            //    textBox3.Text = order.patientTable.PESEL;
-            //    textBox6.Text = order.patientTable.Id_Patient.ToString();
+        //    //var res = SQLDoc.GetPatient(1);
+        //    //foreach (var order in res)
+        //    //{
+        //    //    textBox1.Text = order.patientTable.Name;
+        //    //    textBox2.Text = order.patientTable.Surname;
+        //    //    textBox3.Text = order.patientTable.PESEL;
+        //    //    textBox6.Text = order.patientTable.Id_Patient.ToString();
 
-            //}
-        }
+        //    //}
+        //}
 
         public Handle(TextBox text,int IDP, string IDV)
         {
@@ -79,9 +79,13 @@ namespace MedicalClinic.Doctor
 
         private void button3_Click(object sender, EventArgs e) //show labo
         {
-            ShowLabExamList f2 = new ShowLabExamList(idpat,IDVis);
+            //ShowLabExamList f2 = new ShowLabExamList(idpat,IDVis);
 
-            f2.ShowDialog();
+            // f2.ShowDialog();
+            WindowPanel.Controls.Add(new LabolatoryExaminantion(idpat,IDVis,2));
+            WindowPanel.Visible = true;
+            WindowPanel.Dock = DockStyle.Fill;
+            WindowPanel.BringToFront();
         }
 
         private void button2_Click(object sender, EventArgs e) //back

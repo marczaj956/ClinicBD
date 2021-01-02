@@ -21,6 +21,8 @@ namespace MedicalClinic.Doctor
 
             listView1.FullRowSelect = true;
             listView1.GridLines = true;
+
+          
         }
 
         public Doctor(int id) : this()
