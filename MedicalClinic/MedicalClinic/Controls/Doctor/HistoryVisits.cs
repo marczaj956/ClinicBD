@@ -29,10 +29,12 @@ namespace MedicalClinic.Controls.Doctor
             {
                 ListViewItem lvi = new ListViewItem(order.appointmentTable.Id_Appointment.ToString());
                 lvi.SubItems.Add(order.appointmentTable.Date_Appointment.ToString()); //data
+                string stateString = order.appointmentTable.State.ToString();
+                char stringChar = char.Parse(stateString);
+                var stateTemp = (State)(stringChar);
+                lvi.SubItems.Add(stateTemp.ToString());
                 lvi.SubItems.Add(order.staffTable.Surname); //nazwisko lekarza
-                lvi.SubItems.Add(order.appointmentTable.State); //stan
-
-
+              
                 Mainlist.Items.Add(lvi);
 
             }
