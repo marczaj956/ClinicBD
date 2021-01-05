@@ -14,12 +14,15 @@ namespace MedicalClinic.Doctor
     {
         private string IDVis;
         private int idpat;
-        public NewPhysicalExaminationcs(int IDP, string IDV)
+        private int procedure;
+        public NewPhysicalExaminationcs(int IDP, string IDV, int procedure1) //procedure- ogarnia kiedy pokazujemy wizyte a kiedy obsługujemy - 1 -> pokazujemy 
         {
             InitializeComponent();
 
             IDVis = IDV;
             idpat = IDP;
+            procedure = procedure1;
+
             PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
             searchCriteria.setPatientId(IDP);
 
@@ -46,7 +49,6 @@ namespace MedicalClinic.Doctor
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int procedure = 1;
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();

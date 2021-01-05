@@ -40,14 +40,14 @@ namespace MedicalClinic.Controls.Doctor
 
             textBox10.Text = IDExamination;
 
-            if (procedure == 1)
-            {
-                button1.Visible = true;
-            }
-            else
-            {
-                button1.Visible = false;
-            }
+            //if (procedure == 1)
+            //{
+            //    button1.Visible = true;
+            //}
+            //else
+            //{
+            //    button1.Visible = false;
+            //}
 
             int idVisitInt = int.Parse(IDVisit);
 
@@ -94,7 +94,6 @@ namespace MedicalClinic.Controls.Doctor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int procedure = 1;
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();

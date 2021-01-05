@@ -79,16 +79,27 @@ namespace MedicalClinic.Controls.Doctor
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new NewLabolatoryExaminationcs(idpat,IDVis));
+            this.Parent.Controls.Add(new NewLabolatoryExaminationcs(idpat,IDVis, procedure,-1));
 
         }
 
-        private void button3_Click(object sender, EventArgs e)   // TO DO: jeśli przechodzi przed edycje badania to wpisać id badania, jeśli nowy to id puste
+        private void button3_Click(object sender, EventArgs e) 
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new NewLabolatoryExaminationcs(idpat,IDVis));
+
+            if (Mainlist.SelectedItems.Count > 0)
+            {
+                ListViewItem item = Mainlist.SelectedItems[0];
+                int idExamination = int.Parse(item.SubItems[0].Text.TrimEnd());
+
+                Panel P = new Panel();
+                P.Controls.Clear();
+                this.Hide();
+                this.Parent.Controls.Add(new NewLabolatoryExaminationcs(idpat, IDVis, procedure, idExamination));
+            }
+            else
+            {
+                MessageBox.Show("Nie wybrano badania");
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)

@@ -15,11 +15,13 @@ namespace MedicalClinic.Controls.Doctor
     {
         private string IDVis;
         private int idpat;
-        public EditPhysicalExamination(int IDP, string IDV)
+        private int procedure;
+        public EditPhysicalExamination(int IDP, string IDV, int procedure1) // proce4dura ułatwia ogarniecie kiedy można edytować powiazane formatki - 1 -> oglądamy
         {
             InitializeComponent();
             IDVis = IDV;
             idpat = IDP;
+            procedure = procedure1;
             PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
             searchCriteria.setPatientId(IDP);
 
@@ -32,12 +34,17 @@ namespace MedicalClinic.Controls.Doctor
 
 
             }
+        
+            var result = SQLDoc.GetPhysicalExamination();
+            foreach (var order in result)
+            {
+                comboBox1.Items.Add(order.Name);
 
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int procedure = 1;
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
@@ -51,11 +58,15 @@ namespace MedicalClinic.Controls.Doctor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int procedure = 1;
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
             this.Parent.Controls.Add(new PhysicalExamination(idpat, IDVis,procedure));
+        }
+
+        private void EditPhysicalExamination_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

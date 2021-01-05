@@ -14,12 +14,15 @@ namespace MedicalClinic.Controls.Doctor
     {
         private string IDVis;
         private int idpat;
-        public NewLabolatoryExaminationcs(int IDP, string IDV)
+        private int procedure;
+        public NewLabolatoryExaminationcs(int IDP, string IDV, int procedure1, int idexamination)
         {
             InitializeComponent();
             
             IDVis = IDV;
             idpat = IDP;
+            procedure = procedure1;
+
             PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
             searchCriteria.setPatientId(IDP);
 
@@ -31,6 +34,21 @@ namespace MedicalClinic.Controls.Doctor
                 textBox3.Text = order.patientTable.PESEL;
 
 
+            }
+
+            if (idexamination != -1)
+            {
+                textBox10.Text = idexamination.ToString(); ;
+            
+                ExaminationsSearchCriteria examinationSearchCriteria = new ExaminationsSearchCriteria();
+                examinationSearchCriteria.setExaminationId(idexamination);
+                var resExa = SQLDoc.GetLaboratoryExamination(examinationSearchCriteria);
+                foreach (var order in resExa)
+                {
+                    comboBox1.Text = order.examDictionaryTable.Name;
+                    textBox5.Text = order.laboratoryExaminationTable.Result;
+                }
+                
             }
 
             var result = SQLDoc.GetLabolatoryExamination();
@@ -47,7 +65,7 @@ namespace MedicalClinic.Controls.Doctor
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new LabolatoryExaminantion(0,"0",2)); //spr czy git
+            this.Parent.Controls.Add(new LabolatoryExaminantion(idpat,IDVis,procedure)); 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

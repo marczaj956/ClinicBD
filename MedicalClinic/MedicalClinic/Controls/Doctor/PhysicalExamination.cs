@@ -72,7 +72,7 @@ namespace MedicalClinic.Doctor
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new NewPhysicalExaminationcs(idpat, IDVis));
+            this.Parent.Controls.Add(new NewPhysicalExaminationcs(idpat, IDVis, procedure));
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace MedicalClinic.Doctor
                 Panel P = new Panel();
                 P.Controls.Clear();
                 this.Hide();
-                this.Parent.Controls.Add(new ShowPhysicalExamination(idpat, IDVis, idexam));
+                this.Parent.Controls.Add(new ShowPhysicalExamination(idpat, IDVis, idexam, procedure));
             }
 
            
@@ -100,7 +100,7 @@ namespace MedicalClinic.Doctor
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new EditPhysicalExamination(idpat, IDVis));
+            this.Parent.Controls.Add(new EditPhysicalExamination(idpat, IDVis,procedure));
         }
 
         private void button1_Click(object sender, EventArgs e)

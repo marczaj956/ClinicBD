@@ -90,9 +90,22 @@ namespace MedicalClinic.Doctor
 
         private void button2_Click(object sender, EventArgs e) //back
         {
+            
+            int idDoctor = -1;
+            int x = Int32.Parse(IDVis);
+            var res1 = SQLDoc.GetAppointment(x);
+            foreach (var order in res1)
+            {
+                idDoctor = order.Id_Doctor;
+
+            }
+
             this.Controls.Clear();
-            this.Visible = false;
-            this.Parent.Hide();
+            this.Hide();
+            this.Controls.Add(new MedicalClinic.Doctor.Doctor(idDoctor));
+            this.Visible = true;
+            this.Dock = DockStyle.Fill;
+            this.BringToFront();
         }
 
         private void button9_Click(object sender, EventArgs e)

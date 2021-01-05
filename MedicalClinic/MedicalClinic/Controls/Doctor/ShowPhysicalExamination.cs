@@ -15,12 +15,14 @@ namespace MedicalClinic.Controls.Doctor
     {
         private string IDVis;
         private int idpat;
-        public ShowPhysicalExamination(int IDPatient, string IDVisit, string IDExamination)  
+        private int procedure;
+        public ShowPhysicalExamination(int IDPatient, string IDVisit, string IDExamination, int procedure1)  // w zależności czy pokazujemy wizyty czy obsługujemy wizytę
         {
             InitializeComponent();
 
             IDVis = IDVisit;
             idpat = IDPatient;
+            procedure = procedure1;
             textBox4.Text = IDExamination;
            PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
             searchCriteria.setPatientId(IDPatient);
@@ -80,7 +82,14 @@ namespace MedicalClinic.Controls.Doctor
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new PhysicalExamination(idpat, IDVis,1));
+            if (procedure == 1)
+            {
+                this.Parent.Controls.Add(new PhysicalExamination(idpat, IDVis, 1));
+            }
+            else
+            {
+                this.Parent.Controls.Add(new PhysicalExamination(idpat, IDVis, 2));
+            }
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)

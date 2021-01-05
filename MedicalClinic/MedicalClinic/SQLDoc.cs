@@ -157,7 +157,10 @@ namespace MedicalClinic
             {
                 query = query.Where(app => app.appointmentTable.Id_Appointment.Equals(searchCriteria.getAppointmentId()));
             }
-
+            if (searchCriteria.getExaminationId() != 0)
+            {
+                query = query.Where(lab => lab.laboratoryExaminationTable.Id_Examination.Equals(searchCriteria.getExaminationId()));
+            }
 
             return query;
         }

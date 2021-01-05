@@ -10,6 +10,7 @@ namespace MedicalClinic
     {
         private int appointmentId;
         private int patientId;
+        private int examinationId;
 
         public int getAppointmentId()
         {
@@ -29,7 +30,15 @@ namespace MedicalClinic
         {
             this.patientId = patientId;
         }
-       
+        public int getExaminationId()
+        {
+            return examinationId;
+        }
+
+        public void setExaminationId(int examinationId)
+        {
+            this.examinationId = examinationId;
+        }
 
 
     }
