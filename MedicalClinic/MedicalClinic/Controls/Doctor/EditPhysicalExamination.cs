@@ -76,13 +76,31 @@ namespace MedicalClinic.Controls.Doctor
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            string examCode = "";
+            ExaminationsSearchCriteria examinationSearchCriteria = new ExaminationsSearchCriteria();
+            examinationSearchCriteria.setExaminationName(comboBox1.Text);
+            var resExa = SQLDoc.GetPhysicalExamination(examinationSearchCriteria);
+            foreach (var order in resExa)
+            {
+                examCode = order.examDictionaryTable.Exam_Code;
 
+            }
 
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new PhysicalExamination(idpat, IDVis,procedure));
+            if (examCode != "" && textBox5.Text != "")
+            {
+                
+                int idAppointment = Int32.Parse(IDVis);
+                int idExamination = Int32.Parse(textBox4.Text);
+                SQLDoc.updatePhysicalExamination(idExamination, examCode, textBox5.Text);
+                Panel P = new Panel();
+                P.Controls.Clear();
+                this.Hide();
+                this.Parent.Controls.Add(new PhysicalExamination(idpat, IDVis, procedure));
+            }
+            else
+            {
+                MessageBox.Show("Wymagane dane: rodzaj badania, wynik");
+            }
         }
 
         private void EditPhysicalExamination_Load(object sender, EventArgs e)

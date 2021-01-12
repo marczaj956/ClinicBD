@@ -396,5 +396,16 @@ namespace MedicalClinic
             db.SubmitChanges();
 
         }
+
+        public static void updatePhysicalExamination(int idExamination, string exam_code, string result)
+        {
+
+            DataClassesDataContext db = new DataClassesDataContext();
+            Examination_Physical update = db.Examination_Physical.Single(row => row.Id_Examination == idExamination);
+            update.Exam_Code = exam_code;
+            update.Result = result;
+            db.SubmitChanges();
+
+        }
     }
 }

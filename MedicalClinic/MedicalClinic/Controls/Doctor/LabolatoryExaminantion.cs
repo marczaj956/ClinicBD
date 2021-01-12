@@ -65,7 +65,7 @@ namespace MedicalClinic.Controls.Doctor
                 lvi.SubItems.Add(order.examDictionaryTable.Name); //typ badania
                 lvi.SubItems.Add(order.laboratoryExaminationTable.State); //stan badania
                 lvi.SubItems.Add(order.laboratoryExaminationTable.Comments_Doctor); //notatka doktora
-                lvi.SubItems.Add(order.laboratoryExaminationTable.Date_Exec_Cancel.ToString()); //data wykonania
+                lvi.SubItems.Add(order.laboratoryExaminationTable.Date_Of_Order.ToString()); //data wykonania
 
                 Mainlist.Items.Add(lvi);
               

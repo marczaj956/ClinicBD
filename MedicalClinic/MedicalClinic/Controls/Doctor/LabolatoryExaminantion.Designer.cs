@@ -43,7 +43,7 @@
             this.IdBadania = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RodzajBdania = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Stan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.WynikBadania = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UwagiDokotora = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.data = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -172,7 +172,7 @@
             this.IdBadania,
             this.RodzajBdania,
             this.Stan,
-            this.WynikBadania,
+            this.UwagiDokotora,
             this.data});
             this.Mainlist.HideSelection = false;
             this.Mainlist.Location = new System.Drawing.Point(0, 266);
@@ -198,10 +198,10 @@
             this.Stan.Text = "Stan";
             this.Stan.Width = 200;
             // 
-            // WynikBadania
+            // UwagiDokotora
             // 
-            this.WynikBadania.Text = "Wynik badania";
-            this.WynikBadania.Width = 196;
+            this.UwagiDokotora.Text = "Uwagi Doktora";
+            this.UwagiDokotora.Width = 196;
             // 
             // data
             // 
@@ -257,7 +257,7 @@
         private System.Windows.Forms.ColumnHeader IdBadania;
         private System.Windows.Forms.ColumnHeader RodzajBdania;
         private System.Windows.Forms.ColumnHeader Stan;
-        private System.Windows.Forms.ColumnHeader WynikBadania;
+        private System.Windows.Forms.ColumnHeader UwagiDokotora;
         private System.Windows.Forms.ColumnHeader data;
         private System.Windows.Forms.Button button1;
     }
