@@ -64,7 +64,7 @@ namespace MedicalClinic.Controls.Doctor
                 ListViewItem lvi = new ListViewItem(order.laboratoryExaminationTable.Id_Examination.ToString());
                 lvi.SubItems.Add(order.examDictionaryTable.Name); //typ badania
                 lvi.SubItems.Add(order.laboratoryExaminationTable.State); //stan badania
-                lvi.SubItems.Add(order.laboratoryExaminationTable.Result); //wynik badania
+                lvi.SubItems.Add(order.laboratoryExaminationTable.Comments_Doctor); //notatka doktora
                 lvi.SubItems.Add(order.laboratoryExaminationTable.Date_Exec_Cancel.ToString()); //data wykonania
 
                 Mainlist.Items.Add(lvi);
@@ -79,7 +79,7 @@ namespace MedicalClinic.Controls.Doctor
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new NewLabolatoryExaminationcs(idpat,IDVis, procedure,-1));
+            this.Parent.Controls.Add(new NewLabolatoryExaminationcs(idpat,IDVis, 1,-1));
 
         }
 
@@ -94,7 +94,7 @@ namespace MedicalClinic.Controls.Doctor
                 Panel P = new Panel();
                 P.Controls.Clear();
                 this.Hide();
-                this.Parent.Controls.Add(new NewLabolatoryExaminationcs(idpat, IDVis, procedure, idExamination));
+                this.Parent.Controls.Add(new NewLabolatoryExaminationcs(idpat, IDVis, 2, idExamination));
             }
             else
             {

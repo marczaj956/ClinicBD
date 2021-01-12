@@ -384,5 +384,17 @@ namespace MedicalClinic
             db.Examination_Laboratory.InsertOnSubmit(addLabolatoryExamination);
             db.SubmitChanges();
         }
+
+        public static void updateLabolatoryExamination(int idExamination, string exam_code, string commentDoctor)
+        {   
+
+            DataClassesDataContext db = new DataClassesDataContext();
+            Examination_Laboratory update = db.Examination_Laboratory.Single(row => row.Id_Examination == idExamination);
+            update.Exam_Code = exam_code;
+            update.Comments_Doctor = commentDoctor;
+
+            db.SubmitChanges();
+
+        }
     }
 }

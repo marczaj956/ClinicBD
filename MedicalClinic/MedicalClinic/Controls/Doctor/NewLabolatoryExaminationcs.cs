@@ -15,10 +15,10 @@ namespace MedicalClinic.Controls.Doctor
         private string IDVis;
         private int idpat;
         private int procedure;
-        public NewLabolatoryExaminationcs(int IDP, string IDV, int procedure1, int idexamination)
+        public NewLabolatoryExaminationcs(int IDP, string IDV, int procedure1, int idexamination) // procedure = 2 -> edytuj, procedure = 1 -> nowe
         {
             InitializeComponent();
-            
+
             IDVis = IDV;
             idpat = IDP;
             procedure = procedure1;
@@ -39,16 +39,16 @@ namespace MedicalClinic.Controls.Doctor
             if (idexamination != -1)
             {
                 textBox10.Text = idexamination.ToString(); ;
-            
+
                 ExaminationsSearchCriteria examinationSearchCriteria = new ExaminationsSearchCriteria();
                 examinationSearchCriteria.setExaminationId(idexamination);
                 var resExa = SQLDoc.GetLaboratoryExamination(examinationSearchCriteria);
                 foreach (var order in resExa)
                 {
                     comboBox1.Text = order.examDictionaryTable.Name;
-                    textBox5.Text = order.laboratoryExaminationTable.Result;
+                    textBox5.Text = order.laboratoryExaminationTable.Comments_Doctor;
                 }
-                
+
             }
 
             var result = SQLDoc.GetLabolatoryExamination();
@@ -65,7 +65,7 @@ namespace MedicalClinic.Controls.Doctor
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new LabolatoryExaminantion(idpat,IDVis,procedure)); 
+            this.Parent.Controls.Add(new LabolatoryExaminantion(idpat, IDVis, procedure));
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -85,25 +85,46 @@ namespace MedicalClinic.Controls.Doctor
 
             ExaminationsSearchCriteria examinationSearchCriteria = new ExaminationsSearchCriteria();
             examinationSearchCriteria.setExaminationName(comboBox1.Text);
-            var resExa = SQLDoc.GetPhysicalExamination(examinationSearchCriteria);
+            var resExa = SQLDoc.GetLaboratoryExamination(examinationSearchCriteria);
             foreach (var order in resExa)
             {
                 examCode = order.examDictionaryTable.Exam_Code;
 
             }
             int idAppointment = Int32.Parse(IDVis);
-            if (examCode != "" && textBox5.Text != "")
+
             {
-                SQLDoc.insertLabolatoryExamination(idAppointment, examCode, textBox5.Text);
-                Panel P = new Panel();
-                P.Controls.Clear();
-                this.Hide();
-                this.Parent.Controls.Add(new LabolatoryExaminantion(idpat, IDVis, procedure));
+                if (examCode != "" && textBox5.Text != "")
+                {
+                    if (procedure == 1)
+                    {
+                        SQLDoc.insertLabolatoryExamination(idAppointment, examCode, textBox5.Text);
+                        Panel P = new Panel();
+                        P.Controls.Clear();
+                        this.Hide();
+                        this.Parent.Controls.Add(new LabolatoryExaminantion(idpat, IDVis, 2));
+                    }
+                    else if (procedure == 2)
+                    {
+                        int idExamination = Int32.Parse(textBox10.Text);
+                        SQLDoc.updateLabolatoryExamination(idExamination, examCode, textBox5.Text);
+                        Panel P = new Panel();
+                        P.Controls.Clear();
+                        this.Hide();
+                        this.Parent.Controls.Add(new LabolatoryExaminantion(idpat, IDVis, procedure));
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Wymagane dane: rodzaj badania, wynik.");
+                }
             }
-            else
-            {
-                MessageBox.Show("Wymagane dane: rodzaj badania, wynik oraz numer badania");
-            }
+            
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

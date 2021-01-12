@@ -84,7 +84,7 @@ namespace MedicalClinic.Doctor
             }
             else
             {
-                MessageBox.Show("Wymagane dane: rodzaj badania, wynik oraz numer badania");
+                MessageBox.Show("Wymagane dane: rodzaj badania, wynik.");
             }
         }
 
