@@ -23,12 +23,13 @@ namespace MedicalClinic.Controls.Laboratory
             text = textb;
 
             var temp = SQLLab.GetExamination_Laboratories_ID(t);
-            textBox6.Text = temp.First().Table2.Type.ToString();
+            textBox6.Text = temp.First().Table2.Name.ToString();
             textBox4.Text = temp.First().Table2.Exam_Code.ToString();
             textBox8.Text = SQLLab.translateRolePL(temp.First().Table1.State.ToString());
-            textBox5.Text = temp.First().Table1.Result.ToString();
+            
+           // textBox5.Text = temp.First().Table1.Result.ToString();
             textBox9.Text = temp.First().Table1.Comments_Doctor.ToString();
-            textBox7.Text = temp.First().Table1.Comments_Man_Lab.ToString();
+           // textBox7.Text = temp.First().Table1.Comments_Man_Lab.ToString();
             var temp2 = SQLLab.GetPacjentID(temp.First().Table1.Id_Appointment);
             var temp3 = SQLLab.GetPatientData(temp2.First().Id_Patient);
             textBox1.Text = temp3.First().Name.ToString();

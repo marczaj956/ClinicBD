@@ -24,12 +24,12 @@ namespace MedicalClinic.Controls.Laboratory
             text = textb;
             idappo = t;
             var temp = SQLLab.GetExamination_Laboratories_ID(t);
-            textBox6.Text = temp.First().Table2.Type.ToString();
+            textBox6.Text = temp.First().Table2.Name.ToString();
             textBox4.Text = temp.First().Table2.Exam_Code.ToString();
             
-            textBox5.Text = temp.First().Table1.Result.ToString();
+            textBox5.Text = temp.First().Table1.Result;
             textBox9.Text = temp.First().Table1.Comments_Doctor.ToString();
-            textBox7.Text = temp.First().Table1.Comments_Man_Lab.ToString();
+            textBox7.Text = temp.First().Table1.Comments_Man_Lab;
             var temp2 = SQLLab.GetPacjentID(temp.First().Table1.Id_Appointment);
             var temp3 = SQLLab.GetPatientData(temp2.First().Id_Patient);
             textBox1.Text = temp3.First().Name.ToString();
@@ -88,6 +88,11 @@ namespace MedicalClinic.Controls.Laboratory
             this.Parent.Hide();
 
             text.Text = "changed";
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

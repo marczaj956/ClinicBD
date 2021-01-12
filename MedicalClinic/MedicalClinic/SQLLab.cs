@@ -99,7 +99,7 @@ namespace MedicalClinic
                     on dic.Exam_Code equals lab.Exam_Code
                     where
                           lab.State.StartsWith(state) &&
-                          dic.Type.StartsWith(type) &&
+                          dic.Name.StartsWith(type) &&
                           lab.Date_Of_Order.Equals(date)
 
                     select new TableJoinResult2
@@ -116,7 +116,7 @@ namespace MedicalClinic
                     on dic.Exam_Code equals lab.Exam_Code
                     where
                           lab.State.StartsWith(state) &&
-                          dic.Type.StartsWith(type)
+                          dic.Name.StartsWith(type)
 
                     select new TableJoinResult2
                     {

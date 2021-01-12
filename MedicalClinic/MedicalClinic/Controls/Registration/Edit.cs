@@ -71,25 +71,32 @@ namespace MedicalClinic.Controls.Registration
 
         private void button2_Click(object sender, EventArgs e)
         {//zapisz i zamknij
-            var doc = docs.AsEnumerable<Staff>();
-
-            int docid = doc.ElementAt<Staff>(comboBox1.SelectedIndex).Id_Staff;
-            string culture = "mn-MN";
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(culture);
-            
-            string datetosql = monthCalendar1.SelectionStart.ToShortDateString();
-            datetosql += " " + comboBox2.Text;
-            DateTime dt = DateTime.Parse(datetosql);
+            if (comboBox1.Text != ""&&comboBox2.Text!="")
             {
-                
-                SQLRec.updateApo(apoid,SQLRec.translateRoleDB( comboBox3.Text.ToString()), docid, dt);
+                var doc = docs.AsEnumerable<Staff>();
+
+                int docid = doc.ElementAt<Staff>(comboBox1.SelectedIndex).Id_Staff;
+                string culture = "mn-MN";
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(culture);
+
+                string datetosql = monthCalendar1.SelectionStart.ToShortDateString();
+                datetosql += " " + comboBox2.Text;
+                DateTime dt = DateTime.Parse(datetosql);
+                {
+
+                    SQLRec.updateApo(apoid, SQLRec.translateRoleDB(comboBox3.Text.ToString()), docid, dt);
+                }
+
+                this.Controls.Clear();
+                this.Visible = false;
+                this.Parent.Hide();
+
+                textb.Text = "changed";
             }
-
-            this.Controls.Clear();
-            this.Visible = false;
-            this.Parent.Hide();
-
-            textb.Text = "changed";
+            else
+            {
+                MessageBox.Show("Wprowadz poprawne informacje");
+            }
         }
 
         //private void button3_Click(object sender, EventArgs e)

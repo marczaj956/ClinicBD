@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.mainPanel1 = new MedicalClinic.MainPanel.MainPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -47,9 +48,9 @@
             this.mainPanel1.Location = new System.Drawing.Point(0, 0);
             this.mainPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.mainPanel1.Name = "mainPanel1";
-           // this.mainPanel1.ROLE = "";
             this.mainPanel1.Size = new System.Drawing.Size(1265, 666);
             this.mainPanel1.TabIndex = 2;
+            this.mainPanel1.Load += new System.EventHandler(this.mainPanel1_Load);
             // 
             // flowLayoutPanel2
             // 
@@ -66,9 +67,10 @@
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.mainPanel1);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Medical Clinic Database";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
