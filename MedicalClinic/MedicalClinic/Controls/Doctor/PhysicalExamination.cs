@@ -97,10 +97,23 @@ namespace MedicalClinic.Doctor
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new EditPhysicalExamination(idpat, IDVis,procedure));
+
+            if (Mainlist.SelectedItems.Count > 0)
+            {
+                ListViewItem item = Mainlist.SelectedItems[0];
+                int idExamination = int.Parse(item.SubItems[0].Text.TrimEnd());
+
+                Panel P = new Panel();
+                P.Controls.Clear();
+                this.Hide();
+                this.Parent.Controls.Add(new EditPhysicalExamination(idpat, IDVis, procedure, idExamination));
+            }
+            else
+            {
+                MessageBox.Show("Nie wybrano badania");
+            }
+
+           
         }
 
         private void button1_Click(object sender, EventArgs e)

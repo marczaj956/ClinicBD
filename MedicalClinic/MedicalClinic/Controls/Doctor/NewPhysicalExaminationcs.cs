@@ -62,7 +62,30 @@ namespace MedicalClinic.Doctor
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+            string examCode = "";
 
+            ExaminationsSearchCriteria examinationSearchCriteria = new ExaminationsSearchCriteria();
+            examinationSearchCriteria.setExaminationName(comboBox1.Text);
+            var resExa = SQLDoc.GetPhysicalExamination(examinationSearchCriteria);
+            foreach (var order in resExa)
+            {
+                examCode = order.examDictionaryTable.Exam_Code;
+
+            }
+            int idAppointment = Int32.Parse(IDVis);
+            if (examCode != "" && textBox5.Text != "")
+            {
+                SQLDoc.insertPhysicalExamination(idAppointment, examCode, textBox5.Text);
+                Panel P = new Panel();
+                P.Controls.Clear();
+                this.Hide();
+                this.Parent.Controls.Add(new PhysicalExamination(idpat, IDVis, procedure));
+            }
+            else
+            {
+                MessageBox.Show("Wymagane dane: rodzaj badania, wynik oraz numer badania");
+            }
         }
 
         private void NewPhysicalExaminationcs_Load(object sender, EventArgs e)

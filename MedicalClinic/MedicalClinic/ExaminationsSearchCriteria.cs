@@ -11,6 +11,7 @@ namespace MedicalClinic
         private int appointmentId;
         private int patientId;
         private int examinationId;
+        private string examinationName = "";
 
         public int getAppointmentId()
         {
@@ -40,6 +41,15 @@ namespace MedicalClinic
             this.examinationId = examinationId;
         }
 
+        public string getExaminationName()
+        {
+            return examinationName;
+        }
+
+        public void setExaminationName(string examinationName)
+        {
+            this.examinationName = examinationName;
+        }
 
     }
 }

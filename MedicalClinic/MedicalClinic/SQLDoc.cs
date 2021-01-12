@@ -123,8 +123,15 @@ namespace MedicalClinic
             {
                 query = query.Where(app => app.appointmentTable.Id_Appointment.Equals(searchCriteria.getAppointmentId()));
             }
-           
-            
+            if (searchCriteria.getExaminationId() != 0)
+            {
+                query = query.Where(phy => phy.physicalExaminationTable.Id_Examination.Equals(searchCriteria.getExaminationId()));
+            }
+            if (searchCriteria.getExaminationName() != "")
+            {
+                query = query.Where(dic => dic.examDictionaryTable.Name.Equals(searchCriteria.getExaminationName()));
+            }
+
             return query;
         }
 
@@ -349,7 +356,33 @@ namespace MedicalClinic
                     }); ;
         }
 
+        public static void insertPhysicalExamination(int idAppointment, string exam_code, string result)
+        {   
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            Examination_Physical addPhysicalExamination = new Examination_Physical();
+            addPhysicalExamination.Id_Appointment = idAppointment;
+            addPhysicalExamination.Result = result;
+            addPhysicalExamination.Exam_Code = exam_code;
 
 
+            db.Examination_Physical.InsertOnSubmit(addPhysicalExamination);
+            db.SubmitChanges();
+        }
+        public static void insertLabolatoryExamination(int idAppointment, string exam_code, string commentDoctor)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            Examination_Laboratory addLabolatoryExamination = new Examination_Laboratory();
+            addLabolatoryExamination.Id_Appointment = idAppointment;
+            addLabolatoryExamination.Comments_Doctor = commentDoctor;
+            addLabolatoryExamination.Exam_Code = exam_code;
+            addLabolatoryExamination.Date_Of_Order = DateTime.Today;
+            addLabolatoryExamination.State = "ZLE";
+
+
+            db.Examination_Laboratory.InsertOnSubmit(addLabolatoryExamination);
+            db.SubmitChanges();
+        }
     }
 }
