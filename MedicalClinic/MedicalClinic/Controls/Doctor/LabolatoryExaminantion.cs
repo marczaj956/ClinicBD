@@ -79,7 +79,7 @@ namespace MedicalClinic.Controls.Doctor
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new NewLabolatoryExaminationcs(idpat,IDVis, 1,-1));
+            this.Parent.Controls.Add(new NewLabolatoryExaminationcs(idpat,IDVis, 2,-1));
 
         }
 
