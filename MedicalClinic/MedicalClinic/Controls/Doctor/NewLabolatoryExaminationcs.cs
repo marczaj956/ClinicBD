@@ -83,18 +83,22 @@ namespace MedicalClinic.Controls.Doctor
 
             string examCode = "";
 
-            ExaminationsSearchCriteria examinationSearchCriteria = new ExaminationsSearchCriteria();
+           /* ExaminationsSearchCriteria examinationSearchCriteria = new ExaminationsSearchCriteria();
             examinationSearchCriteria.setExaminationName(comboBox1.Text);
+            //MessageBox.Show(comboBox1.Text);
             var resExa = SQLDoc.GetLaboratoryExamination(examinationSearchCriteria);
+            
             foreach (var order in resExa)
             {
                 examCode = order.examDictionaryTable.Exam_Code;
 
-            }
+            }*/
+            examCode= SQLDoc.GetExamCode(comboBox1.Text.ToString()).First().Exam_Code.ToString();
             int idAppointment = Int32.Parse(IDVis);
-
+           
+            
             {
-                if (examCode != "" && textBox5.Text != "")
+                if (examCode != "")
                 {
                     if (procedure == 1)
                     {
@@ -116,13 +120,18 @@ namespace MedicalClinic.Controls.Doctor
                 }
                 else
                 {
-                    MessageBox.Show("Wymagane dane: rodzaj badania, wynik.");
+                    MessageBox.Show("Wymagane dane: rodzaj badania.");
                 }
             }
             
         }
 
         private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

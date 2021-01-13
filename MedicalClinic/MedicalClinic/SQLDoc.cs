@@ -407,5 +407,28 @@ namespace MedicalClinic
             db.SubmitChanges();
 
         }
+
+
+        public static IQueryable<Exam_Dictionary> GetExamCode(string name)
+        {
+            DataClassesDataContext db = new DataClassesDataContext();
+
+            var result = from code in db.Exam_Dictionary
+                         where
+                               code.Name.Equals(name)
+                             
+
+                         select code;
+
+
+
+            return result;
+        }
+
+
+
+
+
+
     }
 }

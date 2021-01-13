@@ -65,14 +65,15 @@ namespace MedicalClinic.Doctor
             
             string examCode = "";
 
-            ExaminationsSearchCriteria examinationSearchCriteria = new ExaminationsSearchCriteria();
+            /*ExaminationsSearchCriteria examinationSearchCriteria = new ExaminationsSearchCriteria();
             examinationSearchCriteria.setExaminationName(comboBox1.Text);
             var resExa = SQLDoc.GetPhysicalExamination(examinationSearchCriteria);
             foreach (var order in resExa)
             {
                 examCode = order.examDictionaryTable.Exam_Code;
 
-            }
+            }*/
+            examCode = SQLDoc.GetExamCode(comboBox1.Text.ToString()).First().Exam_Code.ToString();
             int idAppointment = Int32.Parse(IDVis);
             if (examCode != "" && textBox5.Text != "")
             {
