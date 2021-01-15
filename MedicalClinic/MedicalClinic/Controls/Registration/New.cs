@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MedicalClinic.Registration;
+using System.Text.RegularExpressions;
 
 namespace MedicalClinic.Controls.Registration
 {
@@ -33,8 +34,9 @@ namespace MedicalClinic.Controls.Registration
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            if (textBox1.TextLength != 0 && textBox2.TextLength != 0 && textBox3.TextLength != 0 )
+        {  
+            
+            if (textBox1.TextLength != 0 && textBox2.TextLength != 0 && textBox3.TextLength != 0 && Regex.IsMatch(textBox3.Text.ToString(), @"^(\d{11})$")) 
             {
                 SQLRec.insertPatient(textBox1.Text, textBox2.Text, textBox3.Text);
                 MessageBox.Show("Dodano pacjenta");
@@ -44,7 +46,7 @@ namespace MedicalClinic.Controls.Registration
 
                 textb.Text = "changed";
             }
-            else MessageBox.Show("Brak Danych");
+            else MessageBox.Show("Brak Danych lub błędny pesel");
            
         }
 

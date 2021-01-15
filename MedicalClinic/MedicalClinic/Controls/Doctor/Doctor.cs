@@ -21,8 +21,8 @@ namespace MedicalClinic.Doctor
 
             listView1.FullRowSelect = true;
             listView1.GridLines = true;
+            dateTimePicker1.Value = DateTime.Now;
 
-          
         }
 
         public Doctor(int id) : this()

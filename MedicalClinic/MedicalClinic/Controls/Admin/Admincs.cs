@@ -40,7 +40,7 @@ namespace MedicalClinic.Admin
             Mainlist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             Mainlist.FullRowSelect = true;
             Mainlist.GridLines = true;
-            // connector.Visible = true;
+            ;
 
         }
 
@@ -61,29 +61,24 @@ namespace MedicalClinic.Admin
 
         private void Add_Click(object sender, EventArgs e)
         {
-            /*Panel P = new Panel();
-            P.Controls.Clear();
-            this.Hide();
-            this.Parent.Controls.Add(new AddNew());*/
+           
             WindowPanel.Controls.Add(new AddNew(connector));
             WindowPanel.Visible = true;
             WindowPanel.Dock = DockStyle.Fill;
             WindowPanel.BringToFront();
-
+            
         }
 
         private void Edit_Click(object sender, EventArgs e)
         {
-            /* Panel P = new Panel();
-             P.Controls.Clear();
-             this.Hide();
-             this.Parent.Controls.Add(new Edit());*/
+            
             if (Selected != 0)
             {
-                WindowPanel.Controls.Add(new Edit(connector,Selected));
+            WindowPanel.Controls.Add(new Edit(connector,Selected));
             WindowPanel.Visible = true;
             WindowPanel.Dock = DockStyle.Fill;
             WindowPanel.BringToFront();
+            
             }
             else MessageBox.Show("Wybierz użytkownika", "Błąd");
 
@@ -98,6 +93,7 @@ namespace MedicalClinic.Admin
                 WindowPanel.Visible = true;
                 WindowPanel.Dock = DockStyle.Fill;
                 WindowPanel.BringToFront();
+                
             }
             else MessageBox.Show("Zaznacz wartość", "Błąd");
         }
@@ -108,9 +104,9 @@ namespace MedicalClinic.Admin
             {
                 Role.Text = "";
             }
-
+          
             Refresh(SQLAdm.GetStaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), SQLAdm.translateRoleDB(Role.Text.ToString())));
-           
+            
         }
 
 
@@ -129,19 +125,21 @@ namespace MedicalClinic.Admin
 
             }
             dataGridView1.DataSource = a;
-
+            Selected = 0;
         }
         //sa 2 funkcje bo nie wiem ktora dziala 
         private void connector_TextChanged(object sender, EventArgs e)
         {
             Refresh(SQLAdm.GetStaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), SQLAdm.translateRoleDB(Role.Text.ToString())));
             connector.Text = "";
+            
         }
 
         private void connector_TextChanged_1(object sender, EventArgs e)
         {
             Refresh(SQLAdm.GetStaff(Name.Text.ToString(), Surname.Text.ToString(), Login.Text.ToString(), SQLAdm.translateRoleDB(Role.Text.ToString())));
             connector.Text = "";
+            
         }
 
         private static int Selected=0;

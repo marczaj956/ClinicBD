@@ -50,8 +50,10 @@ namespace MedicalClinic.Controls.Registration
             comboBox1.Text = doc.First().Name.ToString();//lekarz
             monthCalendar1.SetDate(a.First().Date_Appointment);//data
             comboBox3.Text = SQLRec.translateRolePL( a.First().State.ToString());//stan
-            string time = a.First().Date_Appointment.TimeOfDay.ToString();
+            //string time = a.First().Date_Appointment.Hour.ToString()+":" + a.First().Date_Appointment.Minute.ToString();
+           string time= a.First().Date_Appointment.ToString("HH:mm");
             comboBox2.Text = time;//godzina
+           // comboBox2.Text = a.First().Date_Appointment.TimeOfDay.ToString();
 
 
         }
