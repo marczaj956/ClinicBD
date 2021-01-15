@@ -112,7 +112,6 @@
             "Wszystkie",
             "Zlecone",
             "Anulowane",
-            "Wykonane",
             "Zatwierdzone",
             "Zakonczone"});
             this.comboBox1.Location = new System.Drawing.Point(159, 131);

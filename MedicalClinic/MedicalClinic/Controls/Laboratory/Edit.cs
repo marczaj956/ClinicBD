@@ -41,7 +41,10 @@ namespace MedicalClinic.Controls.Laboratory
                 textBox7.Enabled = false;
                 button4.Enabled = false;
             }
-            
+            if (role=="MLab")
+            {
+                button3.Enabled = false;
+            }
 
         }
             private void button2_Click(object sender, EventArgs e)
@@ -59,13 +62,20 @@ namespace MedicalClinic.Controls.Laboratory
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SQLLab.updateLabExam(idappo, "ANU", textBox5.Text, textBox7.Text);
-            MessageBox.Show("Zmieniono dane badania");
-            this.Controls.Clear();
-            this.Visible = false;
-            this.Parent.Hide();
+            if (textBox7.Text != "")
+            {
+                SQLLab.updateLabExam(idappo, "ANU", textBox5.Text, textBox7.Text);
+                MessageBox.Show("Zmieniono dane badania");
+                this.Controls.Clear();
+                this.Visible = false;
+                this.Parent.Hide();
 
-            text.Text = "changed";
+                text.Text = "changed";
+            }
+            else
+            {
+                MessageBox.Show("Podaj przyczyne anulowania");
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)

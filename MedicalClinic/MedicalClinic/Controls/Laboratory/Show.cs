@@ -27,9 +27,9 @@ namespace MedicalClinic.Controls.Laboratory
             textBox4.Text = temp.First().Table2.Exam_Code.ToString();
             textBox8.Text = SQLLab.translateRolePL(temp.First().Table1.State.ToString());
             
-           // textBox5.Text = temp.First().Table1.Result.ToString();
-            textBox9.Text = temp.First().Table1.Comments_Doctor.ToString();
-           // textBox7.Text = temp.First().Table1.Comments_Man_Lab.ToString();
+            textBox5.Text = temp.First().Table1.Result;
+            textBox9.Text = temp.First().Table1.Comments_Doctor;
+            textBox7.Text = temp.First().Table1.Comments_Man_Lab;
             var temp2 = SQLLab.GetPacjentID(temp.First().Table1.Id_Appointment);
             var temp3 = SQLLab.GetPatientData(temp2.First().Id_Patient);
             textBox1.Text = temp3.First().Name.ToString();

@@ -55,7 +55,7 @@ namespace MedicalClinic.Controls.Laboratory
             }
             if (myrole == "MLab")
             {
-                var temp = SQLLab.GetExamination_Laboratories("", "ZAT", startowadata);
+                var temp = SQLLab.GetExamination_Laboratories("", "ZAK", startowadata);
 
 
                 foreach (var order in temp)
@@ -68,7 +68,7 @@ namespace MedicalClinic.Controls.Laboratory
                     listView1.Items.Add(lvi);
 
                 }
-                comboBox1.Text = "Zatwierdzone";
+                comboBox1.Text = "Zakonczone";
             }
             listView1.FullRowSelect = true;
             listView1.GridLines = true;
