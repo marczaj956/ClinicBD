@@ -30,7 +30,7 @@ namespace MedicalClinic.Controls.Registration
             textb = text;
             
             var a = SQLRec.GetApoSE(apoid);
-
+            //comboBox4.drop
 
             var res = SQLLab.GetPatientData(a.First().Id_Patient);
             foreach (var order in res)
@@ -53,7 +53,9 @@ namespace MedicalClinic.Controls.Registration
             //string time = a.First().Date_Appointment.Hour.ToString()+":" + a.First().Date_Appointment.Minute.ToString();
            string time= a.First().Date_Appointment.ToString("HH:mm");
             comboBox2.Text = time;//godzina
-           // comboBox2.Text = a.First().Date_Appointment.TimeOfDay.ToString();
+            comboBox4.Text = time;
+            // comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
+            // comboBox2.Text = a.First().Date_Appointment.TimeOfDay.ToString();
 
 
         }
