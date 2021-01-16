@@ -47,6 +47,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.WindowPanel = new System.Windows.Forms.Panel();
             this.connector = new System.Windows.Forms.TextBox();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -191,8 +193,10 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader4,
             this.columnHeader1,
+            this.columnHeader7,
             this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader5});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(34, 237);
             this.listView1.Name = "listView1";
@@ -205,21 +209,23 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "ID";
+            this.columnHeader4.Width = 40;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Rodzaj badania";
-            this.columnHeader1.Width = 245;
+            this.columnHeader1.Width = 160;
             // 
             // columnHeader2
             // 
+            this.columnHeader2.DisplayIndex = 3;
             this.columnHeader2.Text = "Data wykonania";
-            this.columnHeader2.Width = 245;
+            this.columnHeader2.Width = 110;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Stan";
-            this.columnHeader3.Width = 245;
+            this.columnHeader3.Width = 90;
             // 
             // textBox1
             // 
@@ -245,6 +251,18 @@
             this.connector.TabIndex = 14;
             this.connector.Visible = false;
             this.connector.TextChanged += new System.EventHandler(this.connector_TextChanged_2);
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.DisplayIndex = 5;
+            this.columnHeader5.Text = "Wynik Badania";
+            this.columnHeader5.Width = 300;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.DisplayIndex = 2;
+            this.columnHeader7.Text = "Data Zlecenia";
+            this.columnHeader7.Width = 110;
             // 
             // Lab
             // 
@@ -286,5 +304,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Panel WindowPanel;
         private System.Windows.Forms.TextBox connector;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }

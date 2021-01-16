@@ -87,6 +87,19 @@ namespace MedicalClinic
             update.Result = result;
             update.State = state;
             update.Comments_Man_Lab = comment_lab;
+            update.Date_Exec_Cancel = DateTime.Now;
+
+            db.SubmitChanges();
+
+        }
+        public static void updateLabExam(int id, string state, string result, string comment_lab,int nic)
+        {   //napisać ifa czy są dane
+            DataClassesDataContext db = new DataClassesDataContext();
+            Examination_Laboratory update = db.Examination_Laboratory.Single(row => row.Id_Examination == id);
+            update.Result = result;
+            update.State = state;
+            update.Comments_Man_Lab = comment_lab;
+            
 
             db.SubmitChanges();
 

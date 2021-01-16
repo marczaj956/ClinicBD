@@ -46,8 +46,10 @@ namespace MedicalClinic.Controls.Laboratory
                     ListViewItem lvi = new ListViewItem(order.Table1.Id_Examination.ToString());
                     lvi.SubItems.Add(order.Table2.Name.ToString());
                     lvi.SubItems.Add(order.Table1.Date_Of_Order.ToString());
+                    lvi.SubItems.Add(order.Table1.Date_Exec_Cancel.ToString());
                     lvi.SubItems.Add(order.Table1.State.ToString());
-
+                    lvi.SubItems.Add(order.Table1.Result.ToString());
+                    
                     listView1.Items.Add(lvi);
 
                 }
@@ -63,8 +65,10 @@ namespace MedicalClinic.Controls.Laboratory
                     ListViewItem lvi = new ListViewItem(order.Table1.Id_Examination.ToString());
                     lvi.SubItems.Add(order.Table2.Name.ToString());
                     lvi.SubItems.Add(order.Table1.Date_Of_Order.ToString());
+                    lvi.SubItems.Add(order.Table1.Date_Exec_Cancel.ToString());
                     lvi.SubItems.Add(order.Table1.State.ToString());
-
+                    lvi.SubItems.Add(order.Table1.Result.ToString());
+                    
                     listView1.Items.Add(lvi);
 
                 }
@@ -170,8 +174,10 @@ namespace MedicalClinic.Controls.Laboratory
                     ListViewItem lvi = new ListViewItem(order.Table1.Id_Examination.ToString());
                     lvi.SubItems.Add(order.Table2.Name.ToString());
                     lvi.SubItems.Add(order.Table1.Date_Of_Order.ToString());
+                    lvi.SubItems.Add(order.Table1.Date_Exec_Cancel.ToString());
                     lvi.SubItems.Add(SQLLab.translateRolePL(order.Table1.State.ToString()));
-
+                    lvi.SubItems.Add(order.Table1.Result.ToString());
+                    
                     listView1.Items.Add(lvi);
 
                 }
@@ -184,8 +190,10 @@ namespace MedicalClinic.Controls.Laboratory
                     ListViewItem lvi = new ListViewItem(order.Table1.Id_Examination.ToString());
                     lvi.SubItems.Add(order.Table2.Name.ToString());
                     lvi.SubItems.Add(order.Table1.Date_Of_Order.ToString());
+                    lvi.SubItems.Add(order.Table1.Date_Exec_Cancel.ToString());
                     lvi.SubItems.Add(SQLLab.translateRolePL(order.Table1.State.ToString()));
-
+                    lvi.SubItems.Add(order.Table1.Result.ToString());
+                    
                     listView1.Items.Add(lvi);
 
                 }
