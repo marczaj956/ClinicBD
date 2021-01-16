@@ -53,7 +53,7 @@ namespace MedicalClinic.Controls.Registration
             //string time = a.First().Date_Appointment.Hour.ToString()+":" + a.First().Date_Appointment.Minute.ToString();
            string time= a.First().Date_Appointment.ToString("HH:mm");
             comboBox2.Text = time;//godzina
-            comboBox4.Text = time;
+            
             // comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
             // comboBox2.Text = a.First().Date_Appointment.TimeOfDay.ToString();
 
