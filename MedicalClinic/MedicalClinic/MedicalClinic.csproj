@@ -194,6 +194,12 @@
     <Compile Include="Controls\Registration\New.Designer.cs">
       <DependentUpon>New.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Registration\PatientEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Registration\PatientEdit.Designer.cs">
+      <DependentUpon>PatientEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Registration\Reg.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -357,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Registration\New.resx">
       <DependentUpon>New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Registration\PatientEdit.resx">
+      <DependentUpon>PatientEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Registration\Reg.resx">
       <DependentUpon>Reg.cs</DependentUpon>

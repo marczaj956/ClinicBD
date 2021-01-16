@@ -47,6 +47,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.connector = new System.Windows.Forms.TextBox();
             this.WindowPanel = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(883, 356);
+            this.button3.Location = new System.Drawing.Point(883, 398);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(111, 42);
@@ -247,10 +248,23 @@
             this.WindowPanel.TabIndex = 18;
             this.WindowPanel.Visible = false;
             // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button6.Location = new System.Drawing.Point(883, 299);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(111, 42);
+            this.button6.TabIndex = 19;
+            this.button6.Text = "Edytuj pacjenta";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
             // Reg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.WindowPanel);
             this.Controls.Add(this.connector);
             this.Controls.Add(this.listView1);
@@ -288,5 +302,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.TextBox connector;
         private System.Windows.Forms.Panel WindowPanel;
+        private System.Windows.Forms.Button button6;
     }
 }

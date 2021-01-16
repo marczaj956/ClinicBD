@@ -190,5 +190,33 @@ namespace MedicalClinic.Controls.Registration
             this.Hide();
             this.Parent.Controls.Add(new VisitViewercs());
         }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+
+
+                var res = SQLRec.GetPatientsList(item.SubItems[0].Text.TrimEnd(), item.SubItems[1].Text.TrimEnd(), item.SubItems[2].Text.TrimEnd());
+                foreach (var x in res)
+                {
+
+
+
+                    WindowPanel.Controls.Add(new PatientEdit(x.Id_Patient, connector));
+                    WindowPanel.Visible = true;
+                    WindowPanel.Dock = DockStyle.Fill;
+                    WindowPanel.BringToFront();
+
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Nie wybrano pacjenta");
+            }
+        }
     }
 }

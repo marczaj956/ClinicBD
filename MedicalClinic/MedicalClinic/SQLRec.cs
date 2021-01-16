@@ -250,5 +250,17 @@ namespace MedicalClinic
 
             return result;
         }
+        public static void EditPatient(int id, string name, string surname, string pesel)
+        {   //napisać ifa czy są dane
+
+            DataClassesDataContext db = new DataClassesDataContext();
+            Patient update = db.Patient.Single(row => row.Id_Patient == id);
+            update.Name = name;
+            update.Surname = surname;
+            update.PESEL = pesel;
+
+            db.SubmitChanges();
+
+        }
     }
 }
