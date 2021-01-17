@@ -13,29 +13,14 @@ namespace MedicalClinic.Doctor
 {
     public partial class Handle : UserControl
     { private string IDVis;
-      private TextBox textb;
-        private int idpat;
-        //public Handle()
-        //{
-        //    InitializeComponent();
+      private int idpat;
 
-        //    //var res = SQLDoc.GetPatient(1);
-        //    //foreach (var order in res)
-        //    //{
-        //    //    textBox1.Text = order.patientTable.Name;
-        //    //    textBox2.Text = order.patientTable.Surname;
-        //    //    textBox3.Text = order.patientTable.PESEL;
-        //    //    textBox6.Text = order.patientTable.Id_Patient.ToString();
-
-        //    //}
-        //}
-
-        public Handle(TextBox text,int IDP, string IDV)
+        public Handle (int IDP, string IDV)
         {
             InitializeComponent();
 
             IDVis = IDV;
-            textb = text;
+            //textb = text;
             idpat = IDP;
             PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
             searchCriteria.setPatientId(IDP);
@@ -165,20 +150,50 @@ namespace MedicalClinic.Doctor
         {
             SQLDoc.updateDescDia(Int32.Parse(IDVis), textBox5.Text.ToString(), textBox4.Text.ToString(), "E");
             MessageBox.Show("Zapisano i zakończono wizytę");
-            this.Controls.Clear();
-            this.Visible = false;
-            this.Parent.Hide();
-            textb.Text = "changed";
+            //this.Controls.Clear();
+            //this.Visible = false;
+            //this.Parent.Hide();
+            int idDoctor = -1;
+            int x = Int32.Parse(IDVis);
+            var res1 = SQLDoc.GetAppointment(x);
+            foreach (var order in res1)
+            {
+                idDoctor = order.Id_Doctor;
+
+            }
+            if (idDoctor != -1)
+            {
+                Panel P = new Panel();
+                P.Controls.Clear();
+                this.Hide();
+                this.Parent.Controls.Add(new Doctor(idDoctor));
+            }
+
         }
 
         private void button6_Click(object sender, EventArgs e)//anulowanie
         {
             SQLDoc.updateDescDia(Int32.Parse(IDVis), textBox5.Text.ToString(), textBox4.Text.ToString(), "C");
             MessageBox.Show("Zapisano i anulowano wizytę");
-            this.Controls.Clear();
-            this.Visible = false;
-            this.Parent.Hide();
-            textb.Text = "changed";
+            //this.Controls.Clear();
+            //this.Visible = false;
+            //this.Parent.Hide();
+            int idDoctor = -1;
+            int x = Int32.Parse(IDVis);
+            var res1 = SQLDoc.GetAppointment(x);
+            foreach (var order in res1)
+            {
+                idDoctor = order.Id_Doctor;
+
+            }
+            if (idDoctor != -1)
+            {
+                Panel P = new Panel();
+                P.Controls.Clear();
+                this.Hide();
+                this.Parent.Controls.Add(new Doctor(idDoctor));
+            }
+
         }
     }
 }

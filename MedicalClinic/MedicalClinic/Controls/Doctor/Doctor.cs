@@ -95,9 +95,9 @@ namespace MedicalClinic.Doctor
                 searchCriteria.setPesel(pesel);
                 var x = SQLDoc.GetPatientsList("", "", item.SubItems[4].Text.TrimEnd().ToString());
 
-                    panel1.Controls.Clear();
-                    panel1.Controls.Add(new Handle(connector,x.First().Id_Patient, item.SubItems[0].Text.TrimEnd()));
-                    panel1.Visible = true;
+                panel1.Controls.Clear();
+                panel1.Controls.Add(new Handle( x.First().Id_Patient, item.SubItems[0].Text.TrimEnd()));
+                panel1.Visible = true;
                     panel1.Dock = DockStyle.Fill;
                     panel1.BringToFront();
                 
