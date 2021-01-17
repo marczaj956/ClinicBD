@@ -70,19 +70,18 @@ namespace MedicalClinic.Doctor
 
         private void button4_Click(object sender, EventArgs e) //show phisical
         {
-            int procedure = 2;
-            WindowPanel.Controls.Add(new PhysicalExamination(idpat, IDVis, procedure));
+
+            WindowPanel.Controls.Add(new PhysicalExamination(idpat, IDVis, 2));
             WindowPanel.Visible = true;
             WindowPanel.Dock = DockStyle.Fill;
             WindowPanel.BringToFront();
+            
         }
 
         private void button3_Click(object sender, EventArgs e) //show labo
         {
-            //ShowLabExamList f2 = new ShowLabExamList(idpat,IDVis);
 
-            // f2.ShowDialog();
-            WindowPanel.Controls.Add(new LabolatoryExaminantion(idpat,IDVis,2));
+            WindowPanel.Controls.Add(new LabolatoryExaminantion(idpat, IDVis, 2));
             WindowPanel.Visible = true;
             WindowPanel.Dock = DockStyle.Fill;
             WindowPanel.BringToFront();

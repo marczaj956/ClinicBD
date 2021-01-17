@@ -28,21 +28,11 @@ namespace MedicalClinic.Doctor
         public Doctor(int id) : this()
         {
 
-         //   var res = SQLAdm.pacjent("", "", "");
-            /* foreach (var order in res)
-             {
-                 ListViewItem lvi = new ListViewItem(order.Table1.Id_Appointment.ToString());
-                 lvi.SubItems.Add(order.Table2.Name);
-                 lvi.SubItems.Add(order.Table2.Surname);
-                 listView1.Items.Add(lvi);
-
-             }*/
-            whoami = id;
-            connector.Text = whoami.ToString();
+           dateTimePicker1.Value = DateTime.Today;
+           whoami = id;
+           connector.Text = whoami.ToString();
         }
-
-       
-
+        
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -99,13 +89,10 @@ namespace MedicalClinic.Doctor
             if (listView1.SelectedItems.Count > 0)
             {
                 ListViewItem item = listView1.SelectedItems[0];
-
-
-
+                
                 PatientsSearchCriteria searchCriteria = new PatientsSearchCriteria();
                 long pesel = long.Parse(item.SubItems[4].Text.TrimEnd());
                 searchCriteria.setPesel(pesel);
-                // Refresh(SQLDoc.GetPatient(searchCriteria));
                 var x = SQLDoc.GetPatientsList("", "", item.SubItems[4].Text.TrimEnd().ToString());
 
                     panel1.Controls.Clear();
@@ -113,13 +100,7 @@ namespace MedicalClinic.Doctor
                     panel1.Visible = true;
                     panel1.Dock = DockStyle.Fill;
                     panel1.BringToFront();
-
-
                 
-
-
-
-
 
             }
             else

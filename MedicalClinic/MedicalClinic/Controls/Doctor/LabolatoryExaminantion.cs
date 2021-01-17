@@ -79,7 +79,7 @@ namespace MedicalClinic.Controls.Doctor
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new NewLabolatoryExaminationcs(idpat,IDVis, 2,-1));
+            this.Parent.Controls.Add(new NewLabolatoryExaminationcs(idpat,IDVis, 1,-1));
 
         }
 
@@ -139,29 +139,23 @@ namespace MedicalClinic.Controls.Doctor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Controls.Clear();
-            this.Hide();
             if (procedure == 1)
             {
+                this.Controls.Clear();
+                this.Hide();
                 this.Controls.Add(new MedicalClinic.Doctor.Show(idpat, IDVis));
+                this.Visible = true;
+                this.Dock = DockStyle.Fill;
+                this.BringToFront();
+
             }
             else
             {
-                int x = Int32.Parse(IDVis);
-                var res1 = SQLDoc.GetAppointment(x);
-                foreach (var order in res1)
-                {
-                    x = order.Id_Doctor;
-
-
-                }
-                TextBox idDoc = new TextBox();
-                idDoc.Text = x.ToString();
-                this.Controls.Add(new MedicalClinic.Doctor.Handle(idDoc,idpat,IDVis));
+                this.Controls.Clear();
+                this.Visible = false;
+                this.Parent.Hide();
             }
-            this.Visible = true;
-            this.Dock = DockStyle.Fill;
-            this.BringToFront();
+            
         }
 
         private void Mainlist_SelectedIndexChanged(object sender, EventArgs e)

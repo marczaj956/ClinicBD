@@ -65,7 +65,7 @@ namespace MedicalClinic.Controls.Doctor
             Panel P = new Panel();
             P.Controls.Clear();
             this.Hide();
-            this.Parent.Controls.Add(new LabolatoryExaminantion(idpat, IDVis, procedure));
+            this.Parent.Controls.Add(new LabolatoryExaminantion(idpat, IDVis, 2));
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

@@ -136,7 +136,6 @@ namespace MedicalClinic.Doctor
         {
             if (procedure == 1)
             {
-               // Panel P = new Panel();
                 this.Controls.Clear();
                 this.Hide();
                 this.Controls.Add(new Show(idpat,IDVis));

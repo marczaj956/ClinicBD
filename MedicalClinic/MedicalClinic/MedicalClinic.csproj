@@ -86,12 +86,6 @@
     <Compile Include="Controls\Doctor\Doctor.Designer.cs">
       <DependentUpon>Doctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Doctor\EditLabExamination.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Doctor\EditLabExamination.Designer.cs">
-      <DependentUpon>EditLabExamination.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\Doctor\EditPhysicalExamination.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -309,9 +303,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Doctor\Doctor.resx">
       <DependentUpon>Doctor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Doctor\EditLabExamination.resx">
-      <DependentUpon>EditLabExamination.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Doctor\EditPhysicalExamination.resx">
       <DependentUpon>EditPhysicalExamination.cs</DependentUpon>
