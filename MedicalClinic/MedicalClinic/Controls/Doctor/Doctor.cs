@@ -31,6 +31,23 @@ namespace MedicalClinic.Doctor
            dateTimePicker1.Value = DateTime.Today;
            whoami = id;
            connector.Text = whoami.ToString();
+
+            State stateTemp = (State)Enum.Parse(typeof(State), "Wszystkie");
+
+            VisitsSearchCriteria searchCriteria = new VisitsSearchCriteria();
+            searchCriteria.setDate(dateTimePicker1.Value.Date, dateTimePicker1.Checked);
+            searchCriteria.setState(stateTemp);
+            searchCriteria.setOnlyVisitsForDoctor(checkBox1.Checked);
+            searchCriteria.setDoctorId(this.whoami);
+            Refresh(SQLDoc.GetVisits(searchCriteria));
+
+
+
+
+
+
+
+
         }
         
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

@@ -52,8 +52,8 @@ namespace MedicalClinic.MainPanel
         private void button1_Click(object sender, EventArgs e)
         {
 
-           // var result = SQLMain.CheckLog(LoginText.Text.ToString(), CreateMD5Hash(PassText.Text.ToString()));
-            var result = SQLMain.CheckLog(LoginText.Text.ToString(), PassText.Text.ToString());
+           var result = SQLMain.CheckLog(LoginText.Text.ToString(), CreateMD5Hash(PassText.Text.ToString()));
+          //  var result = SQLMain.CheckLog(LoginText.Text.ToString(), PassText.Text.ToString());
 
 
             if (result.Any())
